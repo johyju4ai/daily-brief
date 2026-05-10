@@ -1,0 +1,213 @@
+- generic [ref=e5]:
+  - banner:
+    - generic [ref=e8]:
+      - generic [ref=e10]:
+        - generic:
+          - button [disabled]:
+            - img
+        - button "Facebook" [ref=e12] [cursor=pointer]:
+          - img "Facebook" [ref=e13]
+      - generic [ref=e18]:
+        - textbox "이메일 또는 휴대폰" [ref=e21]
+        - textbox "비밀번호" [ref=e24]
+        - button "로그인" [ref=e27] [cursor=pointer]:
+          - generic [ref=e31]: 로그인
+        - link "계정을 잊으셨나요?" [ref=e34] [cursor=pointer]:
+          - /url: https://www.facebook.com/recover/initiate?ars=royal_blue_bar
+  - main [ref=e41]:
+    - generic [ref=e42]:
+      - link [ref=e53] [cursor=pointer]:
+        - /url: https://www.facebook.com/photo/?fbid=9003646979733350&set=a.1813072718790848
+      - generic [ref=e61]:
+        - link [ref=e64] [cursor=pointer]:
+          - /url: https://www.facebook.com/photo/?fbid=7377449975686400&set=a.103999596364844&__tn__=%3C
+          - img [ref=e66]
+        - generic [ref=e72]:
+          - heading [level=1] [ref=e77]:
+            - text: 오건영
+            - generic [ref=e78]: (Kun Young Oh)
+          - generic [ref=e80]:
+            - link [ref=e81] [cursor=pointer]:
+              - /url: https://www.facebook.com/ohrang79/followers/
+              - text: 팔로워
+              - strong [ref=e82]: 7.7만
+              - text: 명
+            - text: •
+            - link [ref=e83] [cursor=pointer]:
+              - /url: https://www.facebook.com/ohrang79/following/
+              - text: 팔로잉
+              - strong [ref=e84]: "156"
+              - text: 명
+    - generic [ref=e92]:
+      - tablist [ref=e100]:
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]: 더 보기
+            - img [ref=e106]
+          - tab [selected] [ref=e109] [cursor=pointer]:
+            - generic [ref=e111]: 게시물
+          - tab [ref=e113] [cursor=pointer]:
+            - generic [ref=e115]: 정보
+          - tab [ref=e117] [cursor=pointer]:
+            - generic [ref=e119]: 사진
+      - button [ref=e123] [cursor=pointer]:
+        - img [ref=e125]
+    - generic [ref=e131]:
+      - generic [ref=e134]:
+        - generic [ref=e138]:
+          - heading [level=2] [ref=e147]:
+            - generic [ref=e149]: 소개
+          - list [ref=e153]:
+            - button [ref=e161] [cursor=pointer]:
+              - generic [ref=e162]:
+                - strong [ref=e163]: 프로필
+                - text: · 디지털 크리에이터
+            - generic [ref=e169]:
+              - link [ref=e170] [cursor=pointer]:
+                - /url: https://www.facebook.com/ShinhanBank
+                - text: 신한은행 (Shinhan Bank)
+              - text: 에서 근무
+        - generic [ref=e174]:
+          - generic [ref=e181]:
+            - heading [level=2] [ref=e183]:
+              - link [ref=e186] [cursor=pointer]:
+                - /url: https://www.facebook.com/ohrang79/photos
+                - text: 사진
+            - link [ref=e191] [cursor=pointer]:
+              - /url: https://www.facebook.com/ohrang79/photos
+              - generic [ref=e192]: 사진 모두 보기
+          - generic [ref=e196]:
+            - link [ref=e199] [cursor=pointer]:
+              - /url: /photo/?fbid=24649126464758816&set=pb.100002644121079.-2207520000
+            - link [ref=e204] [cursor=pointer]:
+              - /url: /photo/?fbid=24649125598092236&set=pb.100002644121079.-2207520000
+            - link [ref=e209] [cursor=pointer]:
+              - /url: /photo/?fbid=9003646979733350&set=pb.100002644121079.-2207520000
+            - link [ref=e214] [cursor=pointer]:
+              - /url: /photo/?fbid=7377449975686400&set=pb.100002644121079.-2207520000
+            - link [ref=e219] [cursor=pointer]:
+              - /url: /photo/?fbid=6201725833258826&set=pb.100002644121079.-2207520000
+            - link [ref=e224] [cursor=pointer]:
+              - /url: /photo/?fbid=6201720673259342&set=pb.100002644121079.-2207520000
+            - link [ref=e229] [cursor=pointer]:
+              - /url: /photo/?fbid=5587279168036832&set=pb.100002644121079.-2207520000
+            - link [ref=e234] [cursor=pointer]:
+              - /url: /photo/?fbid=5050890408342380&set=pb.100002644121079.-2207520000
+            - link [ref=e239] [cursor=pointer]:
+              - /url: /photo/?fbid=5050800265018061&set=pb.100002644121079.-2207520000
+        - contentinfo [ref=e242]:
+          - list [ref=e244]:
+            - listitem [ref=e245]:
+              - link [ref=e246] [cursor=pointer]:
+                - /url: /privacy/policy/?entry_point=comet_dropdown
+                - text: 개인정보처리방침
+              - generic [ref=e247]: ·
+            - listitem [ref=e249]:
+              - link [ref=e250] [cursor=pointer]:
+                - /url: /policies?ref=pf
+                - text: 약관
+              - generic [ref=e251]: ·
+            - listitem [ref=e253]:
+              - link [ref=e254] [cursor=pointer]:
+                - /url: /business/
+                - text: 광고
+              - generic [ref=e255]: ·
+            - listitem [ref=e257]:
+              - link [ref=e258] [cursor=pointer]:
+                - /url: /help/568137493302217
+                - text: AdChoices
+                - img [ref=e260]
+              - generic [ref=e263]: ·
+            - listitem [ref=e265]:
+              - link [ref=e266] [cursor=pointer]:
+                - /url: /policies/cookies/
+                - text: 쿠키
+              - generic [ref=e267]: ·
+            - listitem [ref=e269]:
+              - button [ref=e270] [cursor=pointer]: 더 보기
+      - generic [ref=e272]:
+        - article [ref=e279]:
+          - generic [ref=e287]:
+            - generic [ref=e289]:
+              - link [ref=e293] [cursor=pointer]:
+                - /url: https://www.facebook.com/ohrang79?__cft__[0]=AZaWFYnhYuvPty7PYmRb7FHOY_73dWggmEzNLP4cHdAMGmtjNBFy0wMSzOyhp1jOEaUONsZIWZxP5cjxcSsvWa83NIVu3d9lLwBuYjBwx6Bj2Lyxwnr9LyVqlfeu3bo4qVtouYPHXr79LZMhun9JSUYle27IvuDj2QvTj8tyw3m6vlUoTkxKG17BuN1UErukPJM&__tn__=%3C%3C%2CP-R
+                - img [ref=e295]
+              - generic [ref=e300]:
+                - heading [level=2] [ref=e304]:
+                  - link [ref=e309] [cursor=pointer]:
+                    - /url: https://www.facebook.com/ohrang79?__cft__[0]=AZaWFYnhYuvPty7PYmRb7FHOY_73dWggmEzNLP4cHdAMGmtjNBFy0wMSzOyhp1jOEaUONsZIWZxP5cjxcSsvWa83NIVu3d9lLwBuYjBwx6Bj2Lyxwnr9LyVqlfeu3bo4qVtouYPHXr79LZMhun9JSUYle27IvuDj2QvTj8tyw3m6vlUoTkxKG17BuN1UErukPJM&__tn__=-UC%2CP-R
+                    - generic [ref=e310]: 오건영
+                - generic [ref=e313]:
+                  - link [ref=e317] [cursor=pointer]:
+                    - /url: https://www.facebook.com/ohrang79/posts/pfbid089ZainzZWrYxnx6yqiz5y7pZMSbNLZhZnKEMLhR3CMowPQYJG523WTe4shLjhdeEl?__cft__[0]=AZaWFYnhYuvPty7PYmRb7FHOY_73dWggmEzNLP4cHdAMGmtjNBFy0wMSzOyhp1jOEaUONsZIWZxP5cjxcSsvWa83NIVu3d9lLwBuYjBwx6Bj2Lyxwnr9LyVqlfeu3bo4qVtouYPHXr79LZMhun9JSUYle27IvuDj2QvTj8tyw3m6vlUoTkxKG17BuN1UErukPJM&__tn__=%2CO%2CP-R
+                    - text: 1일
+                  - generic [ref=e319]: ·
+                  - img [ref=e324]
+            - generic [ref=e337]:
+              - generic [ref=e339]: 주식 시장이 정말 뜨겁습니다. 지난 해 이맘 때 즈음이죠.. 코스피 지수가 2500선을 하회하고 있었고, 트럼프 관세의 충격이 수출 중심 국가인 우리에게 직격탄이 될 것이라는 공포에 코스피가 2300선을 하회했던 기억이 생생한데요… 그 때부터 지금까지 정말 드라마틱한 강세를 이어온 듯 합니다. 참고로 삼전도 5만원 수준에 불과했는데요, 지금은 그야말로 환골탈태를 한 모습이죠. 한국 증시에 대한 비관론이 상당히 많이 줄어든 듯 하구요.. 지금은 코스피 1만 시대를 준비해야 한다는 얘기도 나오고 있습니다. 과열이다.. 아니다.. 이런 논쟁을 떠나서 천덕꾸러기 코스피의 화려한 귀환… 개인적으로 기분 좋은 일입니다.
+              - generic [ref=e341]:
+                - text: 오늘도 몇 가지 이슈를 짚어보려고 하는데요… 우선 이번 주에 있을 주요 이벤트들이죠. 우선 미중정상회담과 베센트 재무장관의 일본 방문이 예정되어있습니다. 둘 다 정…
+                - button [ref=e342] [cursor=pointer]: 더 보기
+            - generic [ref=e345]:
+              - generic [ref=e347]:
+                - generic [ref=e349]:
+                  - generic [ref=e350]:
+                    - toolbar [ref=e351]:
+                      - button [ref=e356] [cursor=pointer]
+                    - generic [ref=e357]: "모든 공감:"
+                    - generic [ref=e359]: "878"
+                  - generic [ref=e360]:
+                    - button [ref=e363] [cursor=pointer]:
+                      - generic [ref=e366]: "7"
+                    - button [ref=e371] [cursor=pointer]:
+                      - generic [ref=e374]: "49"
+                - generic [ref=e378]:
+                  - button [ref=e380] [cursor=pointer]:
+                    - generic [ref=e385]: 좋아요
+                  - button [ref=e387] [cursor=pointer]:
+                    - generic [ref=e392]: 댓글
+              - generic [ref=e393]:
+                - button [ref=e397] [cursor=pointer]:
+                  - generic [ref=e399]: 댓글 더 보기
+                - article [ref=e403]:
+                  - link [ref=e407] [cursor=pointer]:
+                    - /url: https://www.facebook.com/jaebinn.lee?comment_id=Y29tbWVudDoyNjQ5NDE2MzY3MDI1NTA3N18xNjAyNTUzOTI3NDkyNTk5&__cft__[0]=AZaWFYnhYuvPty7PYmRb7FHOY_73dWggmEzNLP4cHdAMGmtjNBFy0wMSzOyhp1jOEaUONsZIWZxP5cjxcSsvWa83NIVu3d9lLwBuYjBwx6Bj2Lyxwnr9LyVqlfeu3bo4qVtouYPHXr79LZMhun9JSUYle27IvuDj2QvTj8tyw3m6vlUoTkxKG17BuN1UErukPJM&__tn__=R-R
+                    - img [ref=e409]
+                  - generic [ref=e413]:
+                    - generic [ref=e417]:
+                      - link [ref=e420] [cursor=pointer]:
+                        - /url: https://www.facebook.com/jaebinn.lee?comment_id=Y29tbWVudDoyNjQ5NDE2MzY3MDI1NTA3N18xNjAyNTUzOTI3NDkyNTk5&__cft__[0]=AZaWFYnhYuvPty7PYmRb7FHOY_73dWggmEzNLP4cHdAMGmtjNBFy0wMSzOyhp1jOEaUONsZIWZxP5cjxcSsvWa83NIVu3d9lLwBuYjBwx6Bj2Lyxwnr9LyVqlfeu3bo4qVtouYPHXr79LZMhun9JSUYle27IvuDj2QvTj8tyw3m6vlUoTkxKG17BuN1UErukPJM&__tn__=R-R
+                        - generic [ref=e422]: 이재빈
+                      - generic [ref=e426]: 1983년 코스피 개시 이후 2026년은 가장 역사적인 해가 될 것 같습니다. 상전벽해, 환골탈태, 전대미문, 혁명적?.. 어떤 수식어를 붙여야 할지 모르겠군요. 화려한 귀환은 왠지 예전의 영화가 있었다는 뉴앙스여서 아닌 것 같습니다ㅎ 40년 발아기를 거쳐 이제 꽃망울 터트리는, 영어 표현에서 자주 쓰는 uncharted territory 로 나아가는 느낌입니다.
+                    - generic [ref=e427]:
+                      - list [ref=e428]:
+                        - listitem [ref=e429]:
+                          - link [ref=e432] [cursor=pointer]:
+                            - /url: https://www.facebook.com/ohrang79/posts/pfbid089ZainzZWrYxnx6yqiz5y7pZMSbNLZhZnKEMLhR3CMowPQYJG523WTe4shLjhdeEl?comment_id=1602553927492599&__cft__[0]=AZaWFYnhYuvPty7PYmRb7FHOY_73dWggmEzNLP4cHdAMGmtjNBFy0wMSzOyhp1jOEaUONsZIWZxP5cjxcSsvWa83NIVu3d9lLwBuYjBwx6Bj2Lyxwnr9LyVqlfeu3bo4qVtouYPHXr79LZMhun9JSUYle27IvuDj2QvTj8tyw3m6vlUoTkxKG17BuN1UErukPJM&__tn__=R-R
+                            - text: 21시간
+                      - button [ref=e437] [cursor=pointer]:
+                        - generic [ref=e439]: "4"
+        - generic [ref=e443]:
+          - article [ref=e444]:
+            - status [ref=e445]
+          - article [ref=e457]:
+            - status [ref=e458]
+  - dialog [ref=e478]:
+    - button "닫기" [ref=e480] [cursor=pointer]
+    - generic [ref=e487]:
+      - img [ref=e491]
+      - generic [ref=e498]: 오건영 콘텐츠 더 보기
+      - generic [ref=e503]:
+        - generic: 이메일 또는 전화번호
+        - textbox "이메일 또는 전화번호" [active] [ref=e504]
+      - generic [ref=e509]:
+        - generic: 비밀번호
+        - textbox "비밀번호" [ref=e510]
+      - button "Facebook에 로그인" [ref=e512] [cursor=pointer]:
+        - generic [ref=e515]: 로그인
+      - link "비밀번호를 잊으셨나요?" [ref=e517] [cursor=pointer]:
+        - /url: https://www.facebook.com/recover/initiate?ars=royal_blue_bar
+        - generic [ref=e518]: 비밀번호를 잊으셨나요?
+      - generic [ref=e524]: 또는
+      - button "새 계정 만들기" [ref=e528] [cursor=pointer]:
+        - generic [ref=e531]: 새 계정 만들기

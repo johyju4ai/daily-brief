@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Daily Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; background: #0E0E10; }
+  body { font-family: "Pretendard Variable", "Pretendard", -apple-system, system-ui, sans-serif; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 999px; }
+  #root { height: 100vh; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+
+<!-- ── Inline data ── -->
+<script src="data.js"></script>
+
+<!-- ── All components inlined (no external JSX files needed) ── -->
+<script type="text/babel">
+const { useState, useEffect, useRef, useMemo } = React;
+
+// ── Design tokens ────────────────────────────────────────────────────────
+const T = {
+  bg: '#0E0E10', panel: '#16161A', panel2: '#1C1C22', border: '#26262E',
+  text: '#F5F2EC', text2: '#9C968A', text3: '#5F5B53', accent: '#E08A6E',
+  accentSoft: 'rgba(217,119,87,0.14)', up: '#3DDC97', down: '#F36F6F',
+};
+const SANS = '"Pretendard Variable","Pretendard",-apple-system,sans-serif';
+const MONO = '"IBM Plex Mono",ui-monospace,monospace';
+
+// ── Responsive hook ──────────────────────────────────────────────────────
+function useMobile() {
+  const [mobile, setMobile] = useState(() => window.innerWidth < 640);
+  useEffect(() => {
+    const fn = () => setMobile(window.innerWidth < 640);
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
+  return mobile;
+}
+
+// ── Atoms ────────────────────────────────────────────────────────────────
+function Mono({ children, color, size = 11, style }) {
+  return <span style={{ fontFamily: MONO, fontSize: size, color, letterSpacing: '0.02em', ...style }}>{children}</span>;
+}
+function Pill({ children, weight }) {
+  const hi = weight === 'high';
+  return (
+    <span style={{
+      display:'inline-flex', alignItems:'center', gap:5,
+      fontFamily: MONO, fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase',
+      padding: '2px 7px', borderRadius: 3,
+      color: hi ? T.accent : T.text2,
+      background: hi ? T.accentSoft : 'transparent',
+      border: `1px solid ${hi ? T.accent + '40' : T.border}`,
+    }}>
+      {hi && <span style={{ width:5, height:5, borderRadius:'50%', background:T.accent, display:'inline-block' }}/>}
+      {children}
+    </span>
+  );
+}
+
+// ── Date strip ───────────────────────────────────────────────────────────
+function DateStrip({ date, setDate }) {
+  const dates = window.BRIEF_DATES || [];
+  return (
+    <div style={{
+      display:'flex', gap:6, padding:'0 24px', overflowX:'auto',
+      borderBottom: `1px solid ${T.border}`, background: T.panel,
+      flexShrink: 0, scrollbarWidth: 'none',
+    }}>
+      {dates.map(d => {
+        const data = window.BRIEF_ARCHIVE[d];
+        const active = d === date;
+        const today = d === window.BRIEF_TODAY;
+        return (
+          <button key={d} onClick={() => setDate(d)} style={{
+            all:'unset', cursor:'pointer', flexShrink:0,
+            padding:'9px 14px', borderBottom: `2px solid ${active ? T.accent : 'transparent'}`,
+            color: active ? T.text : T.text2,
+            display:'flex', alignItems:'center', gap:6,
+            fontSize: 13, fontWeight: active ? 600 : 500, whiteSpace:'nowrap',
+            transition:'color .15s',
+          }}>
+            {data.date.shortLabel}
+            {today && <Mono color={T.accent} size={9} style={{ letterSpacing:'0.14em' }}>TODAY</Mono>}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── Tab nav ──────────────────────────────────────────────────────────────
+function TabNav({ tab, setTab, D }) {
+  const tabs = [
+    { id:'ai',   label:'AI 뉴스',       n: D.ai.items.length },
+    { id:'econ', label:'경제',          n: D.econ.items.length },
+    { id:'col',  label:'컬럼 피드',     n: D.columns.items.length },
+    { id:'inv',  label:'투자',          n: 1 },
+  ];
+  useEffect(() => {
+    const fn = e => {
+      if (document.activeElement?.tagName === 'TEXTAREA') return;
+      const m = {'1':'ai','2':'econ','3':'col','4':'inv'};
+      if (m[e.key]) setTab(m[e.key]);
+    };
+    window.addEventListener('keydown', fn);
+    return () => window.removeEventListener('keydown', fn);
+  }, [setTab]);
+  return (
+    <div style={{
+      display:'flex', gap:0, background: T.panel, padding:'0 24px',
+      borderBottom: `1px solid ${T.border}`, flexShrink:0,
+    }}>
+      {tabs.map((tb, i) => {
+        const active = tab === tb.id;
+        return (
+          <button key={tb.id} onClick={() => setTab(tb.id)} style={{
+            all:'unset', cursor:'pointer',
+            padding:'12px 16px', marginRight:4,
+            borderBottom:`2px solid ${active ? T.accent : 'transparent'}`,
+            color: active ? T.text : T.text2,
+            fontSize: 14, fontWeight: active ? 600 : 500,
+            display:'flex', alignItems:'center', gap:8,
+            transition:'color .15s',
+          }}>
+            <Mono color={T.text3} size={10}>{i+1}</Mono>
+            {tb.label}
+            <span style={{
+              background: active ? T.accentSoft : T.border + '44',
+              color: active ? T.accent : T.text3,
+              fontFamily: MONO, fontSize: 10,
+              padding:'1px 6px', borderRadius:3,
+            }}>{tb.n}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── News item ────────────────────────────────────────────────────────────
+function NewsItem({ it, idx, mob = false }) {
+  const [open, setOpen] = useState(it.weight === 'high');
+  const hi = it.weight === 'high';
+  return (
+    <article style={{ borderTop:`1px solid ${T.border}`, padding: hi ? '24px 0' : '14px 0' }}>
+      <div style={{ display:'flex', alignItems:'flex-start', gap:16 }}>
+        <Mono color={T.text3} size={11} style={{ width:28, paddingTop:3, flexShrink:0 }}>
+          {String(idx).padStart(2,'0')}
+        </Mono>
+        <div style={{ flex:1, minWidth:0 }}>
+          <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:8, flexWrap:'wrap' }}>
+            <Pill weight={it.weight}>{hi ? 'KEY' : 'NEWS'}</Pill>
+            <Mono color={T.text3} size={11}>{it.time}</Mono>
+            <Mono color={T.text2} size={11}>· {it.source}</Mono>
+          </div>
+          {it.url ? (
+            <h3 style={{ margin:0, fontSize: hi ? 19 : 15, fontWeight: hi ? 600 : 500, letterSpacing:'-0.01em', lineHeight:1.35 }}>
+              <a href={it.url} target="_blank" rel="noopener noreferrer"
+                onClick={e => { if (!hi) { e.preventDefault(); setOpen(o => !o); } }}
+                style={{ color:T.text, textDecoration:'none', borderBottom: hi ? `1px solid ${T.border}` : 'none', cursor: hi ? 'alias' : 'pointer', fontSize: hi ? (mob?17:19) : (mob?14:15) }}
+                onMouseEnter={e => { if (hi) e.currentTarget.style.borderBottomColor = T.accent; }}
+                onMouseLeave={e => { if (hi) e.currentTarget.style.borderBottomColor = T.border; }}
+              >{it.headline}</a>
+            </h3>
+          ) : (
+            <h3 onClick={() => !hi && setOpen(o => !o)} style={{
+              margin:0, color:T.text,
+              fontSize: hi ? 19 : 15,
+              fontWeight: hi ? 600 : 500,
+              letterSpacing:'-0.01em', lineHeight:1.35,
+              cursor: hi ? 'default' : 'pointer',
+            }}>{it.headline}</h3>
+          )}
+          {open && it.bullets && it.bullets.length > 0 && (
+            <div style={{ marginTop:16, display:'flex', flexDirection:'column', gap:14 }}>
+              <ul style={{ margin:0, padding:0, listStyle:'none', display:'flex', flexDirection:'column', gap:8 }}>
+                {it.bullets.map((b,j) => (
+                  <li key={j} style={{ display:'flex', gap:12, color:T.text, fontSize:14, lineHeight:1.55 }}>
+                    <Mono color={T.accent} size={11} style={{ paddingTop:3, flexShrink:0 }}>{String(j+1).padStart(2,'0')}</Mono>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              {it.why && (
+                <div style={{
+                  background:T.panel2, borderLeft:`2px solid ${T.accent}`,
+                  padding:'12px 14px', borderRadius:'0 4px 4px 0',
+                }}>
+                  <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em' }}>WHY IT MATTERS</Mono>
+                  <div style={{ marginTop:6, color:T.text2, fontSize:13.5, lineHeight:1.6 }}>{it.why}</div>
+                </div>
+              )}
+              {it.notes && it.notes.length > 0 && (
+                <div style={{ borderTop:`1px solid ${T.border}`, paddingTop:12 }}>
+                  <div style={{ display:'flex', gap:8, alignItems:'center', marginBottom:10 }}>
+                    <Mono color={T.text3} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em' }}>용어 설명</Mono>
+                    <div style={{ height:1, flex:1, background:T.border }}/>
+                  </div>
+                  <div style={{ display:'flex', flexDirection:'column', gap:7 }}>
+                    {it.notes.map((n, ni) => (
+                      <div key={ni} style={{ display:'flex', gap:10 }}>
+                        <code style={{ color:T.accent, fontFamily:MONO, fontSize:11, flexShrink:0, minWidth:110, paddingTop:2 }}>{n.term}</code>
+                        <span style={{ color:T.text2, fontSize:12.5, lineHeight:1.55 }}>{n.def}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+        {!hi && it.bullets && it.bullets.length > 0 && (
+          <button onClick={() => setOpen(o => !o)} style={{
+            all:'unset', cursor:'pointer', color:T.text3, padding:4, fontSize:16, flexShrink:0,
+          }}>{open ? '−' : '+'}</button>
+        )}
+      </div>
+    </article>
+  );
+}
+
+// ── News tab ─────────────────────────────────────────────────────────────
+function NewsTab({ data, kicker }) {
+  const mob = useMobile();
+  const px = mob ? 16 : 40;
+  return (
+    <div>
+      <div style={{ padding:`${mob?20:32}px ${px}px 24px`, borderBottom:`1px solid ${T.border}` }}>
+        <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:14 }}>
+          <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.16em' }}>{kicker}</Mono>
+          <div style={{ height:1, flex:1, background:T.border }}/>
+          <Mono color={T.text3} size={10}>{data.items.length} items</Mono>
+        </div>
+        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.2 }}>{data.label}</h1>
+        <p style={{ margin:'12px 0 0', color:T.text2, fontSize:mob?14:15, lineHeight:1.6, maxWidth:720 }}>{data.summary}</p>
+      </div>
+      <div style={{ padding:`16px ${px}px 60px` }}>
+        {data.items.map((it,i) => <NewsItem key={i} it={it} idx={i+1} mob={mob}/>)}
+      </div>
+    </div>
+  );
+}
+
+// ── Columns tab ───────────────────────────────────────────────────────────
+function ColumnsTab({ D }) {
+  const data = D.columns;
+  const mob = useMobile();
+  const px = mob ? 16 : 40;
+  return (
+    <div>
+      <div style={{ padding:`${mob?20:32}px ${px}px 24px`, borderBottom:`1px solid ${T.border}` }}>
+        <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.16em' }}>COLUMNISTS</Mono>
+        <h1 style={{ margin:'10px 0 0', color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em' }}>{data.label}</h1>
+        <p style={{ margin:'10px 0 0', color:T.text2, fontSize:mob?14:15, lineHeight:1.6 }}>{data.summary}</p>
+      </div>
+      {data.items.length === 0 ? (
+        <div style={{ padding:`60px ${px}px`, color:T.text3, fontSize:15, textAlign:'center' }}>
+          오늘 새 게시물이 없습니다.
+        </div>
+      ) : (
+        <div style={{ padding:`24px ${px}px 60px`, display:'grid', gridTemplateColumns: mob ? '1fr' : '1fr 1fr', gap:16 }}>
+          {data.items.map((c,i) => (
+            <article key={i} style={{
+              border:`1px solid ${T.border}`, borderRadius:8, background:T.panel,
+              padding:18, display:'flex', flexDirection:'column', gap:14,
+            }}>
+              <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+                <div style={{
+                  width:40, height:40, borderRadius:'50%', background:c.color,
+                  color:'#fff', display:'flex', alignItems:'center', justifyContent:'center',
+                  fontSize:13, fontWeight:600, fontFamily:MONO,
+                }}>{c.avatar}</div>
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ color:T.text, fontWeight:600, fontSize:14 }}>{c.name}</div>
+                  <div style={{ color:T.text2, fontSize:12 }}>{c.title}</div>
+                </div>
+                <div style={{ textAlign:'right' }}>
+                  <Mono color={T.text3} size={10} style={{ display:'block' }}>{c.time}</Mono>
+                  <Mono color={T.text3} size={10}>♥ {c.likes} · 💬 {c.comments}</Mono>
+                </div>
+              </div>
+              <div style={{
+                background:T.panel2, padding:'12px 14px', borderRadius:6,
+                color:T.text2, fontSize:13, lineHeight:1.55, fontStyle:'italic',
+                borderLeft:`2px solid ${T.border}`,
+              }}>"{c.post}"</div>
+              <div style={{ display:'flex', gap:10 }}>
+                <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em', paddingTop:2 }}>SUMMARY</Mono>
+                <div style={{ flex:1, color:T.text, fontSize:13.5, lineHeight:1.55 }}>{c.summary}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Invest tab ────────────────────────────────────────────────────────────
+function InvestTab({ D }) {
+  const d = D.invest;
+  const mob = useMobile();
+  const px = mob ? 16 : 40;
+  return (
+    <div>
+      <div style={{ padding:`${mob?20:32}px ${px}px 24px`, borderBottom:`1px solid ${T.border}` }}>
+        <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:14, flexWrap:'wrap' }}>
+          <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.16em' }}>INVESTMENT MEMO · CLAUDE</Mono>
+          <div style={{ height:1, flex:1, background:T.border, minWidth:20 }}/>
+          {!mob && <Mono color={T.text3} size={10}>{d.subtitle}</Mono>}
+        </div>
+        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.25 }}>{d.title}</h1>
+        {mob && <p style={{ margin:'8px 0 0', color:T.text3, fontSize:11 }}>{d.subtitle}</p>}
+      </div>
+      <div style={{ padding:`28px ${px}px 60px`, display:'grid', gridTemplateColumns: mob ? '1fr' : '1.5fr 1fr', gap: mob ? 32 : 40 }}>
+        <div style={{ display:'flex', flexDirection:'column', gap:28 }}>
+          {d.sections.map((s,i) => (
+            <section key={i}>
+              <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:10 }}>
+                <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.16em' }}>
+                  {String(i+1).padStart(2,'0')} · {s.h}
+                </Mono>
+                <div style={{ height:1, flex:1, background:T.border }}/>
+              </div>
+              <p style={{ margin:0, color:T.text, fontSize:15, lineHeight:1.65 }}>{s.body}</p>
+            </section>
+          ))}
+          {d.portfolio && d.portfolio.length > 0 && (
+            <section>
+              <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:18 }}>
+                <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.16em' }}>포트폴리오 추천</Mono>
+                <div style={{ height:1, flex:1, background:T.border }}/>
+              </div>
+              <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
+                {d.portfolio.map((p, pi) => (
+                  <div key={pi}>
+                    <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 }}>
+                      <span style={{ color:T.text, fontSize:13.5, fontWeight:600 }}>{p.asset}</span>
+                      <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+                        <span style={{ color:T.text2, fontSize:12 }}>{p.note}</span>
+                        <Mono color={p.color} size={14} style={{ fontWeight:700 }}>{p.pct}%</Mono>
+                      </div>
+                    </div>
+                    <div style={{ height:5, background:T.border, borderRadius:999, marginBottom:8 }}>
+                      <div style={{ height:'100%', width:`${p.pct}%`, background:p.color, borderRadius:999 }}/>
+                    </div>
+                    <div style={{ display:'flex', gap:6, flexWrap:'wrap' }}>
+                      {p.tickers.map((tk, ti) => (
+                        <span key={ti} style={{
+                          background:T.panel2, border:`1px solid ${T.border}`,
+                          padding:'3px 9px', borderRadius:4,
+                          fontFamily:MONO, fontSize:10,
+                        }}>
+                          <span style={{ color:T.text }}>{tk.sym}</span>
+                          <span style={{ color:T.text3 }}> · {tk.name}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+        <aside style={{ display:'flex', flexDirection:'column', gap:12, position: mob ? 'static' : 'sticky', top:0, alignSelf:'start' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+            <Mono color={T.text3} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em' }}>WATCHLIST</Mono>
+            <div style={{ height:1, flex:1, background:T.border }}/>
+          </div>
+          <div style={{ display:'flex', flexDirection:'column', border:`1px solid ${T.border}`, borderRadius:8, overflow:'hidden' }}>
+            {d.watchlist.map((w,i) => (
+              <div key={w.sym} style={{
+                display:'grid', gridTemplateColumns:'auto 1fr auto', gap:10,
+                padding:'12px 14px', borderTop: i ? `1px solid ${T.border}` : 'none',
+                background:T.panel,
+              }}>
+                <Mono color={T.text3} size={10} style={{ width:60 }}>{w.sym}</Mono>
+                <div>
+                  <div style={{ color:T.text, fontSize:13, fontWeight:500 }}>{w.name}</div>
+                  <Mono color={T.text2} size={10}>{w.note}</Mono>
+                </div>
+                <div style={{ textAlign:'right' }}>
+                  <Mono color={T.text} size={12} style={{ fontWeight:600, display:'block' }}>{w.val}</Mono>
+                  <Mono color={w.up ? T.up : T.down} size={10}>{w.pct}</Mono>
+                </div>
+              </div>
+            ))}
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+// ── App root ──────────────────────────────────────────────────────────────
+function App() {
+  const [date, setDate] = useState(window.BRIEF_TODAY);
+  const [tab, setTab] = useState('ai');
+  const D = window.BRIEF_ARCHIVE[date] || window.BRIEF_ARCHIVE[window.BRIEF_TODAY];
+  const mob = useMobile();
+
+  let content;
+  if (tab === 'ai')   content = <NewsTab data={D.ai}   kicker="AI · MORNING WIRE"/>;
+  if (tab === 'econ') content = <NewsTab data={D.econ} kicker="ECONOMY · MORNING WIRE"/>;
+  if (tab === 'col')  content = <ColumnsTab D={D}/>;
+  if (tab === 'inv')  content = <InvestTab D={D}/>;
+
+  return (
+    <div style={{ height:'100vh', display:'flex', flexDirection:'column', background:T.bg, color:T.text, fontFamily:SANS }}>
+      {/* Header */}
+      <div style={{
+        display:'flex', alignItems:'center', gap:14, padding:'0 24px',
+        background:T.panel, borderBottom:`1px solid ${T.border}`, flexShrink:0,
+        height:52,
+      }}>
+        <div style={{
+          width:26, height:26, borderRadius:6, background:T.accent,
+          color:'#fff', fontWeight:700, fontSize:13, fontFamily:MONO,
+          display:'flex', alignItems:'center', justifyContent:'center',
+        }}>※</div>
+        <span style={{ fontWeight:700, fontSize:15, letterSpacing:'-0.01em' }}>Daily Brief</span>
+        <div style={{ height:16, width:1, background:T.border }}/>
+        <span style={{ color:T.text2, fontSize: mob ? 12 : 13 }}>{mob ? D.date.shortLabel : D.date.label}</span>
+        {D.date.isToday && (
+          <span style={{
+            background:T.accentSoft, color:T.accent, fontFamily:MONO, fontSize:9,
+            letterSpacing:'0.14em', padding:'2px 8px', borderRadius:999,
+            border:`1px solid ${T.accent}40`,
+          }}>TODAY</span>
+        )}
+        {!mob && (
+          <div style={{ marginLeft:'auto', color:T.text3, fontSize:12, fontFamily:MONO }}>
+            1·2·3·4 키로 탭 전환
+          </div>
+        )}
+      </div>
+
+      {/* Date selector */}
+      <DateStrip date={date} setDate={setDate}/>
+
+      {/* Tab nav */}
+      <TabNav tab={tab} setTab={setTab} D={D}/>
+
+      {/* Content */}
+      <div style={{ flex:1, overflowY:'auto' }}>
+        {content}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

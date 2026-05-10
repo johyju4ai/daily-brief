@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>Daily Brief — Claude cowork</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; }
+  body { font-family: "Pretendard Variable", "Pretendard", -apple-system, system-ui, sans-serif; }
+  *, *::before, *::after { box-sizing: border-box; }
+  /* Hide scrollbars inside artboards for cleaner look */
+  .ab-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+  .ab-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 999px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="data.js"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="dashboard.jsx"></script>
+<script type="text/babel" src="mobile.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "darkMode": true,
+  "tab": "ai",
+  "mobileTab": "ai",
+  "date": "2026-05-11",
+  "mobileDate": "2026-05-11"
+}/*EDITMODE-END*/;
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  return (
+    <>
+      <DesignCanvas>
+        <DCSection id="overview" title="Daily Brief" subtitle="매일 아침 06:00 — AI · 경제 · 컬럼 · 투자 한 화면에">
+          <DCArtboard id="desktop" label="Desktop · 1440 × 900" width={1440} height={900}>
+            <Dashboard
+              tab={t.tab}
+              setTab={(v) => setTweak('tab', v)}
+              date={t.date}
+              setDate={(v) => setTweak('date', v)}
+              dark={t.darkMode}
+            />
+          </DCArtboard>
+
+          <DCArtboard id="mobile" label="Mobile · iOS" width={420} height={900}>
+            <div style={{ width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center', background:'#f0eee9' }}>
+              <IOSDevice width={390} height={844} dark={t.darkMode}>
+                <MMobile
+                  tab={t.mobileTab}
+                  setTab={(v) => setTweak('mobileTab', v)}
+                  date={t.mobileDate}
+                  setDate={(v) => setTweak('mobileDate', v)}
+                  dark={t.darkMode}
+                />
+              </IOSDevice>
+            </div>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="notes" title="System notes" subtitle="레이아웃 결정과 다음 단계">
+          <DCArtboard id="rationale" label="Design rationale" width={520} height={620}>
+            <Rationale dark={t.darkMode}/>
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="외관">
+          <TweakToggle label="다크모드" value={t.darkMode} onChange={(v) => setTweak('darkMode', v)}/>
+        </TweakSection>
+        <TweakSection label="날짜 (데스크탑)">
+          <TweakSelect label="" value={t.date}
+            options={(window.BRIEF_DATES || []).map(d => ({ value:d, label: (window.BRIEF_ARCHIVE && window.BRIEF_ARCHIVE[d] && window.BRIEF_ARCHIVE[d].date.shortLabel) + (d === window.BRIEF_TODAY ? ' · 오늘' : '') }))}
+            onChange={(v) => setTweak('date', v)}/>
+        </TweakSection>
+        <TweakSection label="활성 탭 (데스크탑)">
+          <TweakRadio label="" value={t.tab}
+            options={[
+              { value:'ai',   label:'AI' },
+              { value:'econ', label:'경제' },
+              { value:'col',  label:'컬럼' },
+              { value:'inv',  label:'투자' },
+            ]}
+            onChange={(v) => setTweak('tab', v)}/>
+        </TweakSection>
+        <TweakSection label="활성 탭 (모바일)">
+          <TweakRadio label="" value={t.mobileTab}
+            options={[
+              { value:'ai',   label:'AI' },
+              { value:'econ', label:'경제' },
+              { value:'col',  label:'컬럼' },
+              { value:'inv',  label:'투자' },
+            ]}
+            onChange={(v) => setTweak('mobileTab', v)}/>
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+function Rationale({ dark }) {
+  const bg = dark ? '#16161A' : '#FFFFFF';
+  const text = dark ? '#F5F2EC' : '#1A1A1A';
+  const text2 = dark ? '#9C968A' : '#6B6258';
+  const border = dark ? '#26262E' : '#E8E4DC';
+  const accent = dark ? '#E08A6E' : '#D97757';
+  const items = [
+    { h: '왜 사이드바 + 우측 레일?', b: '컨텐츠는 중앙에서 길게 읽고, 좌측 탭으로 빠르게 전환, 우측 Ask Claude는 항상 보이는 레일로 두면 "읽다가 묻기" 흐름이 끊기지 않습니다.' },
+    { h: '중요도별 다른 밀도', b: 'KEY 카드는 풀 본문 + 3-bullet + WHY IT MATTERS, NEWS 카드는 한 줄 헤드라인 + 펼치기. 시간이 없을 땐 KEY만 읽고 끝낼 수 있게.' },
+    { h: '컬럼 피드는 카드 그리드', b: '저작자(프로필) → 원문 발췌 → AI 요약 3단 구조. 페이스북 피드처럼 보이되 요약이 항상 마지막에 오는 게 핵심.' },
+    { h: '투자 메모는 2단', b: '왼쪽 본문 / 오른쪽 sticky 워치리스트. 텍스트 인사이트와 가격 데이터를 동시에 볼 수 있는 형태.' },
+    { h: '키보드 단축키', b: '데스크탑에서 1/2/3/4 키로 탭 점프, ⌘K 검색은 자리만 잡혀 있음.' },
+    { h: '다음 단계 제안', b: '① 컬럼리스트 직접 추가/삭제 화면, ② 인사이트 메모 히스토리(아카이브), ③ 음성 요약(팟캐스트 모드), ④ 알림 설정 — 우선순위 의견 주세요.' },
+  ];
+  return (
+    <div style={{
+      width:'100%', height:'100%', overflowY:'auto', background: bg, color: text,
+      padding: 28, display:'flex', flexDirection:'column', gap: 18,
+    }} className="ab-scroll">
+      <div>
+        <div style={{ fontFamily:'"IBM Plex Mono", monospace', fontSize: 10, color: accent, letterSpacing:'0.16em', textTransform:'uppercase' }}>Design rationale</div>
+        <h2 style={{ margin:'8px 0 0', fontSize: 22, fontWeight: 700, letterSpacing:'-0.02em' }}>왜 이 레이아웃인가</h2>
+      </div>
+      {items.map((x, i) => (
+        <section key={i} style={{ paddingTop: 14, borderTop: `1px solid ${border}` }}>
+          <div style={{ display:'flex', gap: 10, alignItems:'baseline' }}>
+            <span style={{ fontFamily:'"IBM Plex Mono", monospace', fontSize: 10, color: accent }}>{String(i+1).padStart(2,'0')}</span>
+            <h3 style={{ margin: 0, fontSize: 14, fontWeight: 600 }}>{x.h}</h3>
+          </div>
+          <p style={{ margin:'6px 0 0 28px', fontSize: 13, lineHeight: 1.6, color: text2, textWrap:'pretty' }}>{x.b}</p>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
