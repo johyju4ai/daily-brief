@@ -106,13 +106,13 @@ function DateStrip({ date, setDate }) {
 // ── Tab nav ──────────────────────────────────────────────────────────────
 function TabNav({ tab, setTab, D }) {
   const tabs = [
-    { id:'ai',       label:'AI 뉴스',    n: D.ai?.items?.length || 0 },
-    { id:'physical', label:'피지컬 AI',  n: D.physical?.items?.length || 0 },
-    { id:'quantum',  label:'양자',       n: D.quantum?.items?.length || 0 },
-    { id:'econ',     label:'경제',       n: D.econ?.items?.length || 0 },
-    { id:'col',      label:'컬럼 피드',  n: D.columns?.items?.length || 0 },
+    { id:'ai',       label:'AI',         n: D.ai ? D.ai.items.length : 0 },
+    { id:'physical', label:'피지컬 AI',  n: D.physical ? D.physical.items.length : 0 },
+    { id:'quantum',  label:'양자',       n: D.quantum ? D.quantum.items.length : 0 },
+    { id:'econ',     label:'경제',       n: D.econ ? D.econ.items.length : 0 },
+    { id:'col',      label:'컬럼 피드',  n: D.columns ? D.columns.items.length : 0 },
     { id:'inv',      label:'투자',       n: 1 },
-  ].filter(tb => tb.n > 0 || tb.id === 'ai' || tb.id === 'econ' || tb.id === 'col' || tb.id === 'inv');
+  ].filter(function(tb) { return tb.n > 0 || tb.id === 'ai' || tb.id === 'econ' || tb.id === 'col' || tb.id === 'inv'; });
   useEffect(() => {
     const fn = e => {
       if (document.activeElement?.tagName === 'TEXTAREA') return;
@@ -417,10 +417,10 @@ function App() {
   const mob = useMobile();
 
   let content;
-  if (tab === 'ai')       content = <NewsTab data={D.ai}       kicker="AI · MORNING WIRE"/>;
-  if (tab === 'physical') content = D.physical ? <NewsTab data={D.physical} kicker="PHYSICAL AI · ROBOTICS"/> : null;
-  if (tab === 'quantum')  content = D.quantum  ? <NewsTab data={D.quantum}  kicker="QUANTUM · TECH"/> : null;
-  if (tab === 'econ')     content = <NewsTab data={D.econ}     kicker="ECONOMY · MORNING WIRE"/>;
+  if (tab === 'ai')       content = <NewsTab data={D.ai}       kicker="AI MORNING WIRE"/>;
+  if (tab === 'physical' && D.physical) content = <NewsTab data={D.physical} kicker="PHYSICAL AI ROBOTICS"/>;
+  if (tab === 'quantum'  && D.quantum)  content = <NewsTab data={D.quantum}  kicker="QUANTUM TECH"/>;
+  if (tab === 'econ')     content = <NewsTab data={D.econ}     kicker="ECONOMY MORNING WIRE"/>;
   if (tab === 'col')      content = <ColumnsTab D={D}/>;
   if (tab === 'inv')      content = <InvestTab D={D}/>;
 
@@ -446,4 +446,29 @@ function App() {
             letterSpacing:'0.14em', padding:'2px 8px', borderRadius:999,
             border:`1px solid ${T.accent}40`,
           }}>TODAY</span>
-  
+        )}
+        {!mob && (
+          <div style={{ marginLeft:'auto', color:T.text3, fontSize:12, fontFamily:MONO }}>
+            {'1-6 tab shortcuts'}
+          </div>
+        )}
+      </div>
+
+      {/* Date selector */}
+      <DateStrip date={date} setDate={setDate}/>
+
+      {/* Tab nav */}
+      <TabNav tab={tab} setTab={setTab} D={D}/>
+
+      {/* Content */}
+      <div style={{ flex:1, overflowY:'auto' }}>
+        {content}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
