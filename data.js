@@ -139,22 +139,13 @@ const TODAY = {
         ] },
       { weight: 'low', time: '08:00', source: 'CNBC',
         headline: 'AI가 이사회를 바꾼다 — 기업 AI 의사결정 비중 2026년 급증', url: 'https://www.cnbc.com/2026/05/11/heres-how-artificial-intelligence-is-changing-boardrooms.html',
-        bullets: [
-          'Fortune 500 기업 중 68%가 이사회 의사결정에 AI 분석 도구를 정기 활용 중. 2024년 대비 2배 수준.',
-          'CEO 보고 자료 자동 생성, 리스크 시나리오 AI 시뮬레이션 등 전략 의사결정 단계까지 AI 침투 확대.',
-        ], why: '', notes: [] },
+        bullets: [], why: '', notes: [] },
       { weight: 'low', time: '10:00', source: 'NVIDIA',
         headline: 'NVIDIA-Cadence, 로봇 시뮬레이션 파트너십 확대 — sim-to-real 격차 해소 목표', url: '',
-        bullets: [
-          'NVIDIA Isaac 플랫폼과 Cadence 물리 시뮬레이션 엔진을 통합. 가상 환경에서 훈련한 로봇 모델을 실물에 그대로 적용하는 정확도 향상 목표.',
-          '주요 휴머노이드 제조사들이 이 파이프라인을 채택 중. 시뮬레이션 훈련 비용을 실물 테스트 대비 90% 이상 절감 가능.',
-        ], why: '', notes: [] },
+        bullets: [], why: '', notes: [] },
       { weight: 'low', time: '11:00', source: 'Microsoft',
         headline: 'Microsoft 보고서: 전 세계 AI 활용 인구 17.8%로 확대, 분기별 최고치 경신', url: 'https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/',
-        bullets: [
-          '전 세계 성인 인터넷 이용자 중 17.8%가 정기적으로 AI 도구 활용. 전 분기(14.2%) 대비 +3.6%p.',
-          '활용 격차: 선진국 28%, 개발도상국 9.3%. 한국은 24.1%로 아시아 2위(일본 27.8% 1위).',
-        ], why: '', notes: [] },
+        bullets: [], why: '', notes: [] },
     ],
   },
   physical: {
@@ -163,10 +154,7 @@ const TODAY = {
     items: [
       { weight: 'low', time: '10:00', source: 'NVIDIA',
         headline: 'NVIDIA-Cadence, Isaac 로보틱스 + Cadence 시뮬레이션 엔진 결합 — 로봇 훈련 sim-to-real 격차 해소',
-        url: '', bullets: [
-          'NVIDIA Isaac 로보틱스 플랫폼에 Cadence의 물리 엔진을 통합. 전기·기계 시뮬레이션 정확도를 높여 가상 훈련 → 실물 적용 성능 갭을 최소화.',
-          'Figure AI, 1X 등 주요 휴머노이드 파트너사가 베타 파이프라인 채택 중. 양산 전 테스트 사이클 단축 효과 기대.',
-        ], why: '', notes: [] },
+        url: '', bullets: [], why: '', notes: [] },
     ],
   },
   quantum: {
@@ -174,11 +162,8 @@ const TODAY = {
     summary: '오늘은 특별한 양자 기술 뉴스가 없습니다. 다음 주요 발표를 주시 중입니다.',
     items: [
       { weight: 'low', time: '00:00', source: '종합',
-        headline: '5월 12일 양자 기술 주요 동향 — 이번 주 Google Quantum AI 발표 예정',
-        url: '', bullets: [
-          '오늘 발표된 중대 양자 뉴스는 없음. 업계는 이번 주 예정된 Google Quantum AI 연례 업데이트와 IBM Quantum Summit(5월 15일) 주목 중.',
-          'IonQ는 지난주 ion trap 방식 큐비트 오류율을 기존 대비 40% 개선했다고 발표. 상용 양자 우위 달성 시점이 2027년으로 앞당겨질 수 있다는 분석.',
-        ], why: '', notes: [] },
+        headline: '오늘의 주요 양자 기술 뉴스 없음',
+        url: '', bullets: [], why: '', notes: [] },
     ],
   },
   econ: {
@@ -222,16 +207,10 @@ const TODAY = {
         why: '', notes: [] },
       { weight: 'low', time: '06:00', source: 'CNBC',
         headline: 'WTI $98 고공행진 — 이란 휴전 거부 지속, 호르무즈 봉쇄 2개월 째', url: 'https://www.cnbc.com/2026/05/11/oil-price-today-brent-wti-iran-war-trump.html',
-        bullets: [
-          'WTI 원유 $98.07/배럴. 이란-이스라엘 전쟁 장기화로 호르무즈 해협이 2개월째 부분 봉쇄 상태.',
-          '국제 해운사들이 희망봉 우회 항로로 전환. 운송 기간 +14일, 물류비 +30% 상승. 이란산 원유 공급 감소분(하루 180만 배럴)을 사우디가 완전 대체 못하는 상황.',
-        ], why: '', notes: [] },
+        bullets: [], why: '', notes: [] },
       { weight: 'low', time: '07:00', source: '파이낸셜뉴스',
         headline: '베센트 재무장관 오늘 도쿄 순방 — 미일 경제협의 후 내일(13일) 서울 방문', url: 'https://www.fnnews.com/news/202605110750594311',
-        bullets: [
-          '스콧 베센트 미 재무장관이 5월 12일 도쿄에서 가토 가쓰노부 일본 재무상과 회담. 엔화 환율·미일 무역 균형 논의.',
-          '내일(13일) 서울 방문 예정. 최상목 경제부총리·허리펑 중국 경제부총리와의 3자 채널이 14~15일 미중 정상회담 사전 조율 역할.',
-        ], why: '', notes: [] },
+        bullets: [], why: '', notes: [] },
     ],
   },
   columns: {
@@ -665,4 +644,47 @@ const D_0430 = pastDay({
           '시장은 한은 인하 시점을 7월에서 7~8월 양립으로 다시 후행.',
         ],
         why:'경기 둔화 시그널이 다시 강해지면, 한은 인하 시점은 빨라질 가능성.' },
-      { weight:'low', time:'21:30', sou
+      { weight:'low', time:'21:30', source:'BEA', headline:'美 1분기 GDP 1.6% — 예상 2.4% 하회, 코어 PCE 3.7%' },
+    ],
+  },
+  columns:{ label:'컬럼 피드', summary:'반도체 규제 보도와 한국 경제지표.',
+    items:[
+      { name:'최배근', title:'건국대학교 경제학과 교수', avatar:'CB', color:'#5B7FB7', time:'수 19:30', likes:870, comments:132,
+        post:'HBM 추가 규제 보도는 진위 확인 전까지 노이즈로 볼 가능성이 큽니다. 다만 표준 분리의 큰 흐름은 변하지 않습니다.',
+        summary:'규제 보도는 단기 노이즈 가능성, 장기 표준 분리는 지속.' },
+      { name:'박정호', title:'명지대학교 특임교수', avatar:'PJ', color:'#1F8A5B', time:'수 11:00', likes:1080, comments:165,
+        post:'시장은 항상 규제 보도에 과민반응합니다. SK하이닉스 매출의 90% 이상은 비-중국 수요. 흔들리는 구간에서 비중 확대 기회.',
+        summary:'SK하이닉스 매출 90%+가 비-중국, 변동성 매수 기회.' },
+    ],
+  },
+  invest:{
+    title:'규제 노이즈와 한국 산업생산 — 변동성이 기회인 구간',
+    subtitle:'Claude가 작성한 4월 30일 메모 · 4분 읽기',
+    sections:[
+      { h:'한 줄 요약', body:'HBM 규제 보도와 산업생산 부진이 겹치면서 한국 시장의 단기 변동성이 커졌습니다.' },
+      { h:'포지셔닝', body:'SK하이닉스·삼성전자의 단기 하락은 비중 확대 구간으로 활용.' },
+      { h:'리스크', body:'규제가 실제로 발표되면 한국 메모리 1주일 -10% 가능성도 배제 못 함.' },
+    ],
+    watchlist:[
+      { sym:'000660', name:'SK하이닉스', val:'180,500', pct:'-1.94%', up:false, note:'규제 노이즈' },
+      { sym:'005930', name:'삼성전자',   val:'76,200',  pct:'-1.40%', up:false, note:'규제 노이즈' },
+      { sym:'NVDA',   name:'NVIDIA',     val:'$928.10', pct:'-1.82%', up:false, note:'동조' },
+    ],
+  },
+});
+
+window.BRIEF_ARCHIVE = {
+  '2026-05-12': TODAY,
+  '2026-05-11': D_0511,
+  '2026-05-08': D_0508,
+  '2026-05-07': D_0507,
+  '2026-05-06': D_0506,
+  '2026-05-02': D_0502,
+  '2026-05-01': D_0501,
+  '2026-04-30': D_0430,
+};
+window.BRIEF_DATES = ['2026-05-12','2026-05-11','2026-05-08','2026-05-07','2026-05-06','2026-05-02','2026-05-01','2026-04-30'];
+window.BRIEF_TODAY = '2026-05-12';
+window.BRIEF_USER = '재현';
+// Backwards compat
+window.BRIEF_DATA = TODAY;
