@@ -403,8 +403,7 @@ const D_0507 = pastDay({
       { weight:'low', time:'21:00', source:'독일 통계청', headline:'독일 3월 산업생산 -0.4% — 예상 -0.2% 하회' },
     ],
   },
-  columns:{ label:'컬럼 피드',
-    summary:'GTC 발표를 둘러싼 코멘트가 다수.',
+  columns:{ label:'컬럼 피드', summary:'GTC 발표를 둘러싼 코멘트가 다수.',
     items:[
       { name:'박정호', title:'명지대학교 특임교수', avatar:'PJ', color:'#1F8A5B', time:'목 13:00', likes:1820, comments:265,
         post:'Blackwell Ultra의 9.2TB HBM4는 한 가지를 의미합니다. SK하이닉스 매출의 위쪽이 다시 열린 겁니다. 2026 컨센서스 영업익은 너무 보수적입니다.',
@@ -421,7 +420,7 @@ const D_0507 = pastDay({
     title:'GTC 이후 — 한국 메모리의 컨센서스가 너무 낮습니다',
     subtitle:'Claude가 작성한 5월 7일 메모 · 6분 읽기',
     sections:[
-      { h:'한 줄 요약', body:'Blackwell Ultra의 HBM4 요구량이 컨센서스 공급 추정보다 25–30% 높게 나왔습니다.' },
+      { h:'한 줄 요약', body:'Blackwell Ultra의 HBM4 요구량이 컨센서스 공급 추정보다 25-30% 높게 나왔습니다.' },
       { h:'포지셔닝', body:'SK하이닉스와 삼성전자의 메모리 부문 비중을 늘리는 구간. 한미반도체·HPSP 등 후공정 장비도 같이.' },
       { h:'리스크', body:'반도체 사이클 베이스라인이 이미 높게 잡혀있어 단기 차익실현 가능.' },
     ],
