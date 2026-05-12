@@ -91,7 +91,7 @@ function DateStrip({ date, setDate }) {
             padding:'9px 14px', borderBottom: `2px solid ${active ? T.accent : 'transparent'}`,
             color: active ? T.text : T.text2,
             display:'flex', alignItems:'center', gap:6,
-            fontSize: 13, fontWeight: active ? 600 : 500, whiteSpace:'nowrap',
+            fontSize: 14, fontWeight: active ? 600 : 500, whiteSpace:'nowrap',
             transition:'color .15s',
           }}>
             {data.date.shortLabel}
@@ -135,7 +135,7 @@ function TabNav({ tab, setTab, D }) {
             padding:'12px 16px', marginRight:4,
             borderBottom:`2px solid ${active ? T.accent : 'transparent'}`,
             color: active ? T.text : T.text2,
-            fontSize: 14, fontWeight: active ? 600 : 500,
+            fontSize: 15, fontWeight: active ? 600 : 500,
             display:'flex', alignItems:'center', gap:8,
             transition:'color .15s',
           }}>
@@ -171,10 +171,10 @@ function NewsItem({ it, idx, mob = false }) {
             <Mono color={T.text2} size={11}>· {it.source}</Mono>
           </div>
           {it.url ? (
-            <h3 style={{ margin:0, fontSize: hi ? 19 : 15, fontWeight: hi ? 600 : 500, letterSpacing:'-0.01em', lineHeight:1.35 }}>
+            <h3 style={{ margin:0, fontSize: hi ? 22 : 16, fontWeight: hi ? 600 : 500, letterSpacing:'-0.01em', lineHeight:1.35 }}>
               <a href={it.url} target="_blank" rel="noopener noreferrer"
                 onClick={e => { if (!hi && it.bullets && it.bullets.length > 0) { e.preventDefault(); setOpen(o => !o); } }}
-                style={{ color:T.text, textDecoration:'none', borderBottom: hi ? `1px solid ${T.border}` : 'none', cursor: hi ? 'alias' : (it.bullets && it.bullets.length > 0 ? 'pointer' : 'alias'), fontSize: hi ? (mob?17:19) : (mob?14:15) }}
+                style={{ color:T.text, textDecoration:'none', borderBottom: hi ? `1px solid ${T.border}` : 'none', cursor: hi ? 'alias' : (it.bullets && it.bullets.length > 0 ? 'pointer' : 'alias'), fontSize: hi ? (mob?17:22) : (mob?14:16) }}
                 onMouseEnter={e => { if (hi || !(it.bullets && it.bullets.length > 0)) e.currentTarget.style.borderBottomColor = T.accent; }}
                 onMouseLeave={e => { if (hi || !(it.bullets && it.bullets.length > 0)) e.currentTarget.style.borderBottomColor = T.border; }}
               >{it.headline}</a>
@@ -182,7 +182,7 @@ function NewsItem({ it, idx, mob = false }) {
           ) : (
             <h3 onClick={() => !hi && it.bullets && it.bullets.length > 0 && setOpen(o => !o)} style={{
               margin:0, color:T.text,
-              fontSize: hi ? 19 : 15,
+              fontSize: hi ? 22 : 16,
               fontWeight: hi ? 600 : 500,
               letterSpacing:'-0.01em', lineHeight:1.35,
               cursor: (!hi && it.bullets && it.bullets.length > 0) ? 'pointer' : 'default',
@@ -192,7 +192,7 @@ function NewsItem({ it, idx, mob = false }) {
             <div style={{ marginTop:16, display:'flex', flexDirection:'column', gap:14 }}>
               <ul style={{ margin:0, padding:0, listStyle:'none', display:'flex', flexDirection:'column', gap:8 }}>
                 {it.bullets.map((b,j) => (
-                  <li key={j} style={{ display:'flex', gap:12, color:T.text, fontSize:14, lineHeight:1.55 }}>
+                  <li key={j} style={{ display:'flex', gap:12, color:T.text, fontSize:15, lineHeight:1.55 }}>
                     <Mono color={T.accent} size={11} style={{ paddingTop:3, flexShrink:0 }}>{String(j+1).padStart(2,'0')}</Mono>
                     <span>{b}</span>
                   </li>
@@ -204,7 +204,7 @@ function NewsItem({ it, idx, mob = false }) {
                   padding:'12px 14px', borderRadius:'0 4px 4px 0',
                 }}>
                   <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em' }}>WHY IT MATTERS</Mono>
-                  <div style={{ marginTop:6, color:T.text2, fontSize:13.5, lineHeight:1.6 }}>{it.why}</div>
+                  <div style={{ marginTop:6, color:T.text2, fontSize:15, lineHeight:1.6 }}>{it.why}</div>
                 </div>
               )}
               {it.notes && it.notes.length > 0 && (
@@ -217,7 +217,7 @@ function NewsItem({ it, idx, mob = false }) {
                     {it.notes.map((n, ni) => (
                       <div key={ni} style={{ display:'flex', gap:10 }}>
                         <code style={{ color:T.accent, fontFamily:MONO, fontSize:11, flexShrink:0, minWidth:110, paddingTop:2 }}>{n.term}</code>
-                        <span style={{ color:T.text2, fontSize:12.5, lineHeight:1.55 }}>{n.def}</span>
+                        <span style={{ color:T.text2, fontSize:14, lineHeight:1.55 }}>{n.def}</span>
                       </div>
                     ))}
                   </div>
@@ -248,8 +248,8 @@ function NewsTab({ data, kicker }) {
           <div style={{ height:1, flex:1, background:T.border }}/>
           <Mono color={T.text3} size={10}>{data.items.length} items</Mono>
         </div>
-        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.2 }}>{data.label}</h1>
-        <p style={{ margin:'12px 0 0', color:T.text2, fontSize:mob?14:15, lineHeight:1.6, maxWidth:720 }}>{data.summary}</p>
+        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:32, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.2 }}>{data.label}</h1>
+        <p style={{ margin:'12px 0 0', color:T.text2, fontSize:mob?14:17, lineHeight:1.6, maxWidth:720 }}>{data.summary}</p>
       </div>
       <div style={{ padding:`16px ${px}px 60px` }}>
         {data.items.map((it,i) => <NewsItem key={i} it={it} idx={i+1} mob={mob}/>)}
@@ -267,8 +267,8 @@ function ColumnsTab({ D }) {
     <div>
       <div style={{ padding:`${mob?20:32}px ${px}px 24px`, borderBottom:`1px solid ${T.border}` }}>
         <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.16em' }}>COLUMNISTS</Mono>
-        <h1 style={{ margin:'10px 0 0', color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em' }}>{data.label}</h1>
-        <p style={{ margin:'10px 0 0', color:T.text2, fontSize:mob?14:15, lineHeight:1.6 }}>{data.summary}</p>
+        <h1 style={{ margin:'10px 0 0', color:T.text, fontSize:mob?22:32, fontWeight:700, letterSpacing:'-0.02em' }}>{data.label}</h1>
+        <p style={{ margin:'10px 0 0', color:T.text2, fontSize:mob?14:17, lineHeight:1.6 }}>{data.summary}</p>
       </div>
       {data.items.length === 0 ? (
         <div style={{ padding:`60px ${px}px`, color:T.text3, fontSize:15, textAlign:'center' }}>
@@ -288,8 +288,8 @@ function ColumnsTab({ D }) {
                   fontSize:13, fontWeight:600, fontFamily:MONO,
                 }}>{c.avatar}</div>
                 <div style={{ flex:1, minWidth:0 }}>
-                  <div style={{ color:T.text, fontWeight:600, fontSize:14 }}>{c.name}</div>
-                  <div style={{ color:T.text2, fontSize:12 }}>{c.title}</div>
+                  <div style={{ color:T.text, fontWeight:600, fontSize:15 }}>{c.name}</div>
+                  <div style={{ color:T.text2, fontSize:13 }}>{c.title}</div>
                 </div>
                 <div style={{ textAlign:'right' }}>
                   <Mono color={T.text3} size={10} style={{ display:'block' }}>{c.time}</Mono>
@@ -298,12 +298,12 @@ function ColumnsTab({ D }) {
               </div>
               <div style={{
                 background:T.panel2, padding:'12px 14px', borderRadius:6,
-                color:T.text2, fontSize:13, lineHeight:1.55, fontStyle:'italic',
+                color:T.text2, fontSize:14, lineHeight:1.55, fontStyle:'italic',
                 borderLeft:`2px solid ${T.border}`,
               }}>"{c.post}"</div>
               <div style={{ display:'flex', gap:10 }}>
                 <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em', paddingTop:2 }}>SUMMARY</Mono>
-                <div style={{ flex:1, color:T.text, fontSize:13.5, lineHeight:1.55 }}>{c.summary}</div>
+                <div style={{ flex:1, color:T.text, fontSize:15, lineHeight:1.55 }}>{c.summary}</div>
               </div>
             </article>
           ))}
@@ -326,7 +326,7 @@ function InvestTab({ D }) {
           <div style={{ height:1, flex:1, background:T.border, minWidth:20 }}/>
           {!mob && <Mono color={T.text3} size={10}>{d.subtitle}</Mono>}
         </div>
-        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.25 }}>{d.title}</h1>
+        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:32, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.25 }}>{d.title}</h1>
         {mob && <p style={{ margin:'8px 0 0', color:T.text3, fontSize:11 }}>{d.subtitle}</p>}
       </div>
       <div style={{ padding:`28px ${px}px 60px`, display:'grid', gridTemplateColumns: mob ? '1fr' : '1.5fr 1fr', gap: mob ? 32 : 40 }}>
@@ -339,7 +339,7 @@ function InvestTab({ D }) {
                 </Mono>
                 <div style={{ height:1, flex:1, background:T.border }}/>
               </div>
-              <p style={{ margin:0, color:T.text, fontSize:15, lineHeight:1.65 }}>{s.body}</p>
+              <p style={{ margin:0, color:T.text, fontSize:17, lineHeight:1.65 }}>{s.body}</p>
             </section>
           ))}
           {d.portfolio && d.portfolio.length > 0 && (
@@ -352,9 +352,9 @@ function InvestTab({ D }) {
                 {d.portfolio.map((p, pi) => (
                   <div key={pi}>
                     <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 }}>
-                      <span style={{ color:T.text, fontSize:13.5, fontWeight:600 }}>{p.asset}</span>
+                      <span style={{ color:T.text, fontSize:15, fontWeight:600 }}>{p.asset}</span>
                       <div style={{ display:'flex', alignItems:'center', gap:12 }}>
-                        <span style={{ color:T.text2, fontSize:12 }}>{p.note}</span>
+                        <span style={{ color:T.text2, fontSize:13 }}>{p.note}</span>
                         <Mono color={p.color} size={14} style={{ fontWeight:700 }}>{p.pct}%</Mono>
                       </div>
                     </div>
@@ -393,7 +393,7 @@ function InvestTab({ D }) {
               }}>
                 <Mono color={T.text3} size={10} style={{ width:60 }}>{w.sym}</Mono>
                 <div>
-                  <div style={{ color:T.text, fontSize:13, fontWeight:500 }}>{w.name}</div>
+                  <div style={{ color:T.text, fontSize:15, fontWeight:500 }}>{w.name}</div>
                   <Mono color={T.text2} size={10}>{w.note}</Mono>
                 </div>
                 <div style={{ textAlign:'right' }}>
@@ -437,7 +437,7 @@ function App() {
           color:'#fff', fontWeight:700, fontSize:13, fontFamily:MONO,
           display:'flex', alignItems:'center', justifyContent:'center',
         }}>※</div>
-        <span style={{ fontWeight:700, fontSize:15, letterSpacing:'-0.01em' }}>Daily Brief</span>
+        <span style={{ fontWeight:700, fontSize:16, letterSpacing:'-0.01em' }}>Daily Brief</span>
         <div style={{ height:16, width:1, background:T.border }}/>
         <span style={{ color:T.text2, fontSize: mob ? 12 : 13 }}>{mob ? D.date.shortLabel : D.date.label}</span>
         {D.date.isToday && (
