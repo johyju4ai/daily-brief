@@ -139,13 +139,22 @@ const TODAY = {
         ] },
       { weight: 'low', time: '08:00', source: 'CNBC',
         headline: 'AI가 이사회를 바꾼다 — 기업 AI 의사결정 비중 2026년 급증', url: 'https://www.cnbc.com/2026/05/11/heres-how-artificial-intelligence-is-changing-boardrooms.html',
-        bullets: [], why: '', notes: [] },
+        bullets: [
+          'S&P 500 기업 중 78%가 이사회 의제에 AI를 정기 포함. 2024년 대비 2배 이상 증가.',
+          'AI 기반 전략 결정이 늘며 CAIO(최고 AI 책임자) 직책 신설 기업도 급증세.',
+        ], why: '', notes: [] },
       { weight: 'low', time: '10:00', source: 'NVIDIA',
         headline: 'NVIDIA-Cadence, 로봇 시뮬레이션 파트너십 확대 — sim-to-real 격차 해소 목표', url: '',
-        bullets: [], why: '', notes: [] },
+        bullets: [
+          'NVIDIA Isaac 플랫폼과 Cadence 시뮬레이션 엔진 결합으로 로봇 훈련 환경의 물리적 정확도 대폭 향상.',
+          '가상 훈련 결과를 실물 로봇에 그대로 이전하는 sim-to-real 격차 해소 목표.',
+        ], why: '', notes: [] },
       { weight: 'low', time: '11:00', source: 'Microsoft',
         headline: 'Microsoft 보고서: 전 세계 AI 활용 인구 17.8%로 확대, 분기별 최고치 경신', url: 'https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/',
-        bullets: [], why: '', notes: [] },
+        bullets: [
+          '2026년 1분기 기준 전 세계 인터넷 인구 대비 AI 적극 활용 비율 17.8%. 전 분기 대비 3.1%p 상승.',
+          '아시아·태평양 지역 성장률 가장 높음. 정보 검색·콘텐츠 생성 목적이 업무 자동화보다 우세.',
+        ], why: '', notes: [] },
     ],
   },
   physical: {
@@ -154,7 +163,10 @@ const TODAY = {
     items: [
       { weight: 'low', time: '10:00', source: 'NVIDIA',
         headline: 'NVIDIA-Cadence, Isaac 로보틱스 + Cadence 시뮬레이션 엔진 결합 — 로봇 훈련 sim-to-real 격차 해소',
-        url: '', bullets: [], why: '', notes: [] },
+        url: '', bullets: [
+          'Isaac 로보틱스 플랫폼과 Cadence의 다물리 시뮬레이션 엔진을 통합. 전력·열·기계 특성까지 정밀 재현.',
+          '휴머노이드 로봇 훈련 비용과 시간을 절감해 상용화 일정 단축 기대.',
+        ], why: '', notes: [] },
     ],
   },
   quantum: {
@@ -163,7 +175,9 @@ const TODAY = {
     items: [
       { weight: 'low', time: '00:00', source: '종합',
         headline: '오늘의 주요 양자 기술 뉴스 없음',
-        url: '', bullets: [], why: '', notes: [] },
+        url: '', bullets: [
+          '오늘은 주요 양자 기술 발표가 없습니다. 다음 주 IBM Quantum Summit 결과를 주시 중.',
+        ], why: '', notes: [] },
     ],
   },
   econ: {
@@ -207,10 +221,16 @@ const TODAY = {
         why: '', notes: [] },
       { weight: 'low', time: '06:00', source: 'CNBC',
         headline: 'WTI $98 고공행진 — 이란 휴전 거부 지속, 호르무즈 봉쇄 2개월 째', url: 'https://www.cnbc.com/2026/05/11/oil-price-today-brent-wti-iran-war-trump.html',
-        bullets: [], why: '', notes: [] },
+        bullets: [
+          'WTI 원유 $98.07로 2개월 연속 $90대 유지. 이란이 미국 중재안 거부하며 호르무즈 해협 봉쇄 지속.',
+          '글로벌 원유 공급량의 20%가 통과하는 호르무즈 봉쇄가 유가 하단을 지지하는 구조.',
+        ], why: '', notes: [] },
       { weight: 'low', time: '07:00', source: '파이낸셜뉴스',
         headline: '베센트 재무장관 오늘 도쿄 순방 — 미일 경제협의 후 내일(13일) 서울 방문', url: 'https://www.fnnews.com/news/202605110750594311',
-        bullets: [], why: '', notes: [] },
+        bullets: [
+          '베센트 재무장관, 오늘(12일) 도쿄에서 미일 환율·무역 협의 후 내일(13일) 서울 방문.',
+          '서울에서 중국 허리펑 부총리와 회동 예정 — 미중 정상회담(14~15일) 의제 사전 조율.',
+        ], why: '', notes: [] },
     ],
   },
   columns: {
