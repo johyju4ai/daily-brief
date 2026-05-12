@@ -173,19 +173,19 @@ function NewsItem({ it, idx, mob = false }) {
           {it.url ? (
             <h3 style={{ margin:0, fontSize: hi ? 19 : 15, fontWeight: hi ? 600 : 500, letterSpacing:'-0.01em', lineHeight:1.35 }}>
               <a href={it.url} target="_blank" rel="noopener noreferrer"
-                onClick={e => { if (!hi) { e.preventDefault(); setOpen(o => !o); } }}
-                style={{ color:T.text, textDecoration:'none', borderBottom: hi ? `1px solid ${T.border}` : 'none', cursor: hi ? 'alias' : 'pointer', fontSize: hi ? (mob?17:19) : (mob?14:15) }}
-                onMouseEnter={e => { if (hi) e.currentTarget.style.borderBottomColor = T.accent; }}
-                onMouseLeave={e => { if (hi) e.currentTarget.style.borderBottomColor = T.border; }}
+                onClick={e => { if (!hi && it.bullets && it.bullets.length > 0) { e.preventDefault(); setOpen(o => !o); } }}
+                style={{ color:T.text, textDecoration:'none', borderBottom: hi ? `1px solid ${T.border}` : 'none', cursor: hi ? 'alias' : (it.bullets && it.bullets.length > 0 ? 'pointer' : 'alias'), fontSize: hi ? (mob?17:19) : (mob?14:15) }}
+                onMouseEnter={e => { if (hi || !(it.bullets && it.bullets.length > 0)) e.currentTarget.style.borderBottomColor = T.accent; }}
+                onMouseLeave={e => { if (hi || !(it.bullets && it.bullets.length > 0)) e.currentTarget.style.borderBottomColor = T.border; }}
               >{it.headline}</a>
             </h3>
           ) : (
-            <h3 onClick={() => !hi && setOpen(o => !o)} style={{
+            <h3 onClick={() => !hi && it.bullets && it.bullets.length > 0 && setOpen(o => !o)} style={{
               margin:0, color:T.text,
               fontSize: hi ? 19 : 15,
               fontWeight: hi ? 600 : 500,
               letterSpacing:'-0.01em', lineHeight:1.35,
-              cursor: hi ? 'default' : 'pointer',
+              cursor: (!hi && it.bullets && it.bullets.length > 0) ? 'pointer' : 'default',
             }}>{it.headline}</h3>
           )}
           {open && it.bullets && it.bullets.length > 0 && (
@@ -458,17 +458,4 @@ function App() {
       <DateStrip date={date} setDate={setDate}/>
 
       {/* Tab nav */}
-      <TabNav tab={tab} setTab={setTab} D={D}/>
-
-      {/* Content */}
-      <div style={{ flex:1, overflowY:'auto' }}>
-        {content}
-      </div>
-    </div>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-</script>
-</body>
-</html>
+      <TabN
