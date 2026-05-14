@@ -329,13 +329,14 @@ const TODAY = {
       { sym: 'BTC',    name: 'Bitcoin',     val: '$81,265',   pct: '+0.50%', up: true,  note: '미중 리스크 완화 반영' },
     ],
     portfolio: [
-      { asset: '국내주식', pct: 25, tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }] },
-      { asset: '미국주식', pct: 20, tickers: [{ sym: 'NVDA', name: 'NVIDIA' }, { sym: 'GOOGL', name: 'Alphabet' }] },
-      { asset: '채권',    pct: 10, tickers: [{ sym: 'TLT', name: 'iShares 20Y' }, { sym: 'IEF', name: 'iShares 7-10Y' }] },
-      { asset: '금',      pct: 25, tickers: [{ sym: 'GLD', name: 'SPDR Gold' }] },
-      { asset: '배당주',  pct: 10, tickers: [{ sym: 'VYM', name: 'Vanguard HY Dividend' }] },
-      { asset: '비트코인', pct: 10, tickers: [{ sym: 'BTC', name: 'Bitcoin' }] },
+      { asset: '국내주식', pct: 25, color: '#3DDC97', tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }], note: '반도체·미중 회담 수혜' },
+      { asset: '미국주식', pct: 20, color: '#5B9BD5', tickers: [{ sym: 'NVDA', name: 'NVIDIA' }, { sym: 'GOOGL', name: 'Alphabet' }], note: 'AI 컴퓨트·클라우드' },
+      { asset: '채권',    pct: 10, color: '#9B8EC4', tickers: [{ sym: 'TLT', name: 'iShares 20Y' }, { sym: 'IEF', name: 'iShares 7-10Y' }], note: 'CPI 충격 헤지' },
+      { asset: '금',      pct: 25, color: '#F5C518', tickers: [{ sym: 'GLD', name: 'SPDR Gold' }], note: '인플레·지정학 헤지' },
+      { asset: '배당주',  pct: 10, color: '#E08A6E', tickers: [{ sym: 'VYM', name: 'Vanguard HY Dividend' }], note: '안정 현금흐름' },
+      { asset: '비트코인', pct: 10, color: '#F7931A', tickers: [{ sym: 'BTC', name: 'Bitcoin' }], note: '리스크온 소규모 노출' },
     ],
+
   },
 };
 
@@ -490,12 +491,12 @@ const D_0513 = pastDay({
       { sym: 'BTC',    name: 'Bitcoin',     val: '$81,265',   pct: '+0.50%', up: false, note: 'CPI 리스크오프 반영' },
     ],
     portfolio: [
-      { asset: '국내주식', pct: 20, tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }] },
-      { asset: '미국주식', pct: 20, tickers: [{ sym: 'NVDA', name: 'NVIDIA' }, { sym: 'GOOGL', name: 'Alphabet' }] },
-      { asset: '채권',    pct: 20, tickers: [{ sym: 'TLT', name: 'iShares 20Y' }, { sym: 'IEF', name: 'iShares 7-10Y' }] },
-      { asset: '금',      pct: 25, tickers: [{ sym: 'GLD', name: 'SPDR Gold' }] },
-      { asset: '배당주',  pct: 10, tickers: [{ sym: 'VYM', name: 'Vanguard HY Dividend' }] },
-      { asset: '비트코인', pct: 5,  tickers: [{ sym: 'BTC', name: 'Bitcoin' }] },
+      { asset: '국내주식', pct: 25, color: '#3DDC97', tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }], note: '반도체·미중 회담 수혜' },
+      { asset: '미국주식', pct: 20, color: '#5B9BD5', tickers: [{ sym: 'NVDA', name: 'NVIDIA' }, { sym: 'GOOGL', name: 'Alphabet' }], note: 'AI 컴퓨트·클라우드' },
+      { asset: '채권',    pct: 10, color: '#9B8EC4', tickers: [{ sym: 'TLT', name: 'iShares 20Y' }, { sym: 'IEF', name: 'iShares 7-10Y' }], note: 'CPI 충격 헤지' },
+      { asset: '금',      pct: 25, color: '#F5C518', tickers: [{ sym: 'GLD', name: 'SPDR Gold' }], note: '인플레·지정학 헤지' },
+      { asset: '배당주',  pct: 10, color: '#E08A6E', tickers: [{ sym: 'VYM', name: 'Vanguard HY Dividend' }], note: '안정 현금흐름' },
+      { asset: '비트코인', pct: 10, color: '#F7931A', tickers: [{ sym: 'BTC', name: 'Bitcoin' }], note: '리스크온 소규모 노출' },
     ],
   },
 });
