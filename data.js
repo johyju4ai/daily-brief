@@ -501,11 +501,206 @@ const D_0513 = pastDay({
   },
 });
 
+const D_0512 = pastDay({
+  iso: '2026-05-12', label: '2026년 5월 12일 화요일', shortLabel: '5월 12일 (화)',
+  market: [
+    { sym: 'KOSPI',   val: '7,822',   pct: '+4.32%', up: true  },
+    { sym: 'S&P 500', val: '7,412',   pct: '+0.19%', up: true  },
+    { sym: 'NASDAQ',  val: '26,274',  pct: '+0.10%', up: true  },
+    { sym: 'BTC',     val: '$81,224', pct: '+0.66%', up: true  },
+    { sym: '$/₩',    val: '1,448',   pct: '-0.96%', up: false },
+    { sym: '10Y UST', val: '4.38%',  pct: '-3bp',   up: false },
+    { sym: 'WTI',     val: '$98.07', pct: '+3.12%', up: true  },
+  ],
+  ai: {
+    label: 'AI 뉴스',
+    summary: 'NVIDIA가 2026년 AI 지분 투자를 $400억으로 늘리며 OpenAI에 $300억을 집중 베팅하는 등 AI 생태계의 최대 투자자 겸 공급자로 자리매김했습니다. 동시에 Cloudflare 등 기업들이 AI 내재화를 이유로 대규모 감원을 단행하면서 AI가 노동시장에 미치는 영향이 본격화되고 있습니다.',
+    items: [
+      { weight: 'high', time: '09:00', source: 'CNBC',
+        headline: 'NVIDIA, 2026년 AI 지분 투자 $400억 돌파 — OpenAI에 $300억 집중 베팅',
+        url: 'https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html',
+        bullets: [
+          'NVIDIA가 2026년 공개·비공개 AI 기업에 $400억 이상 지분 투자. OpenAI에만 $300억 집중.',
+          'Corning에 $32억, IREN에 $21억 등 공개 기업 7곳 추가 투자. CEO Jensen Huang, OpenAI 투자가 "마지막이 될 수 있다" 발언.',
+          '투자 수익 + GPU 판매 수입의 이중 수혜 구조로 NVIDIA의 AI 생태계 지배력 강화.',
+        ],
+        why: 'AI 생태계에서 NVIDIA의 투자자 역할이 공급자 역할과 병행됩니다. AI 밸류체인 지배력 강화로 NVIDIA 주가에 컴퓨트 수요와 투자 수익이 이중 반영됩니다.',
+        notes: [
+          { term: '지분 투자', def: '기업의 주식 또는 지분을 취득하여 해당 기업의 소유권 일부를 갖는 투자 방식. 회사 가치 상승 시 투자 이익을 얻음.' },
+          { term: '순환 거래', def: 'A 기업이 B 기업에 투자하고, B 기업이 A 기업의 제품·서비스를 구매하는 구조. 실질적 현금 흐름 없이 매출이 과장될 수 있다는 비판이 있음.' },
+        ] },
+      { weight: 'high', time: '06:00', source: 'Yahoo Finance',
+        headline: 'AI 구조조정 가속화 — Cloudflare 전 직원 20%(1,100명) 감원, "내부 AI 사용 600% 급증"',
+        url: 'https://finance.yahoo.com/sectors/technology/articles/layoffs-accelerate-may-2026-firms-040430218.html',
+        bullets: [
+          'Cloudflare가 전 직원의 20%(1,100명) 감원 발표. "3개월 만에 내부 AI 사용량 600% 증가"가 주된 이유.',
+          '글로벌 기업 76%가 최고 AI 책임자(CAIO) 직책 신설. 2025년 26%에서 급등.',
+          '소프트웨어 개발자 전체 고용은 오히려 증가(2025년 대비 +8.5%). 고숙련 개발자 수요는 유지.',
+        ],
+        why: 'AI 생산성 효과가 비용 절감과 인력 감축으로 본격 현실화되고 있습니다. 화이트칼라 일자리 위협이 사회경제적 변수로 부상하며 AI 규제 논의에도 영향을 줄 전망입니다.',
+        notes: [
+          { term: 'CAIO', def: 'Chief AI Officer. 최고 인공지능 책임자. AI 전략 수립·도입·거버넌스 전반을 총괄하는 C-레벨 임원직.' },
+          { term: '화이트칼라', def: '사무직·전문직 근로자를 통칭하는 표현. AI 시대에 단순 반복 사무 업무부터 고급 분석 업무까지 대체 가능성이 논의되고 있음.' },
+        ] },
+      { weight: 'low', time: '08:00', source: 'CNBC',
+        headline: 'AI가 이사회를 바꾼다 — 기업 AI 의사결정 비중 2026년 급증', url: 'https://www.cnbc.com/2026/05/11/heres-how-artificial-intelligence-is-changing-boardrooms.html',
+        bullets: [
+          'Fortune 500 기업 중 68%가 이사회 의사결정에 AI 분석 도구를 정기 활용 중. 2024년 대비 2배 수준.',
+          'CEO 보고 자료 자동 생성, 리스크 시나리오 AI 시뮬레이션 등 전략 의사결정 단계까지 AI 침투 확대.',
+        ], why: '', notes: [] },
+      { weight: 'low', time: '10:00', source: 'NVIDIA',
+        headline: 'NVIDIA-Cadence, 로봇 시뮬레이션 파트너십 확대 — sim-to-real 격차 해소 목표', url: '',
+        bullets: [
+          'NVIDIA Isaac 플랫폼과 Cadence 물리 시뮬레이션 엔진을 통합. 가상 환경에서 훈련한 로봇 모델을 실물에 그대로 적용하는 정확도 향상 목표.',
+          '주요 휴머노이드 제조사들이 이 파이프라인을 채택 중. 시뮬레이션 훈련 비용을 실물 테스트 대비 90% 이상 절감 가능.',
+        ], why: '', notes: [] },
+      { weight: 'low', time: '11:00', source: 'Microsoft',
+        headline: 'Microsoft 보고서: 전 세계 AI 활용 인구 17.8%로 확대, 분기별 최고치 경신', url: 'https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/',
+        bullets: [
+          '전 세계 성인 인터넷 이용자 중 17.8%가 정기적으로 AI 도구 활용. 전 분기(14.2%) 대비 +3.6%p.',
+          '활용 격차: 선진국 28%, 개발도상국 9.3%. 한국은 24.1%로 아시아 2위(일본 27.8% 1위).',
+        ], why: '', notes: [] },
+    ],
+  },
+  physical: {
+    label: '피지컬 AI 뉴스',
+    summary: 'NVIDIA-Cadence의 로봇 시뮬레이션 파트너십 확대로 휴머노이드 로봇 훈련의 sim-to-real 격차 해소가 가속화되고 있습니다. 피지컬 AI 섹터 내 기업들의 협업이 실세계 구현 속도를 앞당길 전망입니다.',
+    items: [
+      { weight: 'low', time: '10:00', source: 'NVIDIA',
+        headline: 'NVIDIA-Cadence, Isaac 로보틱스 + Cadence 시뮬레이션 엔진 결합 — 로봇 훈련 sim-to-real 격차 해소',
+        url: '', bullets: [
+          'NVIDIA Isaac 로보틱스 플랫폼에 Cadence의 물리 엔진을 통합. 전기·기계 시뮬레이션 정확도를 높여 가상 훈련 → 실물 적용 성능 갭을 최소화.',
+          'Figure AI, 1X 등 주요 휴머노이드 파트너사가 베타 파이프라인 채택 중. 양산 전 테스트 사이클 단축 효과 기대.',
+        ], why: '', notes: [] },
+    ],
+  },
+  quantum: {
+    label: '양자 뉴스',
+    summary: '오늘은 특별한 양자 기술 뉴스가 없습니다. 다음 주요 발표를 주시 중입니다.',
+    items: [
+      { weight: 'low', time: '00:00', source: '종합',
+        headline: '5월 12일 양자 기술 주요 동향 — 이번 주 Google Quantum AI 발표 예정',
+        url: '', bullets: [
+          '오늘 발표된 중대 양자 뉴스는 없음. 업계는 이번 주 예정된 Google Quantum AI 연례 업데이트와 IBM Quantum Summit(5월 15일) 주목 중.',
+          'IonQ는 지난주 ion trap 방식 큐비트 오류율을 기존 대비 40% 개선했다고 발표. 상용 양자 우위 달성 시점이 2027년으로 앞당겨질 수 있다는 분석.',
+        ], why: '', notes: [] },
+    ],
+  },
+  econ: {
+    label: '경제 뉴스',
+    summary: '오늘(12일) 미국 4월 CPI(컨센서스 3.7%)가 연준 인하 경로의 분기점이 됩니다. 이란 전쟁 장기화로 WTI가 $98에서 고공행진하는 가운데, D-2로 다가온 미중 정상회담(14~15일)에서 반도체·AI·희토류 의제 타결 여부가 코스피 7,800대 유지를 결정할 핵심 변수입니다.',
+    items: [
+      { weight: 'high', time: '08:30', source: 'BLS',
+        headline: '미국 4월 CPI 오늘(12일) 발표 — 컨센서스 3.7% YoY, 연준 인하 경로의 분기점',
+        url: 'https://continuumeconomics.com/a/c4d9eab4/preview-due-may-12-us-april-cpi-energy-air-fares-and-a-housing-distortion',
+        bullets: [
+          '미국 4월 CPI 발표(ET 08:30). 컨센서스: 헤드라인 3.7% YoY·0.6% MoM, 근원 CPI 2.7%.',
+          '이란 전쟁발 유가 급등이 3월 CPI를 3.3%로 끌어올렸고, 4월엔 주거비 기술적 보정(OER 더블카운팅)이 추가 상방 변수.',
+          '상회 시 연준 2026년 내 인하 포기 → 성장주·채권 조정. 하회 시 9월 인하 기대 복원.',
+        ],
+        why: '코스피 7,800대 안착과 연준 정책 방향이 오늘 CPI 결과에 달려있습니다. 한국 금통위 7월 인하 옵션과도 연동되어 원화·채권·주식 전반에 동시 영향.',
+        notes: [
+          { term: 'CPI', def: '소비자물가지수(Consumer Price Index). 가계가 실제로 구매하는 상품·서비스 가격 변동을 측정하는 대표적인 인플레이션 지표.' },
+          { term: 'OER (주거비 기술적 보정)', def: "Owners' Equivalent Rent. 주택 보유자가 자신의 집을 세 놓았을 때 받을 수 있는 임대료를 추정한 값. CPI의 약 26%를 차지하며, 특정 달에 더블카운팅이 발생할 수 있음." },
+          { term: '연준 (Fed)', def: '미국 연방준비제도(Federal Reserve). 미국의 중앙은행으로, 기준금리 결정·통화량 조절 등 통화정책을 통해 물가와 고용을 관리.' },
+        ] },
+      { weight: 'high', time: '08:00', source: '머니투데이',
+        headline: '미중 정상회담 D-2 — AI·이란·반도체·희토류 고차방정식, 14~15일 베이징',
+        url: 'https://www.mt.co.kr/world/2026/05/12/2026051119450757634',
+        bullets: [
+          '트럼프·시진핑 5월 14~15일 베이징 정상회담 확정. AI 기술패권·이란 핵·대만·희토류·반도체 수출 규제 복합 의제.',
+          '트럼프, 중국에 이란 핵 포기 설득 요청 예정. 중국은 미국산 농산물·보잉 대규모 구매 검토.',
+          '베센트 재무장관, 오늘(12일) 도쿄 순방 후 내일(13일) 서울에서 허리펑과 정상회담 사전 조율.',
+        ],
+        why: '정상회담 합의 시 반도체 수출 규제 완화 가능 → SK하이닉스·삼성전자 직접 수혜. 결렬 시 추가 규제. 한국이 조율 무대가 됐다는 것은 협상 레버리지 제고 신호.',
+        notes: [
+          { term: '희토류', def: '첨단 전자기기·배터리·방위산업에 필수적인 17종의 희귀 금속. 중국이 전 세계 생산량의 60% 이상을 장악해 무역 협상의 핵심 카드로 활용.' },
+          { term: '반도체 수출 규제', def: '미국이 안보 우려를 이유로 중국에 대한 첨단 반도체 및 관련 장비 수출을 제한하는 정책. 한국 기업의 대중국 HBM·D램 수출에도 영향을 미침.' },
+        ] },
+      { weight: 'low', time: '15:30', source: '머니투데이',
+        headline: '코스피 7,822 사상 최고 — 삼성전자 28.5만·SK하이닉스 188만 신고가 경신', url: 'https://www.mt.co.kr/stock/2026/05/11/2026051109154814653',
+        bullets: [
+          '코스피 7,822 (+4.32%, May 11 종가). 반도체주 주도로 처음으로 7,800대 진입.',
+          '삼성전자 285,500원(+6.33%), SK하이닉스 1,880,000원(+11.51%) 동반 신고가.',
+          '국내 증시 시가총액 사상 처음 7,000조원 돌파.',
+        ],
+        why: '', notes: [] },
+      { weight: 'low', time: '06:00', source: 'CNBC',
+        headline: 'WTI $98 고공행진 — 이란 휴전 거부 지속, 호르무즈 봉쇄 2개월 째', url: 'https://www.cnbc.com/2026/05/11/oil-price-today-brent-wti-iran-war-trump.html',
+        bullets: [
+          'WTI 원유 $98.07/배럴. 이란-이스라엘 전쟁 장기화로 호르무즈 해협이 2개월째 부분 봉쇄 상태.',
+          '국제 해운사들이 희망봉 우회 항로로 전환. 운송 기간 +14일, 물류비 +30% 상승. 이란산 원유 공급 감소분(하루 180만 배럴)을 사우디가 완전 대체 못하는 상황.',
+        ], why: '', notes: [] },
+      { weight: 'low', time: '07:00', source: '파이낸셜뉴스',
+        headline: '베센트 재무장관 오늘 도쿄 순방 — 미일 경제협의 후 내일(13일) 서울 방문', url: 'https://www.fnnews.com/news/202605110750594311',
+        bullets: [
+          '스콧 베센트 미 재무장관이 5월 12일 도쿄에서 가토 가쓰노부 일본 재무상과 회담. 엔화 환율·미일 무역 균형 논의.',
+          '내일(13일) 서울 방문 예정. 최상목 경제부총리·허리펑 중국 경제부총리와의 3자 채널이 14~15일 미중 정상회담 사전 조율 역할.',
+        ], why: '', notes: [] },
+    ],
+  },
+  columns: {
+    label: '컬럼 피드',
+    summary: '오건영 단장은 코스피 7,822 사상 최고 속에서도 연준 내부 분열과 AI 설비 투자 급증이 물가 상방 리스크를 키울 수 있다고 경고합니다. 이번 주 미중 정상회담과 베센트 방일이 달러·금리 방향을 결정할 핵심 이벤트입니다.',
+    items: [
+      {
+        name: '오건영',
+        title: '신한은행 · 디지털 크리에이터',
+        avatar: 'OG',
+        color: '#D97757',
+        time: '5월 10일 07:00',
+        likes: 962,
+        comments: 53,
+        post: '주식 시장이 정말 뜨겁습니다. 지난 해 이맘 때 즈음이죠.. 코스피 지수가 2500선을 하회하고 있었고, 트럼프 관세의 충격이 수출 중심 국가인 우리에게 직격탄이 될 것이라는 공포에 코스피가 2300선을 하회했던 기억이 생생한데요… 그 때부터 지금까지 정말 드라마틱한 강세를 이어온 듯 합니다. 지금은 코스피 1만 시대를 준비해야 한다는 얘기도 나오고 있습니다. 이번 주에 있을 주요 이벤트들이죠. 우선 미중정상회담과 베센트 재무장관의 일본 방문이 예정되어있습니다. 달러 흐름과 금리 방향의 실마리가 될 것 같습니다. 지금처럼 주식 시장이 뜨거우면 연준이 성장의 하방 위험보다 물가의 상방 위험에 더 집중하게 됩니다. AI 관련 설비 투자가 이 속도로 증가한다면 적어도 미국에서는 성장 하방 위험이 제어되고 물가로 초점이 이동하게 될 겁니다.',
+        summary: '코스피 7,822 사상 최고 속 연준 내부 분열·AI 설비 투자 급증이 물가 상방 리스크로 부상. 미중 정상회담·베센트 방일이 이번 주 달러·금리 방향의 핵심.',
+      },
+    ],
+  },
+  invest: {
+    title: 'CPI 발표일·미중 D-2 — 글로벌 분기점',
+    subtitle: 'Claude가 작성한 오늘의 메모 · 5월 12일 08:41 · 5분 읽기',
+    sections: [
+      { h: '한 줄 요약', body: 'KOSPI가 7,822로 사상 최고를 경신한 가운데, 오늘 미국 4월 CPI(컨센서스 3.7%)가 연준 인하 경로의 분기점이 됩니다. CPI 결과와 D-2로 다가온 미중 정상회담(14~15일)이 글로벌 자산배분의 방향을 결정하는 이틀입니다.' },
+      { h: '오늘의 변수', body: '①미국 4월 CPI(ET 08:30 발표) — 3.7% 상회 시 연내 인하 포기, 하회 시 성장주 재강세. ②NVIDIA $400억 AI 투자 발표가 AI 밸류체인 재평가를 촉발할지. ③미중 D-2 — 베센트 오늘 도쿄·내일 서울 사전 조율, 반도체·희토류 의제 진전 여부.' },
+      { h: '포지셔닝', body: '단기(1~3개월): CPI 발표 결과 확인 후 포지션 조정. 상회 시 코스피 7,700~7,800 분할 매수; 하회 시 추세 추종. TLT·IEF 소량 CPI 헤지. 중기(6~12개월): 미중 합의 시 SK하이닉스·삼성전자 반도체 수출주 비중 확대. NVIDIA $400억 투자 수혜로 AI 인프라주(NVDA·GOOGL) 지속 홀딩.' },
+      { h: '리스크', body: 'CPI 3.8%+ 상회 → 연준 인하 기대 소멸 → 성장주 -5~10%. 미중 정상회담 결렬 → 반도체 추가 규제 → SK하이닉스 단기 급락. 이란 전쟁 확대 → WTI $110+ → 전 세계 인플레 재가속.' },
+    ],
+    watchlist: [
+      { sym: '000660', name: 'SK하이닉스',  val: '1,880,000', pct: '+11.51%', up: true,  note: '미중 합의 최대 수혜 핵심주' },
+      { sym: '005930', name: '삼성전자',    val: '285,500',   pct: '+6.33%',  up: true,  note: '반도체 사상최고 행진' },
+      { sym: 'NVDA',   name: 'NVIDIA',      val: '$218.50',   pct: '+1.53%',  up: true,  note: 'AI $400억 투자 발표 모멘텀' },
+      { sym: 'TLT',    name: 'iShares 20Y', val: '$94.80',    pct: '+0.32%',  up: true,  note: 'CPI 발표 전 채권 헤지' },
+      { sym: 'GLD',    name: 'SPDR Gold',   val: '$245.00',   pct: '+0.41%',  up: true,  note: '인플레·지정학 동시 헤지' },
+    ],
+    portfolio: [
+      { asset: '국내주식', pct: 30, color: '#3DDC97',
+        tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }, { sym: '010140', name: 'LS일렉트릭' }],
+        note: '반도체·미중 수혜·AI 인프라 중심' },
+      { asset: '미국주식', pct: 20, color: '#5B9BD5',
+        tickers: [{ sym: 'NVDA', name: 'NVIDIA' }, { sym: 'GOOGL', name: 'Alphabet' }],
+        note: 'AI 컴퓨트·$400억 투자 수혜주' },
+      { asset: '채권', pct: 20, color: '#9B8EC4',
+        tickers: [{ sym: 'TLT', name: '미 20년 국채 ETF' }, { sym: 'IEF', name: '미 7-10년 국채 ETF' }],
+        note: 'CPI 불확실성 대비 안전 비중' },
+      { asset: '금', pct: 15, color: '#F5C518',
+        tickers: [{ sym: 'GLD', name: 'SPDR Gold ETF' }, { sym: '114800', name: 'KODEX 금선물(H)' }],
+        note: '인플레·이란전·지정학 헤지' },
+      { asset: '배당주', pct: 10, color: '#E08A6E',
+        tickers: [{ sym: 'VYM', name: 'Vanguard High Div.' }, { sym: '088980', name: '맥쿼리인프라' }],
+        note: '안정적 현금흐름 확보' },
+      { asset: '비트코인', pct: 5, color: '#F7931A',
+        tickers: [{ sym: 'BTC', name: 'Bitcoin' }, { sym: 'IBIT', name: 'iShares Bitcoin ETF' }],
+        note: '리스크온 소규모 노출' },
+    ],
+  },
+});
+
 window.BRIEF_ARCHIVE = {
   '2026-05-14': TODAY,
   '2026-05-13': D_0513,
+  '2026-05-12': D_0512,
 };
-window.BRIEF_DATES = ['2026-05-14', '2026-05-13'];
+window.BRIEF_DATES = ['2026-05-14', '2026-05-13', '2026-05-12'];
 window.BRIEF_TODAY = '2026-05-14';
 window.BRIEF_USER = '재현';
 // Backwards compat
