@@ -15,6 +15,8 @@
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 999px; }
   #root { height: 100vh; display: flex; flex-direction: column; }
+  @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+  @keyframes slideUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 </style>
 </head>
 <body>
@@ -91,7 +93,7 @@ function DateStrip({ date, setDate }) {
             padding:'9px 14px', borderBottom: `2px solid ${active ? T.accent : 'transparent'}`,
             color: active ? T.text : T.text2,
             display:'flex', alignItems:'center', gap:6,
-            fontSize: 14, fontWeight: active ? 600 : 500, whiteSpace:'nowrap',
+            fontSize: 13, fontWeight: active ? 600 : 500, whiteSpace:'nowrap',
             transition:'color .15s',
           }}>
             {data.date.shortLabel}
@@ -135,7 +137,7 @@ function TabNav({ tab, setTab, D }) {
             padding:'12px 16px', marginRight:4,
             borderBottom:`2px solid ${active ? T.accent : 'transparent'}`,
             color: active ? T.text : T.text2,
-            fontSize: 15, fontWeight: active ? 600 : 500,
+            fontSize: 14, fontWeight: active ? 600 : 500,
             display:'flex', alignItems:'center', gap:8,
             transition:'color .15s',
           }}>
@@ -171,10 +173,10 @@ function NewsItem({ it, idx, mob = false }) {
             <Mono color={T.text2} size={11}>· {it.source}</Mono>
           </div>
           {it.url ? (
-            <h3 style={{ margin:0, fontSize: hi ? 22 : 16, fontWeight: hi ? 600 : 500, letterSpacing:'-0.01em', lineHeight:1.35 }}>
+            <h3 style={{ margin:0, fontSize: hi ? 19 : 15, fontWeight: hi ? 600 : 500, letterSpacing:'-0.01em', lineHeight:1.35 }}>
               <a href={it.url} target="_blank" rel="noopener noreferrer"
                 onClick={e => { if (!hi && it.bullets && it.bullets.length > 0) { e.preventDefault(); setOpen(o => !o); } }}
-                style={{ color:T.text, textDecoration:'none', borderBottom: hi ? `1px solid ${T.border}` : 'none', cursor: hi ? 'alias' : (it.bullets && it.bullets.length > 0 ? 'pointer' : 'alias'), fontSize: hi ? (mob?17:22) : (mob?14:16) }}
+                style={{ color:T.text, textDecoration:'none', borderBottom: hi ? `1px solid ${T.border}` : 'none', cursor: hi ? 'alias' : (it.bullets && it.bullets.length > 0 ? 'pointer' : 'alias'), fontSize: hi ? (mob?17:19) : (mob?14:15) }}
                 onMouseEnter={e => { if (hi || !(it.bullets && it.bullets.length > 0)) e.currentTarget.style.borderBottomColor = T.accent; }}
                 onMouseLeave={e => { if (hi || !(it.bullets && it.bullets.length > 0)) e.currentTarget.style.borderBottomColor = T.border; }}
               >{it.headline}</a>
@@ -182,7 +184,7 @@ function NewsItem({ it, idx, mob = false }) {
           ) : (
             <h3 onClick={() => !hi && it.bullets && it.bullets.length > 0 && setOpen(o => !o)} style={{
               margin:0, color:T.text,
-              fontSize: hi ? 22 : 16,
+              fontSize: hi ? 19 : 15,
               fontWeight: hi ? 600 : 500,
               letterSpacing:'-0.01em', lineHeight:1.35,
               cursor: (!hi && it.bullets && it.bullets.length > 0) ? 'pointer' : 'default',
@@ -192,7 +194,7 @@ function NewsItem({ it, idx, mob = false }) {
             <div style={{ marginTop:16, display:'flex', flexDirection:'column', gap:14 }}>
               <ul style={{ margin:0, padding:0, listStyle:'none', display:'flex', flexDirection:'column', gap:8 }}>
                 {it.bullets.map((b,j) => (
-                  <li key={j} style={{ display:'flex', gap:12, color:T.text, fontSize:15, lineHeight:1.55 }}>
+                  <li key={j} style={{ display:'flex', gap:12, color:T.text, fontSize:14, lineHeight:1.55 }}>
                     <Mono color={T.accent} size={11} style={{ paddingTop:3, flexShrink:0 }}>{String(j+1).padStart(2,'0')}</Mono>
                     <span>{b}</span>
                   </li>
@@ -204,7 +206,7 @@ function NewsItem({ it, idx, mob = false }) {
                   padding:'12px 14px', borderRadius:'0 4px 4px 0',
                 }}>
                   <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em' }}>WHY IT MATTERS</Mono>
-                  <div style={{ marginTop:6, color:T.text2, fontSize:15, lineHeight:1.6 }}>{it.why}</div>
+                  <div style={{ marginTop:6, color:T.text2, fontSize:13.5, lineHeight:1.6 }}>{it.why}</div>
                 </div>
               )}
               {it.notes && it.notes.length > 0 && (
@@ -217,7 +219,7 @@ function NewsItem({ it, idx, mob = false }) {
                     {it.notes.map((n, ni) => (
                       <div key={ni} style={{ display:'flex', gap:10 }}>
                         <code style={{ color:T.accent, fontFamily:MONO, fontSize:11, flexShrink:0, minWidth:110, paddingTop:2 }}>{n.term}</code>
-                        <span style={{ color:T.text2, fontSize:14, lineHeight:1.55 }}>{n.def}</span>
+                        <span style={{ color:T.text2, fontSize:12.5, lineHeight:1.55 }}>{n.def}</span>
                       </div>
                     ))}
                   </div>
@@ -248,8 +250,8 @@ function NewsTab({ data, kicker }) {
           <div style={{ height:1, flex:1, background:T.border }}/>
           <Mono color={T.text3} size={10}>{data.items.length} items</Mono>
         </div>
-        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:32, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.2 }}>{data.label}</h1>
-        <p style={{ margin:'12px 0 0', color:T.text2, fontSize:mob?14:17, lineHeight:1.6, maxWidth:720 }}>{data.summary}</p>
+        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.2 }}>{data.label}</h1>
+        <p style={{ margin:'12px 0 0', color:T.text2, fontSize:mob?14:15, lineHeight:1.6, maxWidth:720 }}>{data.summary}</p>
       </div>
       <div style={{ padding:`16px ${px}px 60px` }}>
         {data.items.map((it,i) => <NewsItem key={i} it={it} idx={i+1} mob={mob}/>)}
@@ -267,8 +269,8 @@ function ColumnsTab({ D }) {
     <div>
       <div style={{ padding:`${mob?20:32}px ${px}px 24px`, borderBottom:`1px solid ${T.border}` }}>
         <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.16em' }}>COLUMNISTS</Mono>
-        <h1 style={{ margin:'10px 0 0', color:T.text, fontSize:mob?22:32, fontWeight:700, letterSpacing:'-0.02em' }}>{data.label}</h1>
-        <p style={{ margin:'10px 0 0', color:T.text2, fontSize:mob?14:17, lineHeight:1.6 }}>{data.summary}</p>
+        <h1 style={{ margin:'10px 0 0', color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em' }}>{data.label}</h1>
+        <p style={{ margin:'10px 0 0', color:T.text2, fontSize:mob?14:15, lineHeight:1.6 }}>{data.summary}</p>
       </div>
       {data.items.length === 0 ? (
         <div style={{ padding:`60px ${px}px`, color:T.text3, fontSize:15, textAlign:'center' }}>
@@ -288,8 +290,8 @@ function ColumnsTab({ D }) {
                   fontSize:13, fontWeight:600, fontFamily:MONO,
                 }}>{c.avatar}</div>
                 <div style={{ flex:1, minWidth:0 }}>
-                  <div style={{ color:T.text, fontWeight:600, fontSize:15 }}>{c.name}</div>
-                  <div style={{ color:T.text2, fontSize:13 }}>{c.title}</div>
+                  <div style={{ color:T.text, fontWeight:600, fontSize:14 }}>{c.name}</div>
+                  <div style={{ color:T.text2, fontSize:12 }}>{c.title}</div>
                 </div>
                 <div style={{ textAlign:'right' }}>
                   <Mono color={T.text3} size={10} style={{ display:'block' }}>{c.time}</Mono>
@@ -298,12 +300,12 @@ function ColumnsTab({ D }) {
               </div>
               <div style={{
                 background:T.panel2, padding:'12px 14px', borderRadius:6,
-                color:T.text2, fontSize:14, lineHeight:1.55, fontStyle:'italic',
+                color:T.text2, fontSize:13, lineHeight:1.55, fontStyle:'italic',
                 borderLeft:`2px solid ${T.border}`,
               }}>"{c.post}"</div>
               <div style={{ display:'flex', gap:10 }}>
                 <Mono color={T.accent} size={10} style={{ textTransform:'uppercase', letterSpacing:'0.14em', paddingTop:2 }}>SUMMARY</Mono>
-                <div style={{ flex:1, color:T.text, fontSize:15, lineHeight:1.55 }}>{c.summary}</div>
+                <div style={{ flex:1, color:T.text, fontSize:13.5, lineHeight:1.55 }}>{c.summary}</div>
               </div>
             </article>
           ))}
@@ -326,7 +328,7 @@ function InvestTab({ D }) {
           <div style={{ height:1, flex:1, background:T.border, minWidth:20 }}/>
           {!mob && <Mono color={T.text3} size={10}>{d.subtitle}</Mono>}
         </div>
-        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:32, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.25 }}>{d.title}</h1>
+        <h1 style={{ margin:0, color:T.text, fontSize:mob?22:28, fontWeight:700, letterSpacing:'-0.02em', lineHeight:1.25 }}>{d.title}</h1>
         {mob && <p style={{ margin:'8px 0 0', color:T.text3, fontSize:11 }}>{d.subtitle}</p>}
       </div>
       <div style={{ padding:`28px ${px}px 60px`, display:'grid', gridTemplateColumns: mob ? '1fr' : '1.5fr 1fr', gap: mob ? 32 : 40 }}>
@@ -339,7 +341,7 @@ function InvestTab({ D }) {
                 </Mono>
                 <div style={{ height:1, flex:1, background:T.border }}/>
               </div>
-              <p style={{ margin:0, color:T.text, fontSize:17, lineHeight:1.65 }}>{s.body}</p>
+              <p style={{ margin:0, color:T.text, fontSize:15, lineHeight:1.65 }}>{s.body}</p>
             </section>
           ))}
           {d.portfolio && d.portfolio.length > 0 && (
@@ -352,9 +354,9 @@ function InvestTab({ D }) {
                 {d.portfolio.map((p, pi) => (
                   <div key={pi}>
                     <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 }}>
-                      <span style={{ color:T.text, fontSize:15, fontWeight:600 }}>{p.asset}</span>
+                      <span style={{ color:T.text, fontSize:13.5, fontWeight:600 }}>{p.asset}</span>
                       <div style={{ display:'flex', alignItems:'center', gap:12 }}>
-                        <span style={{ color:T.text2, fontSize:13 }}>{p.note}</span>
+                        <span style={{ color:T.text2, fontSize:12 }}>{p.note}</span>
                         <Mono color={p.color} size={14} style={{ fontWeight:700 }}>{p.pct}%</Mono>
                       </div>
                     </div>
@@ -393,7 +395,7 @@ function InvestTab({ D }) {
               }}>
                 <Mono color={T.text3} size={10} style={{ width:60 }}>{w.sym}</Mono>
                 <div>
-                  <div style={{ color:T.text, fontSize:15, fontWeight:500 }}>{w.name}</div>
+                  <div style={{ color:T.text, fontSize:13, fontWeight:500 }}>{w.name}</div>
                   <Mono color={T.text2} size={10}>{w.note}</Mono>
                 </div>
                 <div style={{ textAlign:'right' }}>
@@ -409,12 +411,299 @@ function InvestTab({ D }) {
   );
 }
 
+// ── Context builder ──────────────────────────────────────────────────────
+function buildContext(tab, D) {
+  const fmtNews = items => items.map((it, i) =>
+    `${i+1}. [${it.weight.toUpperCase()}] ${it.headline}\n` +
+    (it.bullets && it.bullets.length ? it.bullets.map(b => `  · ${b}`).join('\n') + '\n' : '') +
+    (it.why ? `  → 왜 중요: ${it.why}\n` : '')
+  ).join('\n');
+
+  if (tab === 'ai' && D.ai)       return `섹션: ${D.ai.label}\n요약: ${D.ai.summary}\n\n${fmtNews(D.ai.items)}`;
+  if (tab === 'physical' && D.physical) return `섹션: ${D.physical.label}\n요약: ${D.physical.summary}\n\n${fmtNews(D.physical.items)}`;
+  if (tab === 'quantum'  && D.quantum)  return `섹션: ${D.quantum.label}\n요약: ${D.quantum.summary}\n\n${fmtNews(D.quantum.items)}`;
+  if (tab === 'econ' && D.econ)   return `섹션: ${D.econ.label}\n요약: ${D.econ.summary}\n\n${fmtNews(D.econ.items)}`;
+  if (tab === 'col' && D.columns) return `섹션: 컬럼 피드\n요약: ${D.columns.summary}\n\n` +
+    D.columns.items.map(c => `필자: ${c.name} (${c.title})\n내용: ${c.post}\n핵심: ${c.summary}`).join('\n\n');
+  if (tab === 'inv' && D.invest) {
+    const inv = D.invest;
+    const mkt = (D.marketStrip||[]).map(m => `${m.label} ${m.val}(${m.pct})`).join(' / ');
+    return `섹션: 투자 리포트 — ${inv.title}\n시장: ${mkt}\n\n` +
+      inv.sections.map(s => `[${s.h}] ${s.body}`).join('\n\n') +
+      '\n\n워치리스트:\n' + inv.watchlist.map(w => `${w.sym} ${w.name}: ${w.val} ${w.pct} — ${w.note}`).join('\n') +
+      '\n\n추천 포트폴리오:\n' + inv.portfolio.map(p => `${p.asset} ${p.weight}% (${(p.tickers||[]).map(t=>typeof t==='string'?t:`${t.sym||''} ${t.name||''}`).join(', ')})`).join('\n');
+  }
+  return '';
+}
+
+const TAB_NAMES = { ai:'AI 뉴스', physical:'피지컬 AI', quantum:'양자', econ:'경제 뉴스', col:'컬럼 피드', inv:'투자 리포트' };
+
+// ── API Key Modal ─────────────────────────────────────────────────────────
+function ApiKeyModal({ apiKey, onSave, onClose }) {
+  const [val, setVal] = useState(apiKey || '');
+  const inp = useRef(null);
+  useEffect(() => { setTimeout(() => inp.current?.focus(), 50); }, []);
+  return (
+    <div onClick={onClose} style={{
+      position:'fixed', inset:0, background:'rgba(0,0,0,0.72)',
+      display:'flex', alignItems:'center', justifyContent:'center', zIndex:2000,
+    }}>
+      <div onClick={e => e.stopPropagation()} style={{
+        background:T.panel, border:`1px solid ${T.border}`, borderRadius:12,
+        padding:28, width:440, maxWidth:'90vw',
+        animation:'slideUp .2s ease',
+      }}>
+        <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:18 }}>
+          <div style={{
+            width:32, height:32, borderRadius:8, background:T.accent,
+            color:'#fff', fontWeight:700, fontFamily:MONO, fontSize:14,
+            display:'flex', alignItems:'center', justifyContent:'center',
+          }}>※</div>
+          <div>
+            <div style={{ color:T.text, fontWeight:700, fontSize:15 }}>Claude API 키 설정</div>
+            <Mono color={T.text3} size={10}>브라우저 로컬에만 저장됩니다</Mono>
+          </div>
+        </div>
+        <p style={{ margin:'0 0 16px', color:T.text2, fontSize:13, lineHeight:1.6 }}>
+          Anthropic{' '}
+          <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer"
+             style={{ color:T.accent }}>콘솔</a>
+          {' '}에서 발급받은 API 키를 입력하세요. 키는 이 브라우저에만 저장되며 서버로 전송되지 않습니다.
+        </p>
+        <input
+          ref={inp} type="password" value={val} onChange={e => setVal(e.target.value)}
+          placeholder="sk-ant-api03-..."
+          onKeyDown={e => e.key === 'Enter' && onSave(val.trim())}
+          style={{
+            width:'100%', background:T.panel2, border:`1px solid ${T.border}`,
+            borderRadius:6, padding:'10px 12px', color:T.text,
+            fontFamily:MONO, fontSize:13, outline:'none', boxSizing:'border-box',
+          }}
+        />
+        {val && !val.startsWith('sk-ant-') && (
+          <Mono color={T.down} size={11} style={{ display:'block', marginTop:6 }}>
+            ⚠ API 키는 보통 sk-ant- 로 시작합니다
+          </Mono>
+        )}
+        <div style={{ display:'flex', gap:10, marginTop:20, justifyContent:'flex-end' }}>
+          {apiKey && (
+            <button onClick={() => onSave('')} style={{
+              all:'unset', cursor:'pointer', padding:'8px 16px',
+              color:T.down, fontSize:13, borderRadius:6,
+              border:`1px solid ${T.down}40`,
+            }}>키 삭제</button>
+          )}
+          <button onClick={onClose} style={{
+            all:'unset', cursor:'pointer', padding:'8px 16px',
+            color:T.text2, fontSize:13, borderRadius:6,
+            border:`1px solid ${T.border}`,
+          }}>취소</button>
+          <button onClick={() => onSave(val.trim())} style={{
+            all:'unset', cursor:'pointer', padding:'8px 20px',
+            background:T.accent, color:'#fff', fontSize:13, fontWeight:600,
+            borderRadius:6,
+          }}>저장</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Chat Widget ───────────────────────────────────────────────────────────
+function ChatWidget({ apiKey, tab, D, onOpenKey }) {
+  const [open, setOpen] = useState(false);
+  const [msgs, setMsgs]  = useState([]);
+  const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
+  const bottomRef = useRef(null);
+  const inputRef  = useRef(null);
+  const context = useMemo(() => buildContext(tab, D), [tab, D]);
+  const tabName = TAB_NAMES[tab] || tab;
+
+  // Reset messages when tab changes
+  useEffect(() => { setMsgs([]); setInput(''); }, [tab]);
+
+  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior:'smooth' }); }, [msgs, loading]);
+  useEffect(() => { if (open) setTimeout(() => inputRef.current?.focus(), 80); }, [open]);
+
+  async function send() {
+    if (!input.trim() || loading) return;
+    if (!apiKey) { setOpen(false); onOpenKey(); return; }
+    const q = input.trim();
+    setInput('');
+    const history = [...msgs, { role:'user', content:q }];
+    setMsgs(history);
+    setLoading(true);
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method:'POST',
+        headers:{
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 1024,
+          system: `당신은 Daily Brief의 AI 어시스턴트입니다. 현재 사용자가 보고 있는 섹션은 "${tabName}"입니다.\n\n아래는 오늘의 ${tabName} 데이터입니다:\n\n${context}\n\n이 데이터를 참고하여 사용자 질문에 간결하고 유용하게 한국어로 답하세요. 데이터에 없는 내용은 솔직히 모른다고 하세요.`,
+          messages: history.map(m => ({ role:m.role, content:m.content })),
+        }),
+      });
+      const data = await res.json();
+      if (data.content?.[0]?.text) {
+        setMsgs(h => [...h, { role:'assistant', content:data.content[0].text }]);
+      } else {
+        const errMsg = data.error?.message || JSON.stringify(data);
+        setMsgs(h => [...h, { role:'assistant', content:`오류: ${errMsg}` }]);
+      }
+    } catch(err) {
+      setMsgs(h => [...h, { role:'assistant', content:`네트워크 오류: ${err.message}` }]);
+    }
+    setLoading(false);
+  }
+
+  return (
+    <>
+      {/* Floating button */}
+      <button onClick={() => setOpen(o => !o)} title="Claude에게 물어보기" style={{
+        position:'fixed', bottom:24, right:24, zIndex:900,
+        width:50, height:50, borderRadius:'50%',
+        background: open ? T.panel2 : T.accent,
+        border:`1px solid ${open ? T.border : 'transparent'}`,
+        cursor:'pointer', color: open ? T.text2 : '#fff',
+        fontSize:20, display:'flex', alignItems:'center', justifyContent:'center',
+        boxShadow:'0 4px 20px rgba(0,0,0,0.4)',
+        transition:'background .15s, color .15s',
+      }}>
+        {open ? '✕' : '💬'}
+      </button>
+
+      {/* Panel */}
+      {open && (
+        <div style={{
+          position:'fixed', bottom:86, right:24, zIndex:900,
+          width:380, maxWidth:'calc(100vw - 48px)',
+          height:480, maxHeight:'calc(100vh - 120px)',
+          background:T.panel, border:`1px solid ${T.border}`,
+          borderRadius:12, display:'flex', flexDirection:'column',
+          boxShadow:'0 8px 40px rgba(0,0,0,0.55)',
+          animation:'slideUp .18s ease', overflow:'hidden',
+        }}>
+          {/* Panel header */}
+          <div style={{
+            padding:'12px 14px', borderBottom:`1px solid ${T.border}`,
+            display:'flex', alignItems:'center', gap:10, flexShrink:0,
+          }}>
+            <div style={{
+              width:28, height:28, borderRadius:6, background:T.accent,
+              color:'#fff', fontWeight:700, fontSize:12, fontFamily:MONO,
+              display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0,
+            }}>※</div>
+            <div style={{ flex:1, minWidth:0 }}>
+              <div style={{ color:T.text, fontWeight:600, fontSize:13 }}>Claude에게 물어보기</div>
+              <Mono color={T.text3} size={10}>{tabName} · 컨텍스트 자동 포함</Mono>
+            </div>
+            {!apiKey ? (
+              <button onClick={() => { setOpen(false); onOpenKey(); }} style={{
+                all:'unset', cursor:'pointer', padding:'4px 10px',
+                background:T.accentSoft, color:T.accent, fontSize:11,
+                fontFamily:MONO, borderRadius:4, border:`1px solid ${T.accent}40`,
+                whiteSpace:'nowrap',
+              }}>🔑 키 설정</button>
+            ) : (
+              <button onClick={onOpenKey} title="API 키 설정" style={{
+                all:'unset', cursor:'pointer', color:T.text3, fontSize:16, padding:'0 4px',
+              }}>⚙</button>
+            )}
+          </div>
+
+          {/* Messages */}
+          <div style={{ flex:1, overflowY:'auto', padding:14, display:'flex', flexDirection:'column', gap:10 }}>
+            {msgs.length === 0 && (
+              <div style={{ color:T.text3, fontSize:13, textAlign:'center', marginTop:48, lineHeight:1.6 }}>
+                이 섹션의 내용에 대해<br/>무엇이든 물어보세요.
+              </div>
+            )}
+            {msgs.map((m, i) => (
+              <div key={i} style={{ alignSelf: m.role==='user' ? 'flex-end' : 'flex-start', maxWidth:'88%' }}>
+                {m.role === 'assistant' && (
+                  <Mono color={T.accent} size={9} style={{ display:'block', marginBottom:3, paddingLeft:2 }}>CLAUDE</Mono>
+                )}
+                <div style={{
+                  background: m.role==='user' ? T.accent : T.panel2,
+                  color: m.role==='user' ? '#fff' : T.text,
+                  padding:'9px 13px',
+                  borderRadius: m.role==='user' ? '12px 12px 2px 12px' : '2px 12px 12px 12px',
+                  fontSize:13.5, lineHeight:1.58, whiteSpace:'pre-wrap', wordBreak:'break-word',
+                }}>{m.content}</div>
+              </div>
+            ))}
+            {loading && (
+              <div style={{ alignSelf:'flex-start', maxWidth:'88%' }}>
+                <Mono color={T.accent} size={9} style={{ display:'block', marginBottom:3, paddingLeft:2 }}>CLAUDE</Mono>
+                <div style={{
+                  background:T.panel2, padding:'10px 14px',
+                  borderRadius:'2px 12px 12px 12px', display:'flex', gap:5,
+                }}>
+                  {[0,.2,.4].map((d,i) => (
+                    <span key={i} style={{
+                      width:6, height:6, borderRadius:'50%', background:T.accent,
+                      display:'inline-block',
+                      animation:`pulse 1s ${d}s infinite`,
+                    }}/>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div ref={bottomRef}/>
+          </div>
+
+          {/* Input area */}
+          <div style={{ padding:'10px 12px', borderTop:`1px solid ${T.border}`, display:'flex', gap:8, flexShrink:0 }}>
+            <textarea
+              ref={inputRef}
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => { if (e.key==='Enter' && !e.shiftKey) { e.preventDefault(); send(); } }}
+              placeholder={apiKey ? "질문 입력… (Enter 전송, Shift+Enter 줄바꿈)" : "먼저 API 키를 설정하세요"}
+              rows={2}
+              style={{
+                flex:1, background:T.panel2, border:`1px solid ${T.border}`,
+                borderRadius:6, padding:'8px 10px', color:T.text,
+                fontFamily:SANS, fontSize:13, resize:'none', outline:'none',
+                lineHeight:1.5,
+              }}
+            />
+            <button onClick={send} disabled={loading || !input.trim()} style={{
+              all:'unset', cursor: loading || !input.trim() ? 'default' : 'pointer',
+              width:38, background: loading || !input.trim() ? T.border : T.accent,
+              color:'#fff', borderRadius:6, fontSize:18,
+              display:'flex', alignItems:'center', justifyContent:'center',
+              flexShrink:0, transition:'background .15s',
+            }}>↑</button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
 // ── App root ──────────────────────────────────────────────────────────────
 function App() {
   const [date, setDate] = useState(window.BRIEF_TODAY);
   const [tab, setTab] = useState('ai');
   const D = window.BRIEF_ARCHIVE[date] || window.BRIEF_ARCHIVE[window.BRIEF_TODAY];
   const mob = useMobile();
+  const [apiKey, setApiKey] = useState(() => localStorage.getItem('daily_brief_api_key') || '');
+  const [showKeyModal, setShowKeyModal] = useState(false);
+
+  function saveKey(k) {
+    if (k) localStorage.setItem('daily_brief_api_key', k);
+    else localStorage.removeItem('daily_brief_api_key');
+    setApiKey(k);
+    setShowKeyModal(false);
+  }
 
   let content;
   if (tab === 'ai')       content = <NewsTab data={D.ai}       kicker="AI MORNING WIRE"/>;
@@ -437,7 +726,7 @@ function App() {
           color:'#fff', fontWeight:700, fontSize:13, fontFamily:MONO,
           display:'flex', alignItems:'center', justifyContent:'center',
         }}>※</div>
-        <span style={{ fontWeight:700, fontSize:16, letterSpacing:'-0.01em' }}>Daily Brief</span>
+        <span style={{ fontWeight:700, fontSize:15, letterSpacing:'-0.01em' }}>Daily Brief</span>
         <div style={{ height:16, width:1, background:T.border }}/>
         <span style={{ color:T.text2, fontSize: mob ? 12 : 13 }}>{mob ? D.date.shortLabel : D.date.label}</span>
         {D.date.isToday && (
@@ -447,11 +736,23 @@ function App() {
             border:`1px solid ${T.accent}40`,
           }}>TODAY</span>
         )}
-        {!mob && (
-          <div style={{ marginLeft:'auto', color:T.text3, fontSize:12, fontFamily:MONO }}>
-            {'1-6 tab shortcuts'}
-          </div>
-        )}
+        <div style={{ marginLeft:'auto', display:'flex', alignItems:'center', gap:10 }}>
+          {!mob && (
+            <Mono color={T.text3} size={11}>1-6 tab shortcuts</Mono>
+          )}
+          <button onClick={() => setShowKeyModal(true)} title="Claude API 키 설정" style={{
+            all:'unset', cursor:'pointer',
+            display:'flex', alignItems:'center', gap:5,
+            padding:'4px 10px', borderRadius:6,
+            border:`1px solid ${apiKey ? T.accent+'40' : T.border}`,
+            background: apiKey ? T.accentSoft : 'transparent',
+            color: apiKey ? T.accent : T.text3,
+            fontSize:12, fontFamily:MONO,
+            transition:'all .15s',
+          }}>
+            {apiKey ? '🔑 API 연결됨' : '🔑 API 키 설정'}
+          </button>
+        </div>
       </div>
 
       {/* Date selector */}
@@ -464,6 +765,12 @@ function App() {
       <div style={{ flex:1, overflowY:'auto' }}>
         {content}
       </div>
+
+      {/* Chat widget */}
+      <ChatWidget apiKey={apiKey} tab={tab} D={D} onOpenKey={() => setShowKeyModal(true)}/>
+
+      {/* API key modal */}
+      {showKeyModal && <ApiKeyModal apiKey={apiKey} onSave={saveKey} onClose={() => setShowKeyModal(false)}/>}
     </div>
   );
 }
