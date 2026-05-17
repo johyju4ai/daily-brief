@@ -358,6 +358,8 @@ const TODAY = {
 };
 
 
-window.BRIEF_TODAY  = '2026-05-17';
-window.BRIEF_USER   = '재현';
-window.BRIEF_DATA   = TODAY;   // backwards compat
+window.BRIEF_ARCHIVE = { '2026-05-17': TODAY };
+window.BRIEF_DATES   = ['2026-05-17'];
+window.BRIEF_TODAY   = '2026-05-17';
+window.BRIEF_USER    = '재현';
+window.BRIEF_DATA    = TODAY;
