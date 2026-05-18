@@ -96,7 +96,7 @@ function DateStrip({ date, setDate }) {
             fontSize: 13, fontWeight: active ? 600 : 500, whiteSpace:'nowrap',
             transition:'color .15s',
           }}>
-            {data.date.shortLabel}
+            {data.date?.shortLabel ?? data.shortLabel}
             {today && <Mono color={T.accent} size={9} style={{ letterSpacing:'0.14em' }}>TODAY</Mono>}
           </button>
         );
@@ -728,8 +728,8 @@ function App() {
         }}>※</div>
         <span style={{ fontWeight:700, fontSize:15, letterSpacing:'-0.01em' }}>Daily Brief</span>
         <div style={{ height:16, width:1, background:T.border }}/>
-        <span style={{ color:T.text2, fontSize: mob ? 12 : 13 }}>{mob ? D.date.shortLabel : D.date.label}</span>
-        {D.date.isToday && (
+        <span style={{ color:T.text2, fontSize: mob ? 12 : 13 }}>{mob ? (D.date?.shortLabel ?? D.shortLabel) : (D.date?.label ?? D.label)}</span>
+        {(D.date?.isToday ?? D.isToday) && (
           <span style={{
             background:T.accentSoft, color:T.accent, fontFamily:MONO, fontSize:9,
             letterSpacing:'0.14em', padding:'2px 8px', borderRadius:999,
