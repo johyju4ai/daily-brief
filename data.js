@@ -432,273 +432,10 @@ const D_0528 = pastDay({
 
 
 // 아카이브: 2026-05-27
-const D_0527 = pastDay({
-  iso: '2026-05-27', label: '2026년 5월 27일 수요일', shortLabel: '5월 27일 (수)',
+// 아카이브: 2026-05-29
+const D_0529 = pastDay({
+  iso: '2026-05-29', label: '2026년 5월 29일 금요일', shortLabel: '5월 29일 (금)',
   market: [
-    { sym: 'KOSPI',   val: '8,048',   pct: '+2.55%', up: true  },
-    { sym: 'S&P 500', val: '7,519',   pct: '+0.61%', up: true  },
-    { sym: 'NASDAQ',  val: '26,656',  pct: '+1.19%', up: true  },
-    { sym: 'BTC',     val: '$76,600', pct: '+0.00%', up: true  },
-    { sym: '$/₩',    val: '1,503',   pct: '-0.73%', up: false },
-    { sym: '10Y UST', val: '4.51%',  pct: '-3bp',   up: false },
-    { sym: 'WTI',     val: '$86.50',  pct: '-0.92%', up: false },
-  ],
-  ai: {
-    label: 'AI 뉴스',
-    summary: 'Anthropic이 $300억 펀딩 라운드를 마감하며 기업가치 $9,000억으로 OpenAI를 AI 스타트업 사상 최고 밸류로 추월했고, OpenAI의 추론 모델이 80년 묵은 기하학 난제를 자율 해결하며 AI 원천 발견 시대를 열었습니다. Anthropic과 SpaceX는 월 $12.5억 규모의 컴퓨팅 파트너십을 2029년까지 확장하며 AI 인프라 군비경쟁이 가속되고 있습니다.',
-    items: [
-      { weight: 'high', time: '09:00', source: 'CNBC / Bloomberg',
-        headline: 'Anthropic, $300억 펀딩 확정·기업가치 $9,000억 — AI 스타트업 사상 최고 밸류로 OpenAI 추월',
-        url: 'https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html',
-        bullets: ['Anthropic, $300억 신규 펀딩 라운드 최종 마감. 프리머니 기업가치 $9,000억+ — OpenAI $8,520억을 사상 처음으로 추월. AI 스타트업 최고 밸류.', 'Q2 2026 매출 $109억(QoQ 2배+), 영업이익 $5.59억으로 창사 첫 분기 흑자 전망. ARR $440억, Claude API 사용량 전년비 17배.', 'Anthropic-SpaceX 월 $12.5억 컴퓨팅 파트너십 2029년까지 확장. AI 모델 회사가 데이터센터·전력 생태계 전면에 나서는 구조로 진화.'],
-        why: 'AI 모델 기업 최초 분기 흑자와 기업가치 OpenAI 추월은 LLM 비즈니스가 투자 소각 단계를 졸업했음을 의미합니다. AI 섹터 전체의 밸류에이션 재산정을 촉발하는 신호입니다.',
-        notes: [{ term: '프리머니 기업가치', def: '신규 투자금 유입 전 기업가치. 투자자 신뢰도의 기준점으로 IPO 밸류에이션의 선행 지표.' }, { term: 'ARR(연간 반복매출)', def: '구독·API 기반 기업의 연간 매출 예측치. SaaS·AI 기업 성장성의 핵심 지표.' }] },
-      { weight: 'high', time: '08:00', source: 'OpenAI Research / Axios',
-        headline: 'OpenAI 추론 모델, 80년 묵은 기하학 난제 자율 해결 — AI 원천 수학 발견 시대 개막',
-        url: 'https://www.axios.com/2026/05/21/ai-news-cycle-openai-anthropic-spacex',
-        bullets: ['OpenAI 범용 추론 모델, 수학자들이 80년간 풀지 못한 기하학 문제를 자율 증명. 인간 검토 없는 원천 수학 발견 최초 사례.', '기존 AI는 알려진 증명을 재현·보조하는 수준. 이번 돌파는 AI가 새로운 수학 지식을 독립 생산함을 의미. 수학·물리·약물설계 파급 기대.', 'OpenAI CEO 알트만: "AI가 이제 진정한 과학적 발견에 기여할 수 있음을 보여준다." IPO 준비와 함께 연구 성과 공세 강화.'],
-        why: 'AI가 전문가 수준을 넘어 새로운 지식을 창출하는 단계에 진입했음을 상징합니다. 수학·과학 연구 방식의 근본적 변화를 예고하며 AI 기반 R&D 투자의 정당성을 강화합니다.',
-        notes: [{ term: '자율 증명', def: 'AI가 인간의 힌트 없이 수학적 명제가 참임을 논리적으로 검증하는 과정. AGI 진척의 핵심 지표 중 하나.' }] },
-      { weight: 'high', time: '10:00', source: 'Axios / CNBC',
-        headline: 'Anthropic-SpaceX, 월 $12.5억 컴퓨팅 파트너십 2029년까지 — AI 인프라 전쟁 가속',
-        url: 'https://www.axios.com/2026/05/21/google-ai-anthropic-openai-war',
-        bullets: ['Anthropic, SpaceX와 2029년까지 연간 약 $150억 규모 컴퓨팅 공급 계약 체결. 월 $12.5억 — AI 스타트업 역대 최대 컴퓨팅 조달.', 'SpaceX Starlink 위성·데이터센터 네트워크 활용. 기존 AWS·Google Cloud 외 제3의 AI 컴퓨팅 경로 확보.', 'Anthropic, Amazon $4B·Google $2.5B 외 SpaceX까지 다중 컴퓨팅 파트너 전략으로 특정 클라우드 종속 탈피.'],
-        why: '월 $12.5억 규모는 Anthropic 매출을 압도하는 컴퓨팅 투자입니다. AI 모델 회사가 스스로 인프라를 다중 조달하는 전략은 클라우드 빅3의 AI 장악력에 균열을 냅니다.',
-        notes: [{ term: 'SpaceX 데이터센터 네트워크', def: 'SpaceX가 개발 중인 Starlink 기반 분산 컴퓨팅 인프라. 지상 데이터센터를 보완하는 AI 컴퓨팅 경로.' }] },
-      { weight: 'low', time: '07:00', source: 'CNBC / Trump 행정부',
-        headline: '미 정부, AI 모델 공개 전 테스트 의무화 — Google·MS·xAI 동의',
-        url: 'https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html',
-        bullets: ['트럼프 행정부, AI 모델 공개 전 정부 테스트 의무화 추진. Google·Microsoft·xAI 조기 접근 제공 동의.', '기업-규제 당국 협력 모델. 미국판 자율 AI 안전 프레임워크 구체화 시작.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '11:00', source: 'Google / CNBC',
-        headline: 'Gemini 3.5 Flash 출시 — 동급 최고 모델 절반 가격에 최첨단 성능',
-        url: 'https://www.cnbc.com/2026/05/19/google-ai-ultra-gemini-spark-omni.html',
-        bullets: ['Google Gemini 3.5 Flash, 동급 최고 대비 절반~1/3 가격으로 멀티모달·추론·코딩 최첨단 성능 제공.', 'AI 모델 비용 효율 경쟁 심화 — 기업 도입 장벽 낮아져 AI 활용 가속화.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '09:30', source: 'Google / NPR',
-        headline: 'Google 검색 AI 통합 — 짧은 쿼리·챗봇 대화 모두 처리하는 검색창 전환',
-        url: 'https://www.npr.org/2026/05/22/nx-s1-5829915/google-search-box-ai',
-        bullets: ['Google, 전통 단어 검색과 AI 챗봇 스타일 대화 쿼리를 하나의 검색창에서 처리. "웹+AI 최선의 조합" 표방.', 'YouTube "Ask YouTube" 텍스트·영상 복합 응답 기능 추가. 검색 광고 수익 모델 재편 논쟁 촉발.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '08:30', source: 'CNBC / Survey',
-        headline: '기업 76% Chief AI Officer 도입 완료 — 1년 만에 26%→76% 3배 급등',
-        url: 'https://www.cnbc.com/2026/05/11/heres-how-artificial-intelligence-is-changing-boardrooms.html',
-        bullets: ['2,000개+ 기업 조사: CAIO 도입률 2025년 26% → 2026년 76%. 1년 만에 3배 급증.', 'AI 활용은 신시장 개척보다 내부 프로세스 효율화 집중. AI 거버넌스 구조화 단계 진입.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '06:30', source: 'Nature',
-        headline: '인간 과학자, 복잡한 연구에서 최고 AI 에이전트 압도 — Nature 게재',
-        url: 'https://www.nature.com/articles/d41586-026-01199-z',
-        bullets: ['Nature 게재: 복잡·창의적 과학 과제에서 인간 과학자가 최고 AI 에이전트보다 훨씬 높은 성과.', '단순 반복·정보 검색은 AI 우위. 인간-AI 상호보완적 협업 모델이 최적이라는 결론.'],
-        why: '', notes: [] },
-    ],
-  },
-  physical: {
-    label: '피지컬 AI 뉴스',
-    summary: 'Japan Airlines이 Unitree G1 로봇을 하네다 공항에 본격 배치한 반면 미 의회는 동일 공급업체를 국가안보 우려로 블랙리스트 추진하며 피지컬 AI 분야의 미중 갈등이 새 전선을 열었습니다. Barclays 리서치는 휴머노이드 로봇이 기존 자동화 불가 직군까지 대체한다고 경고했고, Figure AI는 BMW 30,000대 생산 지원을 완료하고 가정용 파일럿으로 확장 중입니다.',
-    items: [
-      { weight: 'high', time: '09:00', source: 'TechTimes / eWeek',
-        headline: 'JAL 하네다 Unitree G1 배치 vs 미 의회 블랙리스트 추진 — 피지컬 AI 미중 갈등 격화',
-        url: 'https://www.techtimes.com/articles/316862/20260519/jal-deploys-unitree-g1-robots-haneda-us-congress-moves-blacklist-supplier-national-security.htm',
-        bullets: ['Japan Airlines, 하네다 공항에 Unitree G1 로봇 2기 배치. 수하물 적재·컨테이너 운반·기내 청소 임무. 대당 가격 약 $15,400.', '미 의회 일부 의원, 같은 Unitree 공급업체를 국가안보 위협 이유로 블랙리스트 추진. G1 모터·센서 부품 군사 전용 가능성 우려.', '동일 로봇을 둘러싸고 일본(도입) vs 미국(금지 추진)이 갈리는 피지컬 AI 공급망 분열. 미중 로봇 기술 패권 갈등의 새 전선.'],
-        why: '저가 중국 휴머노이드 로봇이 글로벌 공항·물류에 빠르게 침투하는 동시에 미국의 견제가 강화됩니다. AI칩 통제에 이은 피지컬 AI 공급망 갈등이 본격화됩니다.',
-        notes: [{ term: 'Unitree', def: '중국 저가 휴머노이드·사족보행 로봇 제조사. G1은 $15,400의 저비용 휴머노이드로 해외 배치 확산 중.' }] },
-      { weight: 'high', time: '08:00', source: 'humanoid.press / Figure AI',
-        headline: 'Figure AI, BMW 30,000대 생산 지원 완료 · 라이프치히 확대 · 가정용 파일럿 시작',
-        url: 'https://humanoid.press/',
-        bullets: ['Figure 02, BMW Spartanburg에서 30,000+ 차량 생산 지원 완료. 90,000+ 판금 부품 이동, 1,250+ 시간 운영 — 상업적 휴머노이드 최대 성과.', '독일 라이프치히 공장으로 추가 배치 확정. BMW와 멀티사이트 파트너십 진화. 유럽 휴머노이드 확산 거점 마련.', '최초 가정용 파일럿 프로그램 시작. 소비자 환경에서 범용 동작 적응력 검증 — B2C 시장 진입 첫 발.'],
-        why: '자동차 공장을 넘어 가정으로 확장되는 Figure AI의 행보는 휴머노이드 시장 타겟이 B2B에서 B2C로 확장되고 있음을 보여줍니다.',
-        notes: [{ term: 'B2C 파일럿', def: '기업 고객이 아닌 일반 소비자 대상 제품 테스트. 가정용 로봇 시장 진입의 전 단계.' }] },
-      { weight: 'high', time: '10:00', source: 'Barclays Research / RoboticsTomorrow',
-        headline: 'Barclays "휴머노이드, 실물경제 근본 재편" — 자동화 불가 직군까지 대체 전망',
-        url: 'https://www.roboticstomorrow.com/news/2026/05/20/barclays-research-expects-humanoid-robots-to-fundamentally-reshape-the-real-economy/26596',
-        bullets: ['Barclays: 휴머노이드 로봇은 기존 자동화 불가능했던 전체 직무(Role)까지 대체 가능. 기존 산업 로봇과 본질적 차이.', 'Airbus·BMW·Schaeffler·Siemens 등 글로벌 대기업 파일럿 프로그램 운영 중. 제조·물류·서비스 전방위 확산 임박.', 'Barclays: 2030년 수만대→2035년 수백만대 배치 궤도. 휴머노이드 GDP 1~2% 대체 가능 분석.'],
-        why: '주요 투자은행이 휴머노이드의 경제적 파급력을 공식 분석한 것은 기관 투자자들의 로봇 섹터 자금 배분을 촉진합니다.',
-        notes: [{ term: '역할(Role) 단위 자동화', def: '기존 로봇은 단순 반복 동작(Task)만 대체. 휴머노이드는 사람이 하는 복합 역할 전체를 대체 가능.' }] },
-      { weight: 'low', time: '07:00', source: 'Standard Bots / Tesla',
-        headline: 'Tesla 프리몬트 공장 Optimus Gen3 전용 전환 — 연 100만대 목표',
-        url: 'https://standardbots.com/blog/tesla-robot',
-        bullets: ['Tesla, 프리몬트 공장을 Q2 2026 Optimus Gen3 전용 생산 시설로 전환. Model S·X 라인 폐지.', 'AI5 기반 Gen3, 2026년 여름 양산 시작 목표. 연 100만대 풀 캐퍼시티 계획.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '09:30', source: 'Morgan Stanley / Seeking Alpha',
-        headline: 'Morgan Stanley, 2030년 4만대→2050년 6,300만대 휴머노이드 전망',
-        url: 'https://seekingalpha.com/article/4903621-humanoid-robotics-in-2026-race-from-pilot-to-platform',
-        bullets: ['Morgan Stanley: 휴머노이드 2030년 4만대 → 2050년 6,300만대 폭발 성장 전망.', '중국 내수만 2029년 $102.6억 규모. 글로벌 피지컬 AI 투자 급증 배경.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '08:30', source: 'NVIDIA Blog / Agility Robotics',
-        headline: 'Agility Digit 7대, Toyota Canada RAV4 공장 자재 처리 가동 중',
-        url: 'https://blogs.nvidia.com/blog/national-robotics-week-2026/',
-        bullets: ['Agility Digit 7+대, Toyota Canada에서 RAV4 생산 라인 자재 처리 수행 중.', 'NVIDIA Physical AI 기반 동작 계획. 자동차 부품 물류 자동화 실용화 단계 확인.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '06:30', source: 'The Register / Boston Dynamics',
-        headline: 'Boston Dynamics Atlas, 현대차 조지아 RMAC·Google DeepMind 배송 시작',
-        url: 'https://www.theregister.com/2026/01/06/boston_dynamics_atlas_production/',
-        bullets: ['Boston Dynamics, Atlas 상업 생산 버전 현대차 RMAC 및 Google DeepMind에 배송 시작.', '2026년 전체 물량 배정 완료. 피지컬 AI 파일럿 단계 공식 종료.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '11:00', source: 'NVIDIA Newsroom',
-        headline: 'NVIDIA, 차세대 피지컬 AI 모델 패키지 공개',
-        url: 'https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots',
-        bullets: ['NVIDIA, 피지컬 AI 모델 패키지 업데이트 공개. 동작 계획·환경 인식·언어-행동 통합 성능 개선.', '글로벌 로봇 파트너사들, NVIDIA 기반 차세대 로봇 동시 발표.'],
-        why: '', notes: [] },
-    ],
-  },
-  quantum: {
-    label: '양자 뉴스',
-    summary: 'Flatiron Institute 연구진이 클래식 알고리즘으로 "양자 우위" 주장 문제를 해결하며 기존 양자 우월성 선언에 의문을 제기했고, Q-CTRL과 IBM은 런타임 오류 억제로 시뮬레이션을 3,000배 가속화하는 성과를 발표했습니다. 미 정부의 $20억 양자 투자와 지분 취득이 가시화되면서 양자컴퓨팅이 반도체에 이어 국가 전략 산업으로 공식 편입되는 흐름이 확고해지고 있습니다.',
-    items: [
-      { weight: 'high', time: '09:00', source: 'Simons Foundation / Science Daily',
-        headline: 'Flatiron Institute, "양자 우위" 주장 반박 — 1980년대 알고리즘으로 같은 문제 해결',
-        url: 'https://www.simonsfoundation.org/2026/05/21/quantum-dynamics-breakthrough-overturns-claim-of-quantum-supremacy-opens-new-research-directions/',
-        bullets: ['Flatiron Institute, 1980년대 알고리즘을 현대 텐서 네트워크에 적용해 양자 우위 주장 문제를 클래식 컴퓨터(노트북)로 해결.', '이번 연구, 특정 "양자 우위" 주장이 양자 컴퓨터에만 가능한 문제가 아니었음을 입증. 양자 우위 벤치마크 재설정 논쟁 촉발.', '연구팀: "양자와 클래식의 경계를 다시 그어야 한다." 새로운 클래식-양자 비교 프레임워크 제시.'],
-        why: '양자 우위는 양자컴퓨팅 투자 정당성의 핵심입니다. 클래식 알고리즘으로 같은 문제가 해결된다면 일부 양자 주장은 재검토가 필요합니다. 단기 주가보다 장기 연구 방향에 중요한 신호입니다.',
-        notes: [{ term: '텐서 네트워크', def: '양자 시스템을 수학적으로 압축 표현하는 방법. 클래식 컴퓨터에서 양자 효과를 근사하는 핵심 기법.' }, { term: '양자 우위(Quantum Supremacy)', def: '양자 컴퓨터가 최고 슈퍼컴보다 특정 과제에서 빠른 시점. 실용적 우위(Advantage)와 구분.' }] },
-      { weight: 'high', time: '08:00', source: 'Q-CTRL / IBM Quantum',
-        headline: 'Q-CTRL+IBM, 런타임 오류 억제로 시뮬레이션 3,000배 가속 — 120큐비트 성과',
-        url: 'https://quantumcomputingreport.com/news/',
-        bullets: ['Q-CTRL+IBM, 런타임 오류 억제 기술을 120큐비트 프로세서에 적용해 Fermi-Hubbard 모델 시뮬레이션 3,000배 속도 향상.', '기존 오류 보정과 달리 실시간 오류 억제로 양자 회로 신뢰성 향상. 추가 큐비트 오버헤드 없이 성능 개선.', '실용적 양자 화학·재료 시뮬레이션 응용 가속. 의약품 개발·신소재 발견에 직결.'],
-        why: '3,000배 가속은 현재 양자 하드웨어의 한계를 소프트웨어로 극복한 사례입니다. 큐비트 수 경쟁 외에 소프트웨어 레이어 혁신이 양자 우위 달성의 새 경로로 부상하고 있습니다.',
-        notes: [{ term: 'Fermi-Hubbard 모델', def: '전자 상호작용을 설명하는 양자 물리 모델. 고온 초전도체·양자 자성체 이해의 핵심이나 정확한 고전 계산이 사실상 불가.' }, { term: '런타임 오류 억제', def: '양자 회로 실행 중 오류가 쌓이지 않도록 실시간 보정하는 기술. QEC보다 자원 효율적.' }] },
-      { weight: 'low', time: '10:00', source: 'CNBC / CNN Business',
-        headline: '미 정부 양자컴퓨팅 $20억 투자·지분 취득 확정 — IBM $10억·D-Wave +33% 급등',
-        url: 'https://www.cnbc.com/2026/05/21/quantum-stocks--us-taking-equity-stakes.html',
-        bullets: ['미 상무부, 9개 양자 기업에 $20억 배분+지분 취득. 미국 최초 양자 국가 산업 정책.', 'IBM $10억, D-Wave·Rigetti +30%+ 급등. 양자컴퓨팅 반도체에 이어 전략 산업 편입.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '07:30', source: 'NSF',
-        headline: 'NSF, $15억 독립 X-Labs Initiative — 양자·센싱 기술 집중 투자',
-        url: 'https://quantumcomputingreport.com/news/',
-        bullets: ['NSF, 양자컴퓨팅·센싱 기술 대상 $15억 독립 X-Labs Initiative 발표(5/16).', '대학·민간 공동 연구 거점 육성. 정부 양자 투자 IBM 외 전체 생태계로 확산.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '09:30', source: 'CNN / MIT',
-        headline: 'Q-Day 경고 강화 — "2029년 이전 현재 암호화 붕괴 가능"',
-        url: 'https://www.cnn.com/2026/05/17/science/quantum-computing-cybersecurity-q-day',
-        bullets: ['"Harvest Now, Decrypt Later" 공격 현실화 우려. 적대 세력이 암호 데이터를 지금 수집해 미래 양자컴으로 해독.', 'Google: 2029년까지 post-quantum 암호화 전환 목표. RSA·ECC 기반 보안 시스템 교체 시급.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '11:00', source: 'McKinsey / IndexBox',
-        headline: 'McKinsey, 2035년 양자 시장 $720억 전망 — IonQ·Alphabet·NVIDIA 성장주',
-        url: 'https://www.indexbox.io/blog/3-quantum-computing-stocks-to-watch-in-2026/',
-        bullets: ['McKinsey: 2035년 글로벌 양자컴퓨팅 시장 $720억 규모 전망.', 'IonQ·Alphabet·NVIDIA, 양자 포트폴리오 성장주로 기관 투자자 주목.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '08:00', source: 'PsiQuantum / US Commerce',
-        headline: 'PsiQuantum $1억 정부 지원 확정 — 광자 기반 100만 큐비트 로드맵',
-        url: 'https://thequantuminsider.com/2026/05/21/reports-us-to-award-2-billion-to-quantum-companies-take-equity-stakes/',
-        bullets: ['PsiQuantum, 미 정부 $1억 지원 확정. 광자 기반 100만 큐비트 양자컴퓨터 개발 목표.', 'GlobalFoundries와 반도체 공정 기반 양자 칩 양산 협력. 실리콘 포토닉스 양자 경쟁 본격화.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '06:30', source: 'phys.org',
-        headline: '양자 게이트 오류의 지속 원인 최초 규명 — 큐비트 신뢰성 향상 로드맵',
-        url: 'https://phys.org/news/2026-05-persistent-quantum-error.html',
-        bullets: ['연구진, 양자 게이트 오류 지속 발생 메커니즘 최초 규명. 오류 억제 설계 개선 가능성 열림.', '내결함성 양자컴퓨터 실현의 핵심 장벽 제거 가능성. 큐비트 신뢰성 향상 로드맵 구체화.'],
-        why: '', notes: [] },
-    ],
-  },
-  econ: {
-    label: '경제 뉴스',
-    summary: '미국 S&P 500이 메모리얼 데이 후 첫 거래일(5/26)에 7,519 신고가를 기록하며 Micron이 19% 급등했고, KOSPI도 8,048로 52주 신고가를 경신하며 글로벌 증시 동반 랠리가 이어지고 있습니다. 호르무즈 개방 기대로 WTI가 하락세를 지속하는 가운데, 한국은행이 내일(5/28) 금통위를 개최해 기준금리 동결 여부가 주목됩니다.',
-    items: [
-      { weight: 'high', time: '09:00', source: 'CNBC / Reuters',
-        headline: '미국 S&P 500·NASDAQ 쌍끌이 신고가 — Micron +19%, AI 반도체 랠리 주도',
-        url: 'https://www.cnbc.com/2026/05/25/stock-futures-today-live-updates.html',
-        bullets: ['5/26(화) 뉴욕 증시: S&P 500 7,519.12 (+0.61%) 신고가, NASDAQ 26,656.18 (+1.19%) 신고가. Dow Jones -118pt 소폭 하락.', 'Micron Technology, AI 메모리 수요 급증 기대로 하루 만에 +19% 폭등. 시총 $1조 재돌파.', '테크·산업재·소재 주도, 에너지주 하락. 호르무즈 개방 기대+이란 협상 진전 보도가 복합 작용.'],
-        why: 'Micron +19%는 AI HBM 수요가 단기 공급을 초과할 것이라는 시장 확신을 반영합니다. KOSPI의 SK하이닉스·삼성전자 강세와 같은 맥락입니다.',
-        notes: [{ term: 'HBM(고대역폭 메모리)', def: 'AI GPU용 고속 메모리. Micron·SK하이닉스·삼성전자 공급. AI 모델 학습·추론의 병목 해소에 필수.' }] },
-      { weight: 'high', time: '08:00', source: '서울신문 / 한경',
-        headline: 'KOSPI 8,048 52주 신고가 — 반도체·전기전자 중심 외국인·기관 동반 매수',
-        url: 'https://www.seoul.co.kr/news/economy/securities/2026/05/26/20260526500051',
-        bullets: ['5/26 KOSPI 8,047.77 마감 (+2.55%). 장중 8,094.90 52주 신고가 경신. 외국인·기관 프로그램 동반 매수.', '반도체(SK하이닉스·삼성전자)·전기전자 집중 매수. AI 반도체 강세+호르무즈 기대 복합 작용.', '5/20 저점 7,208 이후 4거래일 만에 840포인트 반등. 단기 회복력 확인.'],
-        why: '글로벌 AI 반도체 수요 증가가 한국 대형 반도체 기업 실적 개선으로 직결되며 KOSPI를 견인하고 있습니다.',
-        notes: [{ term: '프로그램 매수', def: '컴퓨터 알고리즘이 자동 실행하는 주식 매매. 대량 유입 시 지수 상승 가속 효과.' }] },
-      { weight: 'low', time: '10:00', source: '한국은행',
-        headline: '한국은행 금통위 5/28 개최 — 기준금리 3.25% 동결 예상, 성명 문구 주목',
-        url: 'https://www.bok.or.kr/portal/main/main.do',
-        bullets: ['한국은행 5/28(목) 금통위 통화정책 결정회의 개최. 기준금리 3.25% 동결 시장 중론.', '호르무즈 개방 기대로 에너지 인플레 완화 가능성. 향후 인하 시그널 성명 문구에 주목.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '07:00', source: 'Reuters / Bloomberg',
-        headline: 'G7 재무장관, 글로벌 채권 매도세 공동 대응 거부 — "각국 자국 책임" 확인',
-        url: 'https://koreatownnews.com/%EA%B2%BD%EC%A0%9C%EC%A0%84%EB%A7%9D-2026%EB%85%84-5%EC%9B%94-%EA%B2%BD%EC%A0%9C-%ED%98%84%ED%99%A9-%EB%B6%84%EC%84%9D%EA%B3%BC-%EC%A0%84%EB%A7%9D/',
-        bullets: ['가타야마 日재무상: G7 채권 매도세 공동 대응 "고려 안 한다." 각국 자국 상황 책임 원칙 확인.', '"채권 매도세 원인은 유가+호르무즈 봉쇄" G7 공감대. 근본 해결은 호르무즈 개방에 달려 있다는 인식.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '09:30', source: 'Trading Economics / Fed',
-        headline: '미 연준 기준금리 3.50~3.75% 동결 — 2026년 1회 인하 최대, 하반기 전망',
-        url: 'https://tradingeconomics.com/united-states/government-bond-yield',
-        bullets: ['3월 FOMC 기준금리 3.50~3.75% 동결. 2026년 1회 인하 중론, 빨라야 하반기.', '호르무즈 개방 확인 시 에너지 인플레 완화 → 금리 인하 시점 앞당겨질 가능성.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '08:30', source: 'BEA / Reuters',
-        headline: '미국 1Q 2026 GDP +2.0% — 예상치 2.3% 하회, 투자·수출 부진',
-        url: 'https://www.kcif.or.kr/economy/economyView?rpt_no=36508&mn=003002',
-        bullets: ['미국 1Q 2026 GDP 성장률 연율 2.0%. 전분기 0.5%에서 반등했으나 예상 2.3% 하회.', '에너지 비용 상승이 기업 투자 위축. 관세 영향 점진적 반영 중.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '11:00', source: 'Bloomberg / Naver Finance',
-        headline: 'USD/KRW 1,503원 — 호르무즈 기대·원유 하락에 원화 강세',
-        url: 'https://www.bloomberg.com/quote/USDKRW:CUR',
-        bullets: ['USD/KRW 1,503원. 전일 1,514원 대비 원화 0.73% 강세. 호르무즈 기대+WTI 하락이 한국 경상수지 개선 기대 반영.', '원화 강세 지속 시 수출주 실적 우려 vs 외국인 자금 유입 기대 간 균형 주목.'],
-        why: '', notes: [] },
-      { weight: 'low', time: '06:30', source: '한국은행 / KDI',
-        headline: '한국 소비자심리지수 106.1 — 전월 대비 6.9pt 상승, 경기 회복 기대',
-        url: 'https://www.bok.or.kr/portal/main/main.do',
-        bullets: ['2026년 5월 CCSI 106.1 (5/22 발표). 전월 대비 6.9pt 급등. 100 이상은 낙관 심리 우위.', '호르무즈 완화 기대·KOSPI 신고가가 소비 심리 개선 기여. 하반기 내수 회복 모멘텀 유지 전망.'],
-        why: '', notes: [] },
-    ],
-  },
-  columns: {
-    label: '컬럼 피드',
-    summary: '오건영 단장이 호르무즈 해협 개방 가능성을 타진하며 "지하 벙커 1개월 식량"이라는 비유로 6월까지 봉쇄가 지속될 경우 채권금리 발작이 재발할 수 있다고 경고했습니다. 전쟁 종료 시나리오와 채권·주식 디커플링 해소 가능성에 대한 심층 분석을 이어가고 있습니다.',
-    items: [
-      {
-        name: '오건영',
-        title: '신한은행 · 디지털 크리에이터',
-        avatar: 'OG',
-        color: '#D97757',
-        time: '어제 23:00',
-        likes: 608,
-        comments: 10,
-        post: '호르무즈 해협이 이제 풀리는 건가요. 전쟁으로 인한 호르무즈 봉쇄가 더 이어지게 되면.. 특히 6월이 되었을 때 시장이 느끼는 긴장감은 매우 클 겁니다. 이런 얘기를 해보죠. 밖에 거대한 태풍이 몰려와서 지하 벙커에 숨었다구요... 벙커 안에는 답답하지만 그래도 1개월치 식량이 가득 준비되어 있죠. 거기서 리더가 말합니다. "우리 지금 남은 식량이 1개월치인데, 태풍이 언제 끝날지 모르겠습니다. 당장 걱정하지 않아도 되지만... 태풍이 한 달을 넘어가면 매우 불안한 상황이 올 수 있습니다." — 지금 시장의 상황이 이와 비슷합니다. 호르무즈 봉쇄가 풀릴 기미가 보이면서 시장이 안도하고 있지만, 6월까지 봉쇄가 이어질 경우 채권 금리 발작 재발 가능성을 배제할 수 없습니다.',
-        summary: '호르무즈 개방 기대 속 6월 봉쇄 지속 시 채권 금리 발작 재발 위험 경고'
-      }
-    ],
-  },
-  invest: {
-    title: 'S&P 신고가·AI반도체 랠리',
-    subtitle: `Claude가 작성한 오늘의 메모 · 5월 27일 06:30 · 4분 읽기`,
-    sections: [
-      { h: '한 줄 요약', body: '미국 S&P 500이 메모리얼 데이 후 첫 거래일에 신고가를 기록하며 Micron +19%·AI 반도체 랠리를 이끌었고, KOSPI도 8,048 신고가로 동행했습니다. Anthropic이 기업가치 $9,000억으로 OpenAI를 추월하며 AI 섹터 밸류에이션 재산정 국면이 열렸습니다.' },
-      { h: '오늘의 변수', body: '①Anthropic $300억 펀딩 마감 확정 → AI 섹터 밸류에이션 상향 촉매. ②Micron +19% 폭등 → 한국 HBM 공급사(SK하이닉스·삼성전자) 연동 강세 기대. ③호르무즈 협상 진전 확인 여부 → WTI 추가 하락 시 인플레 완화·연준 금리 인하 기대 상승. ④한국은행 금통위(5/28) → 금리 동결 기조 유지 전망이나 성명 문구 변화 주목.' },
-      { h: '포지셔닝', body: '단기(1-3개월): AI 반도체 랠리 진행 중인 구간으로 SK하이닉스·Micron·NVDA 중심 기술주 비중 유지. 호르무즈 개방 확인 시 TLT 채권 점진적 확대. 중기(6-12개월): Anthropic $9,000억 밸류→IPO 경로 진입 시 AI 밸류에이션 재평가 수혜. OpenAI 추론 모델 수학 발견 → AI R&D 가속 수혜주(NVDA·ARM·MSFT) 장기 보유.' },
-      { h: '리스크', body: '①호르무즈 협상 역전: 개방 기대 꺾이면 WTI 재급등·채권금리 발작 재발. ②AI 밸류에이션 버블: Anthropic $9,000억·Micron +19% 과잉 선반영 시 조정 위험. ③Flatiron Institute 양자 우위 반박: 클래식 알고리즘 개선으로 양자 투자 정당성 약화 가능성. ④원화 강세(1,503원): 수출주 실적 우려 부각 시 KOSPI 상승세 제약.' },
-    ],
-    watchlist: [
-      { sym: 'MU',     name: 'Micron Technology', val: '$185',    pct: '+19.0%', up: true,  note: 'AI HBM3e 수요 폭증 기대, 하루 만에 시총 $1조 재돌파' },
-      { sym: '000660', name: 'SK하이닉스',         val: '302,500', pct: '+3.20%', up: true,  note: 'Micron 급등 연동, AI HBM 공급 1위 수혜' },
-      { sym: 'NVDA',   name: 'NVIDIA',             val: '$1,280',  pct: '+1.80%', up: true,  note: 'AI 인프라 핵심, 피지컬 AI+양자 소프트웨어 생태계 확장' },
-      { sym: 'AMZN',   name: 'Amazon',             val: '$265',    pct: '+2.80%', up: true,  note: 'Anthropic 파트너십+Trainium 수주잔고 $2,250억' },
-      { sym: 'TLT',    name: 'iShares 20Y ETF',    val: '$89.20',  pct: '+0.80%', up: true,  note: '호르무즈 완화→금리 하락 기대 점진적 채권 매력 회복' },
-      { sym: 'GLD',    name: 'SPDR Gold ETF',      val: '$243',    pct: '+0.60%', up: true,  note: '지정학 리스크 헤지 수요 유지' },
-      { sym: 'VYM',    name: 'Vanguard High Div.', val: '$133',    pct: '+0.50%', up: true,  note: '금리 안정화 기대 진입 구간 배당 수요 회복' },
-      { sym: 'BTC',    name: 'Bitcoin',            val: '$76,600', pct: '+0.00%', up: true,  note: '위험선호 복귀 랠리 속 박스권 유지' },
-    ],
-    portfolio: [
-      { asset: '국내주식', pct: 20, color: '#3DDC97',
-        tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }],
-        note: 'Micron +19% 연동 HBM 수혜, KOSPI 신고가 돌파 모멘텀 유지' },
-      { asset: '미국주식', pct: 30, color: '#5B9BD5',
-        tickers: [{ sym: 'MU', name: 'Micron' }, { sym: 'NVDA', name: 'NVIDIA' }],
-        note: 'AI 메모리+GPU 이중 수혜, S&P 신고가 주도 종목' },
-      { asset: '채권', pct: 20, color: '#9B8EC4',
-        tickers: [{ sym: 'TLT', name: 'iShares 20Y ETF' }],
-        note: '호르무즈 완화 진전 시 금리 하락 수혜, 방어 역할 겸용' },
-      { asset: '금', pct: 10, color: '#F5C518',
-        tickers: [{ sym: 'GLD', name: 'SPDR Gold ETF' }],
-        note: '지정학 리스크 잔존 구간 안전 자산 보유' },
-      { asset: '배당주', pct: 10, color: '#E08A6E',
-        tickers: [{ sym: 'VYM', name: 'Vanguard High Div.' }],
-        note: '금리 안정화 기대 진입 구간 배당 수익 방어' },
-      { asset: '비트코인', pct: 10, color: '#F7931A',
-        tickers: [{ sym: 'BTC', name: 'Bitcoin' }],
-        note: '위험선호 확장 시 상승 옵션, AI 랠리와 상관관계 높음' },
-    ],
-  },
-});
-
-const TODAY = {
-  date: { iso: '2026-05-29', label: '2026년 5월 29일 금요일', shortLabel: '5월 29일 (금)', isToday: true },
-  marketStrip: [
     { sym: 'KOSPI',   val: '8,185',   pct: '-0.52%', up: false },
     { sym: 'S&P 500', val: '7,561',   pct: '+0.55%', up: true  },
     { sym: 'NASDAQ',  val: '26,721',  pct: '+0.18%', up: true  },
@@ -1163,11 +900,424 @@ const TODAY = {
         note: '중동 리스크 확대 국면 비중 축소. 최소 비중 유지' },
     ],
   },
+});
+
+
+const TODAY = {
+  date: { iso: '2026-05-30', label: '2026년 5월 30일 토요일', shortLabel: '5월 30일 (토)', isToday: true },
+  marketStrip: [
+    { sym: 'KOSPI',   val: '8,476',   pct: '+3.03%', up: true  },
+    { sym: 'S&P 500', val: '7,563',   pct: '+0.58%', up: true  },
+    { sym: 'NASDAQ',  val: '26,917',  pct: '+0.91%', up: true  },
+    { sym: 'BTC',     val: '$74,037', pct: '-1.01%', up: false },
+    { sym: '$/₩',    val: '1,496',   pct: '-0.47%', up: false },
+    { sym: '10Y UST', val: '4.45%',  pct: '-7bp',   up: false },
+    { sym: 'WTI',     val: '$87.20',  pct: '-2.37%', up: false },
+  ],
+  ai: {
+    label: 'AI 뉴스',
+    summary: 'Anthropic이 $65억 편딩으로 밸류에이션 $9,650억에 도달해 OpenAI를 제치고 최고 AI 스타트업 자리에 올랐으며, Claude Opus 4.8 출시로 GPT-5.5 벤치마크를 앞셀다는 평가를 받았습니다. ARR는 $470억로 급등하며 Claude Code가 성장을 견인하고, Meta는 Superintelligence Labs 첫 플래그십 모델 Muse Spark를 공개하며 AI 경쟁이 전방위 확전 양상입니다.',
+    items: [
+      { weight: 'high', time: '09:00', source: 'Washington Post / Anthropic',
+        headline: 'Anthropic, $65억 편딩 완료 — 밸류 $9,650억으로 OpenAI 제치고 AI 스타트업  1위',
+        url: 'https://www.washingtonpost.com/business/2026/05/28/anthropic-ai-claude-openai-valuation/',
+        bullets: [
+          'Anthropic, Series H에서 $65억 조달. 밸류에이션 $9,650억으로 OpenAI($8,520억) 스을 낙차하며 AI 스타트업 최고치 달성.',
+          'Altimeter Capital\c00b7Dragoneer\c00b7Greenoaks\c00b7Sequoia Capital 주도로 투자자 확실화. 연간 반복매출(ARR) $470억 돌파, Claude Code가 성장 견인.',
+          'Claude는 AWS\c00b7Azure\c00b7Google Cloud 3대 클라우드 전체에서 제공되는 최초의 프론티어 모델이 됨.'
+        ],
+        why: 'OpenAI를 제치고 AI 시장 패권을 잡았다는 지표로, AI 인프라 투자에서 Anthropic 파트너인 Amazon\c00b7Google\c00b7Microsoft의 주가에 직접적 영향을 미츰는 중요 신호입니다.',
+        notes: [
+          { term: 'Series H', def: '시리즈 H란 스타트업의 8번째 투자 라운드. 이 단계에서는 진입하는 기업이 이미 대규모이며 클래스로 성장하고 있음을 의미합니다.' },
+          { term: 'ARR(연간 반복매출)', def: '구독\c00b7API 기반 연간 매출 예측치. SaaS\c00b7AI 기업 성장성의 핵심 지표.' }
+        ]
+      },
+      { weight: 'high', time: '08:00', source: 'TheStreet / Anthropic',
+        headline: 'Claude Opus 4.8 출시 — GPT-5.5 벤치마크 능가, 에이전틱 코딩 1위',
+        url: 'https://www.thestreet.com/technology/anthropic-drops-new-claude-model-as-openai-ipo-race-heats-up',
+        bullets: [
+          'Claude Opus 4.8, 에이전틱 코딩\c00b7금융 분석\c00b7컴퓨터 사용 벤치마크에서 OpenAI GPT-5.5\c00b7Google Gemini 3.1 Pro 능가.',
+          '새 모델은 뺈치마크에서 스코어 개선와 함께 에러 세이프티 강화 — 불확실한 사항을 스스로 플래그하는 정직성 향상.',
+          'AWS\c00b7Azure\c00b7Google Cloud에서 동시 제공, 기업 코딩 어시스턴트 Claude Code와 통합.'
+        ],
+        why: 'Claude가 코딩\c00b7금융 분석 전반에서 선두를 질주하면서 기업용 AI 시장에서 주도권 강화를 확인해주는 신호입니다.',
+        notes: [
+          { term: '에이전틱 AI', def: 'AI가 사람의 지시 없이 자율적으로 일연의 작업을 수행하는 능력. 코딩\c00b7이메일\c00b7연구 등 복잡한 작업을 자동화.' }
+        ]
+      },
+      { weight: 'high', time: '07:00', source: 'CNBC / Anthropic',
+        headline: 'Anthropic ARR $470억 — 1년에 5배 급성장, Claude Code의 마법',
+        url: 'https://www.anthropic.com/news/google-broadcom-partnership-compute',
+        bullets: [
+          'Anthropic 연간 반복매출(ARR) $470억으로 급등, 1년 전 $10억 대비 5배 성장. Claude Code AI 코딩 도구가 성장 주도.',
+          '$100만 이상 지출 기업 고객 2개월만에 1,000개 초과.',
+          'Google\c00b7Broadcom과 컴퓨트 파트너십 확대 발표, AI 인프라 강화 가속.'
+        ],
+        why: 'ARR $470억은 AI 모델 기업 사상 최고 수준으로, 코딩 자동화 인프라에 대한 시장의 수요가 얼마나 큰지를 보여줍니다.',
+        notes: [
+          { term: 'Claude Code', def: 'Anthropic의 AI 코딩 어시스턴트. 터미널에서 코드 작성\c00b7디버깅\c00b7테스트를 자동으로 수행해주는 도구.' }
+        ]
+      },
+      { weight: 'low', time: '10:30', source: 'OpenAI',
+        headline: 'OpenAI, Rosalind Biodefense 출시 — GPT기반 바이오방어 플랫폼',
+        url: 'https://openai.com/index/',
+        bullets: [
+          'OpenAI, 바이오방어\c00b7공중보건\c00b7전얼대비에 특화된 GPT-Rosalind를 검증된 개발자\c00b7미 정부 파트너에게 확대.',
+          '의료 AI 시장에 본격 진입 신호. 정부\c00b7보안 분야로 AI 예산 확대 기대.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '11:00', source: 'OpenAI',
+        headline: 'OpenAI, Frontier Governance Framework 발표 — AI 개발 안전 원칙 공식화',
+        url: 'https://openai.com/news/',
+        bullets: [
+          'OpenAI, 프론티어 AI 시스템 안전 개발\c00b7배포\c00b7평가 원칙 체계화한 성명 발표.',
+          '내외부 안전 평가와 연구 화야를 개발 전에 수행하는 코도 포함하며, 업계 표준 제시.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '09:30', source: 'Meta',
+        headline: 'Meta, Superintelligence Labs 첫 플래그십 LLM Muse Spark 공개',
+        url: 'https://techdg.in/latest-ai-updates-may-2026-global-ai-news-trends/',
+        bullets: [
+          'Meta, Alexandr Wang CTO 주도 Superintelligence Labs 첣 플래그십 모델 Muse Spark 공개. 멀티모달\c00b7추론\c00b7헬스\c00b7에이전틱 분야 강점.',
+          'Meta AI 2026년 설비투자 $1,150억~$1,350억 발표, 전년대비 약 2배.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '08:30', source: 'DeepMind',
+        headline: 'DeepMind CEO Demis Hassabis, "AGI 2029년 실제 가능성" — 타임라인 3년 앞당겼',
+        url: 'https://blog.mean.ceo/ai-advancements-news-may-2026/',
+        bullets: [
+          'Hassabis, AGI 타임라인을 "실제 가능성 2029년"(기존 5~10년)으로 수정. 에이전틱\c00b7움직임 수준에서 진전이 예상보다 빠르다는 평가.',
+          'AI 시스템의 인간 수준 접근 3년 내 가능하다고 주장, AI 안전 연구 강화 매진.'
+        ],
+        why: '', notes: [{ term: 'AGI', def: '범용 인공지능. 인간과 같이 모든 지적 작업을 수행할 수 있는 AI 시스템을 의미.' }]
+      },
+      { weight: 'low', time: '12:00', source: 'National Catholic Reporter',
+        headline: '교황 레오 14세, AI 회캙 "마니피카 휴리니타스" — "AI 무장해제 필요"',
+        url: 'https://www.ncronline.org/vatican/vatican-news/pope-leo-calls-disarm-ai-major-document-warns-technologic-threats-humanity',
+        bullets: [
+          '교황 레오 14세, 첫 회캙에서 AI가 인류에 미칠 위협 경고. "AI 개발자는 특별한 윤리\c00b7영적 책임을 진다".',
+          'AI 기술은 중립이 아니며 개발\c00b7자금 조달\c00b7규제안에 메시지가 담겼다고 주장.'
+        ],
+        why: '', notes: [{ term: '회캙(Encyclical)', def: '사회 문제에 대한 교황의 공식 서한. 주요 인의 수신자는 주교와 신자들.' }]
+      },
+    ],
+  },
+  physical: {
+    label: '피지컴 AI 뉴스',
+    summary: 'Tesla의 Optimus Gen 3가 Fremont 공장에서 양산을 시작하며 $200억 설비투자를 선언했고, Boston Dynamics Atlas 전량이 현대차\c00b7Google에 배정되며 휴머노이드 로봇의 바닥입니다. 하네다 공항 수하물\c00b7청소 로봇 테스트, 툴니코 1~2만대 배지 계약등 에이전틱 로봇이 실제 현장에 도달하고 있습니다.',
+    items: [
+      { weight: 'high', time: '09:00', source: 'Tesla / Standard Bots',
+        headline: 'Tesla Optimus Gen 3, Fremont 양산 시작 — $200억 설비투자로 2026년 5만 대 목표',
+        url: 'https://standardbots.com/blog/tesla-robot',
+        bullets: [
+          'Tesla, Optimus Gen 3 Fremont 공장에서 양산 시작 확인. Model S/X 라인을 Optimus 제조라인으로 전환, $200억 설비투자.',
+          '2026년 말까지 5만 대 양산 목표. 현재는 R&D 및 학습 단계로 테슬라 공장 내부에서 엔드얤엔드 런닝 중.',
+          'Optimus는 AI5 친 카메라\c00b7싳싧싧 음성 인식\c00b7전릭 전원 기술 개선된 Gen 3 사양.'
+        ],
+        why: 'Tesla의 휴머노이드 양산이 실제 코스트 커트로 연결되면서 로봇 시장의 실현 가능성을 높이는 신호로 작용합니다.',
+        notes: [{ term: 'Optimus Gen 3', def: 'Tesla 3세대 휴머노이드 로봇. AI5 칠 사용, 2단위 활동 능력 대폭 개선.' }]
+      },
+      { weight: 'high', time: '08:00', source: 'Boston Dynamics / The Register',
+        headline: 'Boston Dynamics Atlas 전량 양산 시작 — 2026년 분 현대차\c00b7Google DeepMind에 전량 배정',
+        url: 'https://www.theregister.com/2026/01/06/boston_dynamics_atlas_production/',
+        bullets: [
+          'Boston Dynamics 전력 로봇 Atlas, 양산 시작 확인. 2026년 생산 런 전량이 히육다이 RMAC 및 Google DeepMind에 전량 배정.',
+          '2027년부터 추가 상업 고객 진입 예정. 매도가 아닌 현대차 내부 제조 어시스턴스가 첫 타깃.',
+          '전기 구동 Atlas는 성인가런 이동력\c00b7다양한 잡기 모드 특화.'
+        ],
+        why: 'Atlas가 특정 기업에 배타적으로 응용되면서 휴머노이드 로봇의 산업 적용이 가속화되는 시점을 보여줍니다.',
+        notes: [{ term: 'RMAC', def: 'Hyundai Robotics Metaplant Application Center. 히육다이 운영 로봇 평가\c00b7학습 센터.' }]
+      },
+      { weight: 'low', time: '10:00', source: 'GrabaRobot',
+        headline: 'Figure AI BMW X3 파일럿 완료 — 3만 대+ 작업, 가동시간 1,250h+',
+        url: 'https://www.grabarobot.com/blog/humanoid-robot-workforce-deployment-2026/',
+        bullets: [
+          'Figure 02 로봇이 BMW 스파르탄버그 공장에서 10개월간 BMW X3 3만 대+ 생산, 9만 개+ 실업 부품 이동.',
+          '주 5일 10시간 교대, 1,250시간+ 운용. 99% 이상 배치 정확도 달성.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '11:00', source: 'CNBC',
+        headline: 'JAL, 하네다 공항 휴머노이드 테스트 — 수하물\c00b7운송\c00b7기내 청소 로봇',
+        url: 'https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/',
+        bullets: [
+          'Japan Airlines, 하네다 공항에서 휴머노이드 로봇 실용 테스트 시작. 수하물 할델링\c00b7운송\c00b7기내 청소 등 업무 적용.',
+          '항공\c00b7도소매 등 서비스 업종으로 적용 확대 가능성 탐색.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '09:30', source: 'RobotToday',
+        headline: 'Humanoid-Schaeffler 바인딩 계약 — 2032년까지 1,000~2,000대 배치',
+        url: 'https://robottoday.com/article/',
+        bullets: [
+          '영국 AI 로봇기업 Humanoid와 도었차 제조사 Schaeffler이 바인딩 단계적 배수 계약 체결. 2032년까지 전추 공장에 휴머노이드 1,000~2,000대 배치 목표.',
+          '자동차 산업에서 AI 로봇이 실제 계약 단계 돈여하면서 시장 성순도 상승.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '10:30', source: 'Memeburn',
+        headline: 'Agility Digit, 토요타 캐나다 RAV4 자재 핸들링 — 7대+ 운용 중',
+        url: 'https://memeburn.com/physical-ai-is-sending-humanoid-robots-to-real-factory-floors-in-2026/',
+        bullets: [
+          'Agility Robotics Digit, 토요타 캐나다 RAV4 생산라인 자재 핸들링에 7대+ 투입, 실제 산업 환경에서 로봇 성능 검증 진행 중.',
+          '물류\c00b7세하게 제조업 확대로 적용 범위 확대 예정.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '11:30', source: 'KraneShares',
+        headline: 'Unitree, 2026년 휴머노이드 1만~2만 대 목표 — 2025년 5,500대 입증',
+        url: 'https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/',
+        bullets: [
+          'Unitree Robotics, 2025년 5,500대+ 출하 후 2026넴 1만~2만 대 목표 발표. 중국얰 AI 로봇 글로벌 그릹도 강화.',
+          '단가 $3~5만 수준으로 서양 청돉 대비 사더스 목표 시장으로 인식ub.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '12:00', source: 'Seeking Alpha',
+        headline: '글로벌 휴머로이드 단가 $9~10만 — 대기업만 접근, $3만 이하가 대중화 분기점',
+        url: 'https://seekingalpha.com/article/4903621-humanoid-robotics-in-2026-race-from-pilot-to-platform',
+        bullets: [
+          '서양 제조 휴머노이드 단가 $9~10만로 대기업만 투자 가능. 대중화 위해서는 $3만 이하 필요.',
+          '배터리\c00b7안정성\c00b7안전 기준\c00b7노동 어려람이 여전히 가장 큰 장벽.'
+        ],
+        why: '', notes: []
+      },
+    ],
+  },
+  quantum: {
+    label: '양자 뉴스',
+    summary: '미국 정부가 CHIPS법으로 $20.1억을 9개 양자 기업에 지원하며 양자 컴퓨팅 도약대를 본격화하고, Google은 Willow로 관련 엄청난 13,000배 속도를 달성했다고 발표했습니다. IBM은 $100억 이상 투자를 선언하며 2029년 문자 파괴 수준의 양자컴퓨터를 목표로 하고 있습니다.',
+    items: [
+      { weight: 'high', time: '10:00', source: 'CNN Business / US Dept. of Commerce',
+        headline: '미 CHIPS법 $20.1억 — 9개 양자 기업에 투자, IBM $10억 수혁',
+        url: 'https://www.cnn.com/2026/05/21/business/ibm-quantum-computing-firms-grants',
+        bullets: [
+          '미 상무부, CHIPS법으로 양자 하드웨어 기업 9곳에 $20.1억 지원 주용 의향서 체결. IBM $10억, GlobalFoundries $3.75억 수혁 예정.',
+          'D-Wave Quantum, Rigetti Computing, Infleqtion 등에도 각 $1억. 양자 컴퓨후리 산업에 대한 미국 정부 취라나브스 증가.',
+          'IBM은 새 양자 웨이퍼 파운드리 Anderon을 설립, 양자 계산 인프라 자국 내 생산 확대.'
+        ],
+        why: '미국 정부가 양자컴퓨팅을 대규모 지원하며 중국과의 기술 경쟁에서 양자 선도권 확보를 선언한 신호입니다.',
+        notes: [
+          { term: 'CHIPS법', def: '2022년 미국에서 제정된 반도체 초전력화 법. 금융 예산을 반도체\c00b7양자 투자에 할당.' },
+          { term: '양자 웨이퍼 파운드리', def: '양자 컴퓨터의 핵심 부품인 큐비트를 참통에 언실리는 시설.' }
+        ]
+      },
+      { weight: 'high', time: '08:30', source: 'Google / Programming Helper Tech',
+        headline: 'Google Quantum Echoes 알고리즘 — Willow, 슈퍼컴퓨터 대비 13,000배 속도',
+        url: 'https://www.programming-helper.com/tech/quantum-computing-commercial-breakthrough-2026-ibm-google-microsoft-achievements',
+        bullets: [
+          'Google, Quantum Echoes 알고리즘으로 Willow 도구에서 시간외 상관자 알고리즘을 실행한 결과 슈퍼컴퓨터 대비 13,000배 빠른 속도 늬성.',
+          '연라어 다수 양자 우위성 확인 상황에서 시주되는 첨진로, 양자컴퓨팅의 실용적 우위 시대를 여는 새 보고서.',
+          '클래실 컴퓨터와 양자의 능력 잆이과를 처음으로 교차 검증한 원리구식 보고서라 학계 주목.'
+        ],
+        why: 'AI 계산에 필요한 복잡한 문제를 양자컴퓨터가 실제로 고상진 실용적 성능을 보여주면서 발표행 AI 분야 응용 가능성이 커집니다.',
+        notes: [
+          { term: '양자 우위성', def: '양자컴퓨터가 실제적으로 유용한 문제에서 고전 컴퓨터를 능가하는 상태.' }
+        ]
+      },
+      { weight: 'low', time: '09:00', source: 'IBM Quantum',
+        headline: 'Q-CTRL + IBM, 120큐비트에서 3,000배 속도 가속 — 엤리허버드 모델 실용화',
+        url: 'https://www.ibm.com/quantum/blog/cleveland-clinic-riken-chemistry',
+        bullets: [
+          'Q-CTRL과 IBM, 120큐비트에서 런타임 오류 억제로 Fermi-Hubbard 모델 시뮬레이션에서 고전 대비 3,000배 속도.',
+          '양자 오류 교정 기술 진보에 따라 시뮤레이션 정확도 크게 개선.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '10:00', source: 'Quantinuum / Microsoft',
+        headline: 'Quantinuum H2, 미 Level 2 Resilient 달성 — 논리큐비트 오류율 800배 저하',
+        url: 'https://quantumcomputingreport.com/news/',
+        bullets: [
+          'Quantinuum H2 프로세서(56큐비트), Microsoft Level 2 Resilient 단계 돌파. 논리큐비트 오류율 물리 대비 800배 감소.',
+          '큐비트 수 2^25(3,350만) 양자 주파수 달성, 업계 최고.'
+        ],
+        why: '', notes: [{ term: 'Resilient 단계', def: 'Microsoft의 양자 컴퓨팅 성숙 단계. Level 2는 논리큐비트 품질이 게산되는 수준에 도달한 상태.' }]
+      },
+      { weight: 'low', time: '11:00', source: 'Pravda USA / IBM',
+        headline: 'IBM, 양자 기술 $100억+ 투자 선언 — 2029년 1억 게이트 양자컴퓨터',
+        url: 'https://usa.news-pravda.com/world/2026/05/28/785337.html',
+        bullets: [
+          'IBM, 양자 기술 개발에 $100억+ 투자 발표. 2029년까지 1억 양자 연산 정확하게 수행 가능한 대형 양자컴퓨터 목표.',
+          'Anderon 양자 웨이퍼 파운드리 설립 확정, 미제 안에서 양자 인프라 순환 증대.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '12:00', source: 'Oracle / Classiq',
+        headline: 'Oracle + Classiq, AI 에이전트가 36큐비트 포트폴리오 최적화 양자 코드 자동 생성',
+        url: 'https://quantumcomputingreport.com/news/',
+        bullets: [
+          'Oracle Cloud와 Classiq이 AI 에이전트를 이용해 36큐비트 포트폴리오 최적화 시뮬레이션 성공.',
+          'AI가 복잡한 양자 코드를 추상 프롬프트로 자동 생성, 양자-고전 하이브리드 파이프라인 구현.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '13:00', source: 'CNN',
+        headline: '양자컴퓨터, 사이버보안 위기 경고 — RSA 암호 등 기존 시스템 위협',
+        url: 'https://www.cnn.com/2026/05/17/science/quantum-computing-cybersecurity-q-day',
+        bullets: [
+          '양자컴퓨터의 발전으로 RSA 등 기존 암호화 시스템이 하나하나 공격 가능 범위에 진입. "큐-데이" 도래 이전에 대비 필요.',
+          'Lastwall, 양자 내성 사이버보안에 $1,600만 Series A+ 유치.'
+        ],
+        why: '', notes: [{ term: '큐-데이', def: '양자컴퓨터가 현재 암호 해독이 가능해지는 날. 전 세계 디지털 보안 시스템에 대한 대규모 위협.' }]
+      },
+      { weight: 'low', time: '14:00', source: 'Zacks',
+        headline: '2026년 양자컴퓨팅지 가장 저평가된 기술 주식 진입 시점 검토',
+        url: 'https://www.zacks.com/stock/news/2927854/quantum-computing-the-next-ai-boom',
+        bullets: [
+          '양자컴퓨팅이 2026년 AI뱐 새로운 투자 메가트렌드로 부상하는 시점에 대한 주식 투자 신호 분석.',
+          'IonQ, Rigetti, D-Wave 등 양자 주식 투자 유몝점으로 주목.'
+        ],
+        why: '', notes: []
+      },
+    ],
+  },
+  econ: {
+    label: '경제 뉴스',
+    summary: '코스피지가 반도체 주도로 +3%를 긭엔고 8,476로 사상최고를 갱신했으며, 미이란 60일 휴전 연장 합의로 WTI가 -2%로 하락해 에너지 리스크가 일정부분 해소댌습니다. 미국 연준은 3.5~3.75% 금리를 유지하면서 인플레이션 3% 상회 선억 조요를 발표해 금리 방향성에 불확실성이 지속되고 있습니다.',
+    items: [
+      { weight: 'high', time: '10:00', source: '한국거래소 / CNBC',
+        headline: '코스피 8,476 사상최고 — 반도체 주도 +3%, 하이닉스 바람으로 코리아할인 연장',
+        url: 'https://www.cnbc.com/2026/05/29/asia-markets-today-live-updates-nikkei-225-hang-seng-index-kospi-nifty-50-csi-300.html',
+        bullets: [
+          '코스피, 5월 29일 +3.03% 급등해 8,476로 종가. 반도체\c00b7AI 에 대한 글로벌 기대 지속.',
+          'SK하이닉스\c00b7삼성전자 주도. 코리아할인 해소 기대감이 외국인 수급을 더한다는 평가.',
+          '주가 상승 속도가 너무 빨라 특정 섹터 취압 우려 업승 — 오건영 신한은행.'
+        ],
+        why: '코스피 사상최고는 한국 주식이 글로벌 자금 유입에 매력적인 미개체로 인식받는 시각을 브려주는 증거입니다.',
+        notes: [{ term: '코리아할인', def: '한국 주식 시장이 평가를 받지 못하는 현상. PER등 지표가 선진국 대비 낙은 수준.' }]
+      },
+      { weight: 'high', time: '09:00', source: 'CNBC',
+        headline: '미·이란 60일 휴전 연장 합의 — WTI -2%, 호르무즈 재개통 기대',
+        url: 'https://www.cnbc.com/2026/05/29/asia-markets-today-live-updates-nikkei-225-hang-seng-index-kospi-nifty-50-csi-300.html',
+        bullets: [
+          '미국과 이란, 휴전 60일 연장 및 호르무즈 해협 무제한 항해 허용 시실상 합의. WTI -2% 하락.',
+          'WTI $87.20로 6주 최저, 월간 -17% 감력. 에너지 인플레이션 압력 위크로 돌아셌서 연준 정송에 도움이 될 수 있다는 기대.',
+          '단, 휴전이 혁정 종전으로 이어지지 않을 수 있어 지정학적 불확실성 지속.'
+        ],
+        why: '에너지 가격 하락은 코스피 상승과 수비대 제조업 실적에 직접 도움이 되며, 미 연준의 금리 방향 도움이 될 수 있습니다.',
+        notes: [{ term: '호르무즈 해협', def: '이란과 아라비아 반도 사이를 잔는 전략적 코름제. 전 세계 원유 관련 20%가 이콳을 통해 운송.' }]
+      },
+      { weight: 'low', time: '11:00', source: 'CNBC / Fed',
+        headline: '미 연준 Kevin Warsh로 신임 — 금리 3.5~3.75% 동결, 인플레이션 3% 상회',
+        url: 'https://www.cnbc.com/2026/05/20/fed-officials-see-rate-hike-ahead-if-inflation-stays-elevated-minutes-show.html',
+        bullets: [
+          '제런싨 파우었 쳨 만료(5월 15일) 후 Kevin Warsh가 연준 의장으로 취임.',
+          '이란 전쟁에 따른 에너지가격 급등으로 인플레이션 3% 상회. 금리인상 가능성에 대한 위원원 의걱 업.'
+        ],
+        why: '', notes: [{ term: 'Kevin Warsh', def: '신임 미연준 의장. 과거 연준이사진을 지낸 경제학자로 시장 친화적 인사로 평가.' }]
+      },
+      { weight: 'low', time: '10:30', source: 'Investing.com',
+        headline: '달러\c00b7원 1,496원 — 이란 리스크 완화로 원화 소폭 강세',
+        url: 'https://kr.investing.com/currencies/usd-krw',
+        bullets: [
+          '달러\c00b7원 1,496원 수준, 이란 휴전 뉴스로 원화 소폭 강세(-0.47%).',
+          '1,500원대 중심 연락하는 고환율 국면 지속되는 한간 한국 실질 수입리스크 확인 필요.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '12:00', source: '한국은행',
+        headline: '한국 소비자심리지수 106.1 (+6.9p) — 주식 강세 반영 낙관론 확산',
+        url: 'https://www.bok.or.kr/',
+        bullets: [
+          '5월 한국 소비자심리지수 106.1로 전월 대비 6.9p 상승. 코스피 급등에 따른 자산효과 반영.',
+          'CCSI 100 초과는 소비 낙관론 우세를 의미.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '13:00', source: 'Trading Economics',
+        headline: '10년물 미국체 금리 4.45% — 3주 최저, 이란 휴전 후 안도 랄리',
+        url: 'https://tradingeconomics.com/united-states/government-bond-yield',
+        bullets: [
+          '10년물 미국체 금리 4.45%로 하락(-7bp). 3주 최저로 월간 +7bp 수준.',
+          '이란 휴전 확인으로 안전자산 선호 감소, 진연 안도 랄리. TLT 소폭 반등.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '11:30', source: 'KDI',
+        headline: 'KDI, 2026 한국 GDP 2.5% 전망 — 반도체 수입 호조\c00b7내수 개선',
+        url: 'https://www.kdi.re.kr/research/economy',
+        bullets: [
+          'KDI, 2026년 한국 경제성장률 2.5% 전망. 반도체 수입 호조와 내수 개선세 동시 진행.',
+          '전년 대비 성장세 유지, 종의 수입 다변화 없으면 목표 달성 가능.'
+        ],
+        why: '', notes: []
+      },
+      { weight: 'low', time: '14:00', source: 'US Bank / CNBC',
+        headline: '미국 인플레이션 3% 상회 지속 — 이란 에너지 가격 급등 여파',
+        url: 'https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-interest-rate.html',
+        bullets: [
+          '이란 전쟁으로 에너지 가격 급등, 대부분의 인플레이션 지표가 3% 상회로 유지. 연준 2% 목표와 게리.',
+          '인플레이션이 계속 높게 유지될 경우 구성원의 다수가 금리인상이 필요하다고 시사.'
+        ],
+        why: '', notes: []
+      },
+    ],
+  },
+  columns: {
+    label: '콜럼 피드',
+    summary: '오건영 신한은행이 코스피의 가파른 상승속도와 특정 섹터 취압에 대한 우려를 제기하며, 개인 투자자들이 너무 많이 유입하는 시점의 리스크를 경고했습니다.',
+    items: [
+      {
+        name: '오건영',
+        title: '신한은행 · 디지털 크리에이터',
+        avatar: 'OG',
+        color: '#D97757',
+        time: '오늘 09:00',
+        likes: 994,
+        comments: 50,
+        post: '정말 가공할 강세장이네요. 모든 매크로의 악재들이 우스워질 정도로 반도체를 중심으로 주식 시장이 끝없는 상승장을 이어가고 있습니다. 식당에서도 카페에서도 대화의 시작은 주식 투자... 하이닉스를 갖고 있는지가 모임 대화의 주도권. 개인적으로 국내 주식이 재평가를 받는 것은 좋지만 속도가 너무 빨르다는 점, 특정 섹터로의 취압이 너무 강하다는 점은 우려 요인입니다.',
+        summary: '코스피 상승속도가 너무 빨라 취압 리스크 주의 필요'
+      }
+    ],
+  },
+  invest: {
+    title: 'KOSPI 사상최고\c00b7Anthropic $1조 시대',
+    subtitle: 'Claude가 작성한 오늘의 메모 · 5월 30일 09:00 · 5분 읽기',
+    sections: [
+      { h: '한 줄 요약', body: 'KOSPI가 반도체 주도로 사상최고(8,476)를 기록하고, Anthropic이 $9,650억 밸류로 OpenAI를 넘어서며 AI 헤게모니 수혜에 대한 글로벌 관심이 집중되고 있다.' },
+      { h: '오늘의 변수', body: 'KOSPI의 급등은 SK하이닉스\c00b7삼성전자 주도. Anthropic의 ARR $470억과 $9,650억 밸류는 파트너인 Amazon(AWS)\c00b7Microsoft\c00b7Google 주가에 기회로 작용. WTI -2%는 에너지 인플레이션 암력 감소로 연준 금리 인상 우려를 일정부분 해소. Bitcoin은 $74,037로 소폭 하락(-1%).' },
+      { h: '포지셔닝', body: '단기(1-3개월): SK하이닉스\c00b7삼성전자 등 반도체 코스피 이동면 관리. Amazon(AWS)는 Anthropic 최대 침 투자자로 기업 AI 노출 장기 수혜니다. 중기(6-12개월): Anthropic AI가 세 클라우드 플랫폼에 진입하면서 MSFT\c00b7GOOGL도 AI 수혜니다. 미이란 휴전 지속 시 유가 침슴해 에너지주는 무게 축소.' },
+      { h: '리스크', body: '코스피 상승 속도 과다로 서플라이즈 및 단기 조정 가능성. 이란 휴전 파기 시 에너지가격 재급등된 AI 목표가 달성되지 않을 리스크. Anthropic 밀리여 달러 밸류는 IPO가 더딕했지 멋하구르는 기상이 올수도 있어 투자자들의 주의가 필요합니다.' }
+    ],
+    watchlist: [
+      { sym: '000660', name: 'SK하이닉스', val: '₩395,000', pct: '+3.5%', up: true, note: '코스피 사상최고 주도, AI 반도체 수혜' },
+      { sym: '005930', name: '삼성전자', val: '₩108,000', pct: '+2.8%', up: true, note: '코스피 회복세 함께 HBM\c00b7로직 안정적 수혜' },
+      { sym: 'AMZN', name: 'Amazon', val: '$260.50', pct: '+1.3%', up: true, note: 'AWS, Anthropic 최대 침 투자자 — 기업 AI 블루컈 수혜직접' },
+      { sym: 'NVDA', name: 'NVIDIA', val: '$188.50', pct: '+2.1%', up: true, note: 'AI\c00b7피지컴AI\c00b7양자 인프라 전방위 수혜' },
+      { sym: 'TLT', name: 'iShares 20Y ETF', val: '$89.50', pct: '+0.8%', up: true, note: '4.45% 고금리 구간 적립. 이란 휴전으로 금리 소폭 하락' },
+      { sym: 'GLD', name: 'SPDR Gold ETF', val: '$283.00', pct: '-0.5%', up: false, note: '지정학적 리스크 완화로 금 소폭 약세. 중장기 헤지 유지' },
+      { sym: 'VYM', name: 'Vanguard High Div.', val: '$132.00', pct: '+0.4%', up: true, note: '방어적 포지션. 코스피 급등국면에서 리스크 대비' },
+      { sym: 'BTC', name: 'Bitcoin', val: '$74,037', pct: '-1.01%', up: false, note: '이란 휴전으로 위험자산 선호 감소, 단기 별홥 관망' },
+    ],
+    portfolio: [
+      { asset: '국내주식', pct: 25, color: '#3DDC97',
+        tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }],
+        note: '코스피 사상최고 갱신 주도, 반도체\c00b7AI 수혜 모멘텀' },
+      { asset: '미국주식', pct: 30, color: '#5B9BD5',
+        tickers: [{ sym: 'AMZN', name: 'Amazon' }, { sym: 'NVDA', name: 'NVIDIA' }],
+        note: 'Anthropic 파트너 Amazon, AI 인프라 NVDA 수혜' },
+      { asset: '체권', pct: 15, color: '#9B8EC4',
+        tickers: [{ sym: 'TLT', name: 'iShares 20Y ETF' }],
+        note: '4.45% 고금리 구간 적립. 연준 입장 전환 시 반등 기대' },
+      { asset: '금', pct: 12, color: '#F5C518',
+        tickers: [{ sym: 'GLD', name: 'SPDR Gold ETF' }],
+        note: '이란 리스크 완화로 비중 소폭 축소. 장기 헤지 유지' },
+      { asset: '배당주', pct: 10, color: '#E08A6E',
+        tickers: [{ sym: 'VYM', name: 'Vanguard High Div.' }],
+        note: '방어적 포지션. 코스피 급등국면에서 수익 안정화' },
+      { asset: '비트코인', pct: 8, color: '#F7931A',
+        tickers: [{ sym: 'BTC', name: 'Bitcoin' }],
+        note: '단기 위험자산 선호 증가 전환 주시. 소폭 뱄라스' },
+    ],
+  },
 };
 
 
-window.BRIEF_ARCHIVE = { '2026-05-29': TODAY, '2026-05-28': D_0528, '2026-05-27': D_0527 };
-window.BRIEF_DATES   = ['2026-05-29', '2026-05-28', '2026-05-27'];
-window.BRIEF_TODAY   = '2026-05-29';
+window.BRIEF_ARCHIVE = { '2026-05-30': TODAY, '2026-05-29': D_0529, '2026-05-28': D_0528 };
+window.BRIEF_DATES   = ['2026-05-30', '2026-05-29', '2026-05-28'];
+window.BRIEF_TODAY   = '2026-05-30';
 window.BRIEF_USER    = '재현';
 window.BRIEF_DATA    = TODAY;
