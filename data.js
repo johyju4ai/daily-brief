@@ -916,17 +916,17 @@ const TODAY = {
   ],
   ai: {
     label: 'AI 뉴스',
-    summary: 'Anthropic이 $65억 편딩으로 밸류에이션 $9,650억에 도달해 OpenAI를 제치고 최고 AI 스타트업 자리에 올랐으며, Claude Opus 4.8 출시로 GPT-5.5 벤치마크를 앞셀다는 평가를 받았습니다. ARR는 $470억로 급등하며 Claude Code가 성장을 견인하고, Meta는 Superintelligence Labs 첫 플래그십 모델 Muse Spark를 공개하며 AI 경쟁이 전방위 확전 양상입니다.',
+    summary: 'Anthropic이 $65억 펀딩으로 밸류에이션 $9,650억에 도달해 OpenAI를 제치고 최고 AI 스타트업 자리에 올랐으며, Claude Opus 4.8 출시로 GPT-5.5 벤치마크를 앞선다는 평가를 받았습니다. ARR는 $470억로 급등하며 Claude Code가 성장을 견인하고, Meta는 Superintelligence Labs 첫 플래그십 모델 Muse Spark를 공개하며 AI 경쟁이 전방위 확전 양상입니다.',
     items: [
       { weight: 'high', time: '09:00', source: 'Washington Post / Anthropic',
-        headline: 'Anthropic, $65억 편딩 완료 — 밸류 $9,650억으로 OpenAI 제치고 AI 스타트업  1위',
+        headline: 'Anthropic, $65억 펀딩 완료 — 밸류 $9,650억으로 OpenAI 제치고 AI 스타트업  1위',
         url: 'https://www.washingtonpost.com/business/2026/05/28/anthropic-ai-claude-openai-valuation/',
         bullets: [
           'Anthropic, Series H에서 $65억 조달. 밸류에이션 $9,650억으로 OpenAI($8,520억) 스을 낙차하며 AI 스타트업 최고치 달성.',
           'Altimeter Capital·Dragoneer·Greenoaks·Sequoia Capital 주도로 투자자 확실화. 연간 반복매출(ARR) $470억 돌파, Claude Code가 성장 견인.',
           'Claude는 AWS·Azure·Google Cloud 3대 클라우드 전체에서 제공되는 최초의 프론티어 모델이 됨.'
         ],
-        why: 'OpenAI를 제치고 AI 시장 패권을 잡았다는 지표로, AI 인프라 투자에서 Anthropic 파트너인 Amazon·Google·Microsoft의 주가에 직접적 영향을 미츰는 중요 신호입니다.',
+        why: 'OpenAI를 제치고 AI 시장 패권을 잡았다는 지표로, AI 인프라 투자에서 Anthropic 파트너인 Amazon·Google·Microsoft의 주가에 직접적 영향을 미치는 중요 신호입니다.',
         notes: [
           { term: 'Series H', def: '시리즈 H란 스타트업의 8번째 투자 라운드. 이 단계에서는 진입하는 기업이 이미 대규모이며 클래스로 성장하고 있음을 의미합니다.' },
           { term: 'ARR(연간 반복매출)', def: '구독·API 기반 연간 매출 예측치. SaaS·AI 기업 성장성의 핵심 지표.' }
@@ -980,7 +980,7 @@ const TODAY = {
         headline: 'Meta, Superintelligence Labs 첫 플래그십 LLM Muse Spark 공개',
         url: 'https://techdg.in/latest-ai-updates-may-2026-global-ai-news-trends/',
         bullets: [
-          'Meta, Alexandr Wang CTO 주도 Superintelligence Labs 첣 플래그십 모델 Muse Spark 공개. 멀티모달·추론·헬스·에이전틱 분야 강점.',
+          'Meta, Alexandr Wang CTO 주도 Superintelligence Labs 첫 플래그십 모델 Muse Spark 공개. 멀티모달·추론·헬스·에이전틱 분야 강점.',
           'Meta AI 2026년 설비투자 $1,150억~$1,350억 발표, 전년대비 약 2배.'
         ],
         why: '', notes: []
@@ -995,13 +995,13 @@ const TODAY = {
         why: '', notes: [{ term: 'AGI', def: '범용 인공지능. 인간과 같이 모든 지적 작업을 수행할 수 있는 AI 시스템을 의미.' }]
       },
       { weight: 'low', time: '12:00', source: 'National Catholic Reporter',
-        headline: '교황 레오 14세, AI 회캙 "마니피카 휴리니타스" — "AI 무장해제 필요"',
+        headline: '교황 레오 14세, AI 회칙 "마니피카 휴리니타스" — "AI 무장해제 필요"',
         url: 'https://www.ncronline.org/vatican/vatican-news/pope-leo-calls-disarm-ai-major-document-warns-technologic-threats-humanity',
         bullets: [
-          '교황 레오 14세, 첫 회캙에서 AI가 인류에 미칠 위협 경고. "AI 개발자는 특별한 윤리·영적 책임을 진다".',
+          '교황 레오 14세, 첫 회칙에서 AI가 인류에 미칠 위협 경고. "AI 개발자는 특별한 윤리·영적 책임을 진다".',
           'AI 기술은 중립이 아니며 개발·자금 조달·규제안에 메시지가 담겼다고 주장.'
         ],
-        why: '', notes: [{ term: '회캙(Encyclical)', def: '사회 문제에 대한 교황의 공식 서한. 주요 인의 수신자는 주교와 신자들.' }]
+        why: '', notes: [{ term: '회칙(Encyclical)', def: '사회 문제에 대한 교황의 공식 서한. 주요 인의 수신자는 주교와 신자들.' }]
       },
     ],
   },
@@ -1015,10 +1015,10 @@ const TODAY = {
         bullets: [
           'Tesla, Optimus Gen 3 Fremont 공장에서 양산 시작 확인. Model S/X 라인을 Optimus 제조라인으로 전환, $200억 설비투자.',
           '2026년 말까지 5만 대 양산 목표. 현재는 R&D 및 학습 단계로 테슬라 공장 내부에서 엔드얤엔드 런닝 중.',
-          'Optimus는 AI5 친 카메라·싳싧싧 음성 인식·전릭 전원 기술 개선된 Gen 3 사양.'
+          'Optimus는 AI5 칩·카메라·음성 인식·전력 효율 기술 개선된 Gen 3 사양.'
         ],
         why: 'Tesla의 휴머노이드 양산이 실제 코스트 커트로 연결되면서 로봇 시장의 실현 가능성을 높이는 신호로 작용합니다.',
-        notes: [{ term: 'Optimus Gen 3', def: 'Tesla 3세대 휴머노이드 로봇. AI5 칠 사용, 2단위 활동 능력 대폭 개선.' }]
+        notes: [{ term: 'Optimus Gen 3', def: 'Tesla 3세대 휴머노이드 로봇. AI5 칩 사용, 2단위 활동 능력 대폭 개선.' }]
       },
       { weight: 'high', time: '08:00', source: 'Boston Dynamics / The Register',
         headline: 'Boston Dynamics Atlas 전량 양산 시작 — 2026년 분 현대차·Google DeepMind에 전량 배정',
