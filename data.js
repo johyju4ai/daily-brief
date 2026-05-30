@@ -923,26 +923,26 @@ const TODAY = {
         url: 'https://www.washingtonpost.com/business/2026/05/28/anthropic-ai-claude-openai-valuation/',
         bullets: [
           'Anthropic, Series H에서 $65억 조달. 밸류에이션 $9,650억으로 OpenAI($8,520억) 스을 낙차하며 AI 스타트업 최고치 달성.',
-          'Altimeter Capital\c00b7Dragoneer\c00b7Greenoaks\c00b7Sequoia Capital 주도로 투자자 확실화. 연간 반복매출(ARR) $470억 돌파, Claude Code가 성장 견인.',
-          'Claude는 AWS\c00b7Azure\c00b7Google Cloud 3대 클라우드 전체에서 제공되는 최초의 프론티어 모델이 됨.'
+          'Altimeter Capital·Dragoneer·Greenoaks·Sequoia Capital 주도로 투자자 확실화. 연간 반복매출(ARR) $470억 돌파, Claude Code가 성장 견인.',
+          'Claude는 AWS·Azure·Google Cloud 3대 클라우드 전체에서 제공되는 최초의 프론티어 모델이 됨.'
         ],
-        why: 'OpenAI를 제치고 AI 시장 패권을 잡았다는 지표로, AI 인프라 투자에서 Anthropic 파트너인 Amazon\c00b7Google\c00b7Microsoft의 주가에 직접적 영향을 미츰는 중요 신호입니다.',
+        why: 'OpenAI를 제치고 AI 시장 패권을 잡았다는 지표로, AI 인프라 투자에서 Anthropic 파트너인 Amazon·Google·Microsoft의 주가에 직접적 영향을 미츰는 중요 신호입니다.',
         notes: [
           { term: 'Series H', def: '시리즈 H란 스타트업의 8번째 투자 라운드. 이 단계에서는 진입하는 기업이 이미 대규모이며 클래스로 성장하고 있음을 의미합니다.' },
-          { term: 'ARR(연간 반복매출)', def: '구독\c00b7API 기반 연간 매출 예측치. SaaS\c00b7AI 기업 성장성의 핵심 지표.' }
+          { term: 'ARR(연간 반복매출)', def: '구독·API 기반 연간 매출 예측치. SaaS·AI 기업 성장성의 핵심 지표.' }
         ]
       },
       { weight: 'high', time: '08:00', source: 'TheStreet / Anthropic',
         headline: 'Claude Opus 4.8 출시 — GPT-5.5 벤치마크 능가, 에이전틱 코딩 1위',
         url: 'https://www.thestreet.com/technology/anthropic-drops-new-claude-model-as-openai-ipo-race-heats-up',
         bullets: [
-          'Claude Opus 4.8, 에이전틱 코딩\c00b7금융 분석\c00b7컴퓨터 사용 벤치마크에서 OpenAI GPT-5.5\c00b7Google Gemini 3.1 Pro 능가.',
+          'Claude Opus 4.8, 에이전틱 코딩·금융 분석·컴퓨터 사용 벤치마크에서 OpenAI GPT-5.5·Google Gemini 3.1 Pro 능가.',
           '새 모델은 뺈치마크에서 스코어 개선와 함께 에러 세이프티 강화 — 불확실한 사항을 스스로 플래그하는 정직성 향상.',
-          'AWS\c00b7Azure\c00b7Google Cloud에서 동시 제공, 기업 코딩 어시스턴트 Claude Code와 통합.'
+          'AWS·Azure·Google Cloud에서 동시 제공, 기업 코딩 어시스턴트 Claude Code와 통합.'
         ],
-        why: 'Claude가 코딩\c00b7금융 분석 전반에서 선두를 질주하면서 기업용 AI 시장에서 주도권 강화를 확인해주는 신호입니다.',
+        why: 'Claude가 코딩·금융 분석 전반에서 선두를 질주하면서 기업용 AI 시장에서 주도권 강화를 확인해주는 신호입니다.',
         notes: [
-          { term: '에이전틱 AI', def: 'AI가 사람의 지시 없이 자율적으로 일연의 작업을 수행하는 능력. 코딩\c00b7이메일\c00b7연구 등 복잡한 작업을 자동화.' }
+          { term: '에이전틱 AI', def: 'AI가 사람의 지시 없이 자율적으로 일연의 작업을 수행하는 능력. 코딩·이메일·연구 등 복잡한 작업을 자동화.' }
         ]
       },
       { weight: 'high', time: '07:00', source: 'CNBC / Anthropic',
@@ -951,19 +951,19 @@ const TODAY = {
         bullets: [
           'Anthropic 연간 반복매출(ARR) $470억으로 급등, 1년 전 $10억 대비 5배 성장. Claude Code AI 코딩 도구가 성장 주도.',
           '$100만 이상 지출 기업 고객 2개월만에 1,000개 초과.',
-          'Google\c00b7Broadcom과 컴퓨트 파트너십 확대 발표, AI 인프라 강화 가속.'
+          'Google·Broadcom과 컴퓨트 파트너십 확대 발표, AI 인프라 강화 가속.'
         ],
         why: 'ARR $470억은 AI 모델 기업 사상 최고 수준으로, 코딩 자동화 인프라에 대한 시장의 수요가 얼마나 큰지를 보여줍니다.',
         notes: [
-          { term: 'Claude Code', def: 'Anthropic의 AI 코딩 어시스턴트. 터미널에서 코드 작성\c00b7디버깅\c00b7테스트를 자동으로 수행해주는 도구.' }
+          { term: 'Claude Code', def: 'Anthropic의 AI 코딩 어시스턴트. 터미널에서 코드 작성·디버깅·테스트를 자동으로 수행해주는 도구.' }
         ]
       },
       { weight: 'low', time: '10:30', source: 'OpenAI',
         headline: 'OpenAI, Rosalind Biodefense 출시 — GPT기반 바이오방어 플랫폼',
         url: 'https://openai.com/index/',
         bullets: [
-          'OpenAI, 바이오방어\c00b7공중보건\c00b7전얼대비에 특화된 GPT-Rosalind를 검증된 개발자\c00b7미 정부 파트너에게 확대.',
-          '의료 AI 시장에 본격 진입 신호. 정부\c00b7보안 분야로 AI 예산 확대 기대.'
+          'OpenAI, 바이오방어·공중보건·전얼대비에 특화된 GPT-Rosalind를 검증된 개발자·미 정부 파트너에게 확대.',
+          '의료 AI 시장에 본격 진입 신호. 정부·보안 분야로 AI 예산 확대 기대.'
         ],
         why: '', notes: []
       },
@@ -971,7 +971,7 @@ const TODAY = {
         headline: 'OpenAI, Frontier Governance Framework 발표 — AI 개발 안전 원칙 공식화',
         url: 'https://openai.com/news/',
         bullets: [
-          'OpenAI, 프론티어 AI 시스템 안전 개발\c00b7배포\c00b7평가 원칙 체계화한 성명 발표.',
+          'OpenAI, 프론티어 AI 시스템 안전 개발·배포·평가 원칙 체계화한 성명 발표.',
           '내외부 안전 평가와 연구 화야를 개발 전에 수행하는 코도 포함하며, 업계 표준 제시.'
         ],
         why: '', notes: []
@@ -980,7 +980,7 @@ const TODAY = {
         headline: 'Meta, Superintelligence Labs 첫 플래그십 LLM Muse Spark 공개',
         url: 'https://techdg.in/latest-ai-updates-may-2026-global-ai-news-trends/',
         bullets: [
-          'Meta, Alexandr Wang CTO 주도 Superintelligence Labs 첣 플래그십 모델 Muse Spark 공개. 멀티모달\c00b7추론\c00b7헬스\c00b7에이전틱 분야 강점.',
+          'Meta, Alexandr Wang CTO 주도 Superintelligence Labs 첣 플래그십 모델 Muse Spark 공개. 멀티모달·추론·헬스·에이전틱 분야 강점.',
           'Meta AI 2026년 설비투자 $1,150억~$1,350억 발표, 전년대비 약 2배.'
         ],
         why: '', notes: []
@@ -989,7 +989,7 @@ const TODAY = {
         headline: 'DeepMind CEO Demis Hassabis, "AGI 2029년 실제 가능성" — 타임라인 3년 앞당겼',
         url: 'https://blog.mean.ceo/ai-advancements-news-may-2026/',
         bullets: [
-          'Hassabis, AGI 타임라인을 "실제 가능성 2029년"(기존 5~10년)으로 수정. 에이전틱\c00b7움직임 수준에서 진전이 예상보다 빠르다는 평가.',
+          'Hassabis, AGI 타임라인을 "실제 가능성 2029년"(기존 5~10년)으로 수정. 에이전틱·움직임 수준에서 진전이 예상보다 빠르다는 평가.',
           'AI 시스템의 인간 수준 접근 3년 내 가능하다고 주장, AI 안전 연구 강화 매진.'
         ],
         why: '', notes: [{ term: 'AGI', def: '범용 인공지능. 인간과 같이 모든 지적 작업을 수행할 수 있는 AI 시스템을 의미.' }]
@@ -998,8 +998,8 @@ const TODAY = {
         headline: '교황 레오 14세, AI 회캙 "마니피카 휴리니타스" — "AI 무장해제 필요"',
         url: 'https://www.ncronline.org/vatican/vatican-news/pope-leo-calls-disarm-ai-major-document-warns-technologic-threats-humanity',
         bullets: [
-          '교황 레오 14세, 첫 회캙에서 AI가 인류에 미칠 위협 경고. "AI 개발자는 특별한 윤리\c00b7영적 책임을 진다".',
-          'AI 기술은 중립이 아니며 개발\c00b7자금 조달\c00b7규제안에 메시지가 담겼다고 주장.'
+          '교황 레오 14세, 첫 회캙에서 AI가 인류에 미칠 위협 경고. "AI 개발자는 특별한 윤리·영적 책임을 진다".',
+          'AI 기술은 중립이 아니며 개발·자금 조달·규제안에 메시지가 담겼다고 주장.'
         ],
         why: '', notes: [{ term: '회캙(Encyclical)', def: '사회 문제에 대한 교황의 공식 서한. 주요 인의 수신자는 주교와 신자들.' }]
       },
@@ -1007,7 +1007,7 @@ const TODAY = {
   },
   physical: {
     label: '피지컴 AI 뉴스',
-    summary: 'Tesla의 Optimus Gen 3가 Fremont 공장에서 양산을 시작하며 $200억 설비투자를 선언했고, Boston Dynamics Atlas 전량이 현대차\c00b7Google에 배정되며 휴머노이드 로봇의 바닥입니다. 하네다 공항 수하물\c00b7청소 로봇 테스트, 툴니코 1~2만대 배지 계약등 에이전틱 로봇이 실제 현장에 도달하고 있습니다.',
+    summary: 'Tesla의 Optimus Gen 3가 Fremont 공장에서 양산을 시작하며 $200억 설비투자를 선언했고, Boston Dynamics Atlas 전량이 현대차·Google에 배정되며 휴머노이드 로봇의 바닥입니다. 하네다 공항 수하물·청소 로봇 테스트, 툴니코 1~2만대 배지 계약등 에이전틱 로봇이 실제 현장에 도달하고 있습니다.',
     items: [
       { weight: 'high', time: '09:00', source: 'Tesla / Standard Bots',
         headline: 'Tesla Optimus Gen 3, Fremont 양산 시작 — $200억 설비투자로 2026년 5만 대 목표',
@@ -1015,21 +1015,21 @@ const TODAY = {
         bullets: [
           'Tesla, Optimus Gen 3 Fremont 공장에서 양산 시작 확인. Model S/X 라인을 Optimus 제조라인으로 전환, $200억 설비투자.',
           '2026년 말까지 5만 대 양산 목표. 현재는 R&D 및 학습 단계로 테슬라 공장 내부에서 엔드얤엔드 런닝 중.',
-          'Optimus는 AI5 친 카메라\c00b7싳싧싧 음성 인식\c00b7전릭 전원 기술 개선된 Gen 3 사양.'
+          'Optimus는 AI5 친 카메라·싳싧싧 음성 인식·전릭 전원 기술 개선된 Gen 3 사양.'
         ],
         why: 'Tesla의 휴머노이드 양산이 실제 코스트 커트로 연결되면서 로봇 시장의 실현 가능성을 높이는 신호로 작용합니다.',
         notes: [{ term: 'Optimus Gen 3', def: 'Tesla 3세대 휴머노이드 로봇. AI5 칠 사용, 2단위 활동 능력 대폭 개선.' }]
       },
       { weight: 'high', time: '08:00', source: 'Boston Dynamics / The Register',
-        headline: 'Boston Dynamics Atlas 전량 양산 시작 — 2026년 분 현대차\c00b7Google DeepMind에 전량 배정',
+        headline: 'Boston Dynamics Atlas 전량 양산 시작 — 2026년 분 현대차·Google DeepMind에 전량 배정',
         url: 'https://www.theregister.com/2026/01/06/boston_dynamics_atlas_production/',
         bullets: [
           'Boston Dynamics 전력 로봇 Atlas, 양산 시작 확인. 2026년 생산 런 전량이 히육다이 RMAC 및 Google DeepMind에 전량 배정.',
           '2027년부터 추가 상업 고객 진입 예정. 매도가 아닌 현대차 내부 제조 어시스턴스가 첫 타깃.',
-          '전기 구동 Atlas는 성인가런 이동력\c00b7다양한 잡기 모드 특화.'
+          '전기 구동 Atlas는 성인가런 이동력·다양한 잡기 모드 특화.'
         ],
         why: 'Atlas가 특정 기업에 배타적으로 응용되면서 휴머노이드 로봇의 산업 적용이 가속화되는 시점을 보여줍니다.',
-        notes: [{ term: 'RMAC', def: 'Hyundai Robotics Metaplant Application Center. 히육다이 운영 로봇 평가\c00b7학습 센터.' }]
+        notes: [{ term: 'RMAC', def: 'Hyundai Robotics Metaplant Application Center. 히육다이 운영 로봇 평가·학습 센터.' }]
       },
       { weight: 'low', time: '10:00', source: 'GrabaRobot',
         headline: 'Figure AI BMW X3 파일럿 완료 — 3만 대+ 작업, 가동시간 1,250h+',
@@ -1041,11 +1041,11 @@ const TODAY = {
         why: '', notes: []
       },
       { weight: 'low', time: '11:00', source: 'CNBC',
-        headline: 'JAL, 하네다 공항 휴머노이드 테스트 — 수하물\c00b7운송\c00b7기내 청소 로봇',
+        headline: 'JAL, 하네다 공항 휴머노이드 테스트 — 수하물·운송·기내 청소 로봇',
         url: 'https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/',
         bullets: [
-          'Japan Airlines, 하네다 공항에서 휴머노이드 로봇 실용 테스트 시작. 수하물 할델링\c00b7운송\c00b7기내 청소 등 업무 적용.',
-          '항공\c00b7도소매 등 서비스 업종으로 적용 확대 가능성 탐색.'
+          'Japan Airlines, 하네다 공항에서 휴머노이드 로봇 실용 테스트 시작. 수하물 할델링·운송·기내 청소 등 업무 적용.',
+          '항공·도소매 등 서비스 업종으로 적용 확대 가능성 탐색.'
         ],
         why: '', notes: []
       },
@@ -1063,7 +1063,7 @@ const TODAY = {
         url: 'https://memeburn.com/physical-ai-is-sending-humanoid-robots-to-real-factory-floors-in-2026/',
         bullets: [
           'Agility Robotics Digit, 토요타 캐나다 RAV4 생산라인 자재 핸들링에 7대+ 투입, 실제 산업 환경에서 로봇 성능 검증 진행 중.',
-          '물류\c00b7세하게 제조업 확대로 적용 범위 확대 예정.'
+          '물류·세하게 제조업 확대로 적용 범위 확대 예정.'
         ],
         why: '', notes: []
       },
@@ -1081,7 +1081,7 @@ const TODAY = {
         url: 'https://seekingalpha.com/article/4903621-humanoid-robotics-in-2026-race-from-pilot-to-platform',
         bullets: [
           '서양 제조 휴머노이드 단가 $9~10만로 대기업만 투자 가능. 대중화 위해서는 $3만 이하 필요.',
-          '배터리\c00b7안정성\c00b7안전 기준\c00b7노동 어려람이 여전히 가장 큰 장벽.'
+          '배터리·안정성·안전 기준·노동 어려람이 여전히 가장 큰 장벽.'
         ],
         why: '', notes: []
       },
@@ -1101,7 +1101,7 @@ const TODAY = {
         ],
         why: '미국 정부가 양자컴퓨팅을 대규모 지원하며 중국과의 기술 경쟁에서 양자 선도권 확보를 선언한 신호입니다.',
         notes: [
-          { term: 'CHIPS법', def: '2022년 미국에서 제정된 반도체 초전력화 법. 금융 예산을 반도체\c00b7양자 투자에 할당.' },
+          { term: 'CHIPS법', def: '2022년 미국에서 제정된 반도체 초전력화 법. 금융 예산을 반도체·양자 투자에 할당.' },
           { term: '양자 웨이퍼 파운드리', def: '양자 컴퓨터의 핵심 부품인 큐비트를 참통에 언실리는 시설.' }
         ]
       },
@@ -1182,8 +1182,8 @@ const TODAY = {
         headline: '코스피 8,476 사상최고 — 반도체 주도 +3%, 하이닉스 바람으로 코리아할인 연장',
         url: 'https://www.cnbc.com/2026/05/29/asia-markets-today-live-updates-nikkei-225-hang-seng-index-kospi-nifty-50-csi-300.html',
         bullets: [
-          '코스피, 5월 29일 +3.03% 급등해 8,476로 종가. 반도체\c00b7AI 에 대한 글로벌 기대 지속.',
-          'SK하이닉스\c00b7삼성전자 주도. 코리아할인 해소 기대감이 외국인 수급을 더한다는 평가.',
+          '코스피, 5월 29일 +3.03% 급등해 8,476로 종가. 반도체·AI 에 대한 글로벌 기대 지속.',
+          'SK하이닉스·삼성전자 주도. 코리아할인 해소 기대감이 외국인 수급을 더한다는 평가.',
           '주가 상승 속도가 너무 빨라 특정 섹터 취압 우려 업승 — 오건영 신한은행.'
         ],
         why: '코스피 사상최고는 한국 주식이 글로벌 자금 유입에 매력적인 미개체로 인식받는 시각을 브려주는 증거입니다.',
@@ -1210,10 +1210,10 @@ const TODAY = {
         why: '', notes: [{ term: 'Kevin Warsh', def: '신임 미연준 의장. 과거 연준이사진을 지낸 경제학자로 시장 친화적 인사로 평가.' }]
       },
       { weight: 'low', time: '10:30', source: 'Investing.com',
-        headline: '달러\c00b7원 1,496원 — 이란 리스크 완화로 원화 소폭 강세',
+        headline: '달러·원 1,496원 — 이란 리스크 완화로 원화 소폭 강세',
         url: 'https://kr.investing.com/currencies/usd-krw',
         bullets: [
-          '달러\c00b7원 1,496원 수준, 이란 휴전 뉴스로 원화 소폭 강세(-0.47%).',
+          '달러·원 1,496원 수준, 이란 휴전 뉴스로 원화 소폭 강세(-0.47%).',
           '1,500원대 중심 연락하는 고환율 국면 지속되는 한간 한국 실질 수입리스크 확인 필요.'
         ],
         why: '', notes: []
@@ -1237,7 +1237,7 @@ const TODAY = {
         why: '', notes: []
       },
       { weight: 'low', time: '11:30', source: 'KDI',
-        headline: 'KDI, 2026 한국 GDP 2.5% 전망 — 반도체 수입 호조\c00b7내수 개선',
+        headline: 'KDI, 2026 한국 GDP 2.5% 전망 — 반도체 수입 호조·내수 개선',
         url: 'https://www.kdi.re.kr/research/economy',
         bullets: [
           'KDI, 2026년 한국 경제성장률 2.5% 전망. 반도체 수입 호조와 내수 개선세 동시 진행.',
@@ -1274,19 +1274,19 @@ const TODAY = {
     ],
   },
   invest: {
-    title: 'KOSPI 사상최고\c00b7Anthropic $1조 시대',
+    title: 'KOSPI 사상최고·Anthropic $1조 시대',
     subtitle: 'Claude가 작성한 오늘의 메모 · 5월 30일 09:00 · 5분 읽기',
     sections: [
       { h: '한 줄 요약', body: 'KOSPI가 반도체 주도로 사상최고(8,476)를 기록하고, Anthropic이 $9,650억 밸류로 OpenAI를 넘어서며 AI 헤게모니 수혜에 대한 글로벌 관심이 집중되고 있다.' },
-      { h: '오늘의 변수', body: 'KOSPI의 급등은 SK하이닉스\c00b7삼성전자 주도. Anthropic의 ARR $470억과 $9,650억 밸류는 파트너인 Amazon(AWS)\c00b7Microsoft\c00b7Google 주가에 기회로 작용. WTI -2%는 에너지 인플레이션 암력 감소로 연준 금리 인상 우려를 일정부분 해소. Bitcoin은 $74,037로 소폭 하락(-1%).' },
-      { h: '포지셔닝', body: '단기(1-3개월): SK하이닉스\c00b7삼성전자 등 반도체 코스피 이동면 관리. Amazon(AWS)는 Anthropic 최대 침 투자자로 기업 AI 노출 장기 수혜니다. 중기(6-12개월): Anthropic AI가 세 클라우드 플랫폼에 진입하면서 MSFT\c00b7GOOGL도 AI 수혜니다. 미이란 휴전 지속 시 유가 침슴해 에너지주는 무게 축소.' },
+      { h: '오늘의 변수', body: 'KOSPI의 급등은 SK하이닉스·삼성전자 주도. Anthropic의 ARR $470억과 $9,650억 밸류는 파트너인 Amazon(AWS)·Microsoft·Google 주가에 기회로 작용. WTI -2%는 에너지 인플레이션 암력 감소로 연준 금리 인상 우려를 일정부분 해소. Bitcoin은 $74,037로 소폭 하락(-1%).' },
+      { h: '포지셔닝', body: '단기(1-3개월): SK하이닉스·삼성전자 등 반도체 코스피 이동면 관리. Amazon(AWS)는 Anthropic 최대 침 투자자로 기업 AI 노출 장기 수혜니다. 중기(6-12개월): Anthropic AI가 세 클라우드 플랫폼에 진입하면서 MSFT·GOOGL도 AI 수혜니다. 미이란 휴전 지속 시 유가 침슴해 에너지주는 무게 축소.' },
       { h: '리스크', body: '코스피 상승 속도 과다로 서플라이즈 및 단기 조정 가능성. 이란 휴전 파기 시 에너지가격 재급등된 AI 목표가 달성되지 않을 리스크. Anthropic 밀리여 달러 밸류는 IPO가 더딕했지 멋하구르는 기상이 올수도 있어 투자자들의 주의가 필요합니다.' }
     ],
     watchlist: [
       { sym: '000660', name: 'SK하이닉스', val: '₩395,000', pct: '+3.5%', up: true, note: '코스피 사상최고 주도, AI 반도체 수혜' },
-      { sym: '005930', name: '삼성전자', val: '₩108,000', pct: '+2.8%', up: true, note: '코스피 회복세 함께 HBM\c00b7로직 안정적 수혜' },
+      { sym: '005930', name: '삼성전자', val: '₩108,000', pct: '+2.8%', up: true, note: '코스피 회복세 함께 HBM·로직 안정적 수혜' },
       { sym: 'AMZN', name: 'Amazon', val: '$260.50', pct: '+1.3%', up: true, note: 'AWS, Anthropic 최대 침 투자자 — 기업 AI 블루컈 수혜직접' },
-      { sym: 'NVDA', name: 'NVIDIA', val: '$188.50', pct: '+2.1%', up: true, note: 'AI\c00b7피지컴AI\c00b7양자 인프라 전방위 수혜' },
+      { sym: 'NVDA', name: 'NVIDIA', val: '$188.50', pct: '+2.1%', up: true, note: 'AI·피지컴AI·양자 인프라 전방위 수혜' },
       { sym: 'TLT', name: 'iShares 20Y ETF', val: '$89.50', pct: '+0.8%', up: true, note: '4.45% 고금리 구간 적립. 이란 휴전으로 금리 소폭 하락' },
       { sym: 'GLD', name: 'SPDR Gold ETF', val: '$283.00', pct: '-0.5%', up: false, note: '지정학적 리스크 완화로 금 소폭 약세. 중장기 헤지 유지' },
       { sym: 'VYM', name: 'Vanguard High Div.', val: '$132.00', pct: '+0.4%', up: true, note: '방어적 포지션. 코스피 급등국면에서 리스크 대비' },
@@ -1295,7 +1295,7 @@ const TODAY = {
     portfolio: [
       { asset: '국내주식', pct: 25, color: '#3DDC97',
         tickers: [{ sym: '000660', name: 'SK하이닉스' }, { sym: '005930', name: '삼성전자' }],
-        note: '코스피 사상최고 갱신 주도, 반도체\c00b7AI 수혜 모멘텀' },
+        note: '코스피 사상최고 갱신 주도, 반도체·AI 수혜 모멘텀' },
       { asset: '미국주식', pct: 30, color: '#5B9BD5',
         tickers: [{ sym: 'AMZN', name: 'Amazon' }, { sym: 'NVDA', name: 'NVIDIA' }],
         note: 'Anthropic 파트너 Amazon, AI 인프라 NVDA 수혜' },
