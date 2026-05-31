@@ -19,6 +19,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ap-northeast-2
         run: |
+          DATE=$(date +%Y%m%d)
           aws s3 cp data.js s3://daily-brief-946986551338/data.js \
             --content-type "application/javascript"
-          echo "✅ s3://daily-brief-946986551338/data.js 업로드 완료"
+          aws s3 cp data.js s3://daily-brief-946986551338/${DATE}_data.js \
+            --content-type "application/javascript"
+          echo "✅ data.js 및 ${DATE}_data.js 업로드 완료"
