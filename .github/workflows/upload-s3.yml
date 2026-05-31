@@ -1,0 +1,24 @@
+name: Upload data.js to S3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data.js'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-2
+        run: |
+          aws s3 cp data.js s3://daily-brief-946986551338/data.js \
+            --content-type "application/javascript"
+          echo "✅ s3://daily-brief-946986551338/data.js 업로드 완료"
